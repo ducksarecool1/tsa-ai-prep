@@ -10,7 +10,9 @@ export const STORAGE_KEYS = {
   bank: 'aiprep.bank.v1',
 } as const;
 
-export const DEFAULT_MODEL = 'claude-opus-5-5';
+export const DEFAULT_OLLAMA_URL = 'http://localhost:11434';
+export const DEFAULT_MODEL = 'llama3.2';
+export const DAILY_GOALS = [20, 50, 100, 150] as const;
 
 export const DEFAULT_SETTINGS: Settings = {
   theme: 'system',
@@ -20,7 +22,10 @@ export const DEFAULT_SETTINGS: Settings = {
   includeTypes: { mc: true, tf: true, written: true, matching: true, scenario: true, ordering: true, term: true, prompt: true },
   answerWith: 'term',
   advisorMode: false,
-  ai: { apiKey: '', model: DEFAULT_MODEL },
+  ai: { enabled: false, baseUrl: DEFAULT_OLLAMA_URL, model: DEFAULT_MODEL },
+  sound: true,
+  volume: 0.6,
+  dailyGoal: 50,
 };
 
 export function loadJson<T>(key: string, fallback: T): T {
@@ -49,19 +54,42 @@ export function removeKey(key: string): void {
 }
 
 export function emptyProgressState(): ProgressState {
-  return { version: 1, items: {}, studyDays: [], lastUnitIds: [], prompts: {}, spot: {}, tests: [] };
+  return {
+    version: 1,
+    items: {},
+    studyDays: [],
+    lastUnitIds: [],
+    prompts: {},
+    spot: {},
+    tests: [],
+    xp: { total: 0, byDay: {} },
+    goalDays: [],
+    achievements: {},
+    stats: { sessionsCompleted: 0, bestCombo: 0, perfectRounds: 0 },
+  };
 }
 
 /** Fill in any settings missing from older saved data. */
 export function mergeSettings(raw: Partial<Settings> | null | undefined): Settings {
   const s = raw ?? {};
   const roundSize = Number(s.roundSize);
+  const volume = Number(s.volume);
+  // Settings saved by the earlier cloud-AI version had { apiKey, model }; only keep fields that still apply.
+  const oldAi = (s.ai ?? {}) as Partial<Settings['ai']> & { apiKey?: string };
+  const model = typeof oldAi.model === 'string' && oldAi.model && !oldAi.model.startsWith('claude-') ? oldAi.model : DEFAULT_MODEL;
   return {
     ...DEFAULT_SETTINGS,
     ...s,
     roundSize: roundSize >= 7 && roundSize <= 10 ? roundSize : DEFAULT_SETTINGS.roundSize,
     includeTypes: { ...DEFAULT_SETTINGS.includeTypes, ...(s.includeTypes ?? {}) },
-    ai: { ...DEFAULT_SETTINGS.ai, ...(s.ai ?? {}) },
+    ai: {
+      enabled: typeof oldAi.enabled === 'boolean' ? oldAi.enabled : false,
+      baseUrl: typeof oldAi.baseUrl === 'string' && oldAi.baseUrl ? oldAi.baseUrl : DEFAULT_OLLAMA_URL,
+      model,
+    },
+    sound: typeof s.sound === 'boolean' ? s.sound : DEFAULT_SETTINGS.sound,
+    volume: volume >= 0 && volume <= 1 ? volume : DEFAULT_SETTINGS.volume,
+    dailyGoal: (DAILY_GOALS as readonly number[]).includes(Number(s.dailyGoal)) ? Number(s.dailyGoal) : DEFAULT_SETTINGS.dailyGoal,
   };
 }
 
@@ -103,6 +131,17 @@ export function sanitizeProgress(raw: unknown): ProgressState {
     prompts: r.prompts && typeof r.prompts === 'object' ? r.prompts : {},
     spot: r.spot && typeof r.spot === 'object' ? r.spot : {},
     tests: Array.isArray(r.tests) ? r.tests : [],
+    xp: {
+      total: typeof r.xp?.total === 'number' ? r.xp.total : 0,
+      byDay: r.xp?.byDay && typeof r.xp.byDay === 'object' ? r.xp.byDay : {},
+    },
+    goalDays: Array.isArray(r.goalDays) ? r.goalDays.filter((d) => typeof d === 'string') : [],
+    achievements: r.achievements && typeof r.achievements === 'object' ? r.achievements : {},
+    stats: {
+      sessionsCompleted: typeof r.stats?.sessionsCompleted === 'number' ? r.stats.sessionsCompleted : 0,
+      bestCombo: typeof r.stats?.bestCombo === 'number' ? r.stats.bestCombo : 0,
+      perfectRounds: typeof r.stats?.perfectRounds === 'number' ? r.stats.perfectRounds : 0,
+    },
   };
 }
 

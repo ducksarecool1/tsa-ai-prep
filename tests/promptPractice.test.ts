@@ -56,9 +56,9 @@ describe('prompt review', () => {
     expect(r.summary).toMatch(/most useful next step/);
   });
 
-  it('uses the offline checklist when no API key is set', async () => {
+  it('uses the offline checklist when the local AI is turned off', async () => {
     const c = content.challenges[0];
-    const r = await reviewPrompt({ apiKey: '', model: '' }, c, c.strongExample);
+    const r = await reviewPrompt({ enabled: false, baseUrl: 'http://localhost:11434', model: 'llama3.2' }, c, c.strongExample);
     expect(r.source).toBe('offline');
     expect(r.score).toBe(100);
   });

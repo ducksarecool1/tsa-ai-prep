@@ -37,7 +37,7 @@ export function offlineReview(challenge: PromptChallenge, prompt: string): Promp
   };
 }
 
-/** Uses the AI coach when an API key is set, and falls back to the offline checklist on any failure. */
+/** Uses the AI coach when Ollama is turned on, and falls back to the offline checklist on any failure. */
 export async function reviewPrompt(
   ai: AIConfig,
   challenge: PromptChallenge,

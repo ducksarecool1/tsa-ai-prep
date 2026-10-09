@@ -1,5 +1,8 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import type { Content, Flag, MasteryLevel, ProgressState, Question, Settings, Term } from '../types';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import type { Content, Flag, GameStats, MasteryLevel, ProgressState, Question, Settings, Term } from '../types';
+import { addXp, levelInfo, newlyUnlocked, xpToday } from '../lib/gamification';
+import { configureSound, playSound } from '../lib/sound';
+import { fireConfetti, showToast } from '../lib/celebrate';
 import { bundledContent } from '../content';
 import {
   STORAGE_KEYS,
@@ -29,6 +32,9 @@ interface AppState {
   recordSpot: (id: string, correct: boolean) => void;
   recordTest: (unitIds: string[], score: number, total: number) => void;
   setLastUnits: (unitIds: string[]) => void;
+  /** Adds XP; daily goal, level-up and achievement celebrations follow automatically. */
+  awardXp: (amount: number) => void;
+  updateStats: (fn: (s: GameStats) => Partial<GameStats>) => void;
   replaceProgress: (progress: ProgressState) => void;
   resetProgress: () => void;
   settings: Settings;
@@ -134,8 +140,24 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setProgress((p) => ({ ...p, lastUnitIds: unitIds }));
   }, []);
 
-  const replaceProgress = useCallback((next: ProgressState) => setProgress(sanitizeProgress(next)), []);
-  const resetProgress = useCallback(() => setProgress(emptyProgressState()), []);
+  const awardXp = useCallback((amount: number) => {
+    if (amount > 0) setProgress((p) => addXp(p, amount));
+  }, []);
+
+  const updateStats = useCallback((fn: (s: GameStats) => Partial<GameStats>) => {
+    setProgress((p) => ({ ...p, stats: { ...p.stats, ...fn(p.stats) } }));
+  }, []);
+
+  const replaceProgress = useCallback((next: ProgressState) => {
+    const clean = sanitizeProgress(next);
+    resetCelebrations(clean);
+    setProgress(clean);
+  }, []);
+  const resetProgress = useCallback(() => {
+    const clean = emptyProgressState();
+    resetCelebrations(clean);
+    setProgress(clean);
+  }, []);
 
   const updateSettings = useCallback((patch: Partial<Settings> | ((current: Settings) => Partial<Settings>)) => {
     setSettings((s) => mergeSettings({ ...s, ...(typeof patch === 'function' ? patch(s) : patch) }));
@@ -151,6 +173,62 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const knownTerms = useMemo(() => knownTermNames(content.units), [content]);
   const termPool = useMemo(() => allTerms(content.units), [content]);
 
+  useEffect(() => configureSound(settings.sound, settings.volume), [settings.sound, settings.volume]);
+
+  // Celebrations that follow from progress: daily goal, level-up and achievements.
+  // Refs stop repeats (React runs effects twice in development, and state updates lag a render).
+  const announced = useRef(new Set(Object.keys(progress.achievements)));
+  const goalAnnounced = useRef(progress.goalDays.includes(localDate()) ? localDate() : '');
+  const lastLevel = useRef(levelInfo(progress.xp.total).level);
+  function resetCelebrations(p: ProgressState) {
+    announced.current = new Set(Object.keys(p.achievements));
+    goalAnnounced.current = p.goalDays.includes(localDate()) ? localDate() : '';
+    lastLevel.current = levelInfo(p.xp.total).level;
+  }
+  useEffect(() => {
+    const today = localDate();
+    let delay = 450;
+    const later = (fn: () => void) => {
+      setTimeout(fn, delay);
+      delay += 900;
+    };
+    const goalReached = xpToday(progress, today) >= settings.dailyGoal && !progress.goalDays.includes(today);
+    if (goalReached && goalAnnounced.current !== today) {
+      goalAnnounced.current = today;
+      later(() => {
+        playSound('goal');
+        fireConfetti();
+        showToast({ title: 'Daily goal reached!', body: `You earned ${settings.dailyGoal} XP today. Keep the streak alive tomorrow.`, icon: 'target', tone: 'green' });
+      });
+    }
+    const level = levelInfo(progress.xp.total).level;
+    if (level > lastLevel.current) {
+      lastLevel.current = level;
+      later(() => {
+        playSound('levelup');
+        fireConfetti();
+        showToast({ title: `Level ${level}!`, body: 'You leveled up. Nice work.', icon: 'star', tone: 'accent' });
+      });
+    }
+    const withGoal = goalReached ? { ...progress, goalDays: [...progress.goalDays, today] } : progress;
+    const fresh = newlyUnlocked({ progress: withGoal, content }).filter((a) => !announced.current.has(a.id));
+    for (const a of fresh) {
+      announced.current.add(a.id);
+      later(() => {
+        playSound('achievement');
+        showToast({ title: `Achievement: ${a.title}`, body: a.description, icon: a.icon, tone: 'gold' });
+      });
+    }
+    if (goalReached || fresh.length) {
+      const now = Date.now();
+      setProgress((p) => ({
+        ...p,
+        goalDays: goalReached && !p.goalDays.includes(today) ? [...p.goalDays, today] : p.goalDays,
+        achievements: { ...p.achievements, ...Object.fromEntries(fresh.map((a) => [a.id, now])) },
+      }));
+    }
+  }, [progress, settings.dailyGoal, content]);
+
   const value: AppState = {
     content,
     bundled: bundledContent,
@@ -162,6 +240,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
     recordSpot,
     recordTest,
     setLastUnits,
+    awardXp,
+    updateStats,
     replaceProgress,
     resetProgress,
     settings,

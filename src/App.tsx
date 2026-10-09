@@ -11,6 +11,7 @@ import { SpotProblemPage } from './pages/SpotProblem';
 import { GlossaryPage } from './pages/Glossary';
 import { SettingsPage } from './pages/Settings';
 import { AdvisorPage } from './pages/Advisor';
+import { AchievementsPage } from './pages/Achievements';
 
 const TITLES: Record<string, string> = {
   '': 'Dashboard',
@@ -23,6 +24,7 @@ const TITLES: Record<string, string> = {
   glossary: 'Glossary',
   settings: 'Settings',
   advisor: 'Advisor',
+  achievements: 'Achievements',
 };
 
 export function App() {
@@ -66,6 +68,9 @@ export function App() {
       break;
     case 'advisor':
       page = <AdvisorPage />;
+      break;
+    case 'achievements':
+      page = <AchievementsPage />;
       break;
     default:
       page = (

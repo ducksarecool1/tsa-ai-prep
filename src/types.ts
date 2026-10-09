@@ -208,6 +208,19 @@ export interface ProgressState {
   prompts: Record<string, { bestScore: number; attempts: number }>;
   spot: Record<string, { attempts: number; correct: number }>;
   tests: { date: string; unitIds: string[]; score: number; total: number }[];
+  /** Experience points: lifetime total and per local day (recent days only). */
+  xp: { total: number; byDay: Record<string, number> };
+  /** Local dates on which the daily XP goal was reached. */
+  goalDays: string[];
+  /** Achievement id -> epoch ms when unlocked. */
+  achievements: Record<string, number>;
+  stats: GameStats;
+}
+
+export interface GameStats {
+  sessionsCompleted: number;
+  bestCombo: number;
+  perfectRounds: number;
 }
 
 export interface Flag {
@@ -234,5 +247,11 @@ export interface Settings {
   includeTypes: Record<IncludeKey, boolean>;
   answerWith: AnswerWith;
   advisorMode: boolean;
-  ai: { apiKey: string; model: string };
+  /** Optional local AI through Ollama (https://ollama.com). */
+  ai: { enabled: boolean; baseUrl: string; model: string };
+  sound: boolean;
+  /** 0 to 1. */
+  volume: number;
+  /** XP needed each day to reach the daily goal. */
+  dailyGoal: number;
 }

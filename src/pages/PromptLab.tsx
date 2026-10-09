@@ -6,6 +6,9 @@ import { AnswerInput, type AnswerResult } from '../components/AnswerInput';
 import { StudentMessage, TutorMessage } from '../components/Chat';
 import { ChallengeBrief, PromptReviewView } from '../components/PromptPractice';
 import { Icon } from '../components/Icon';
+import { XpPill } from '../components/GameWidgets';
+import { answerXp } from '../lib/gamification';
+import { playSound } from '../lib/sound';
 
 const DIFFICULTY_LABEL: Record<Difficulty, string> = { 1: 'Easy', 2: 'Medium', 3: 'Hard' };
 
@@ -17,7 +20,7 @@ export function PromptLabPage() {
       <div className="pt-4 text-center sm:pt-8">
         <h1 className="font-display text-3xl font-normal sm:text-4xl">Prompt Lab</h1>
         <p className="mt-3 text-ink-soft">
-          Write prompts for real situations. {aiEnabled(settings.ai) ? 'The AI coach runs each prompt and reviews it.' : 'Each prompt is checked against a checklist.'}{' '}
+          Write prompts for real situations. {aiEnabled(settings.ai) ? 'Your local AI coach runs each prompt and reviews it.' : 'Each prompt is checked against a checklist.'}{' '}
           {solved} of {content.challenges.length} passed so far.
         </p>
         <div className="mt-5 flex flex-wrap justify-center gap-2">
@@ -56,7 +59,7 @@ export function PromptLabPage() {
 }
 
 export function ChallengePage({ challengeId }: { challengeId: string }) {
-  const { content, recordPrompt, progress, knownTerms } = useApp();
+  const { content, recordPrompt, progress, knownTerms, awardXp } = useApp();
   const index = content.challenges.findIndex((c) => c.id === challengeId);
   const challenge: PromptChallenge | undefined = content.challenges[index];
   const [attempts, setAttempts] = useState<AnswerResult[]>([]);
@@ -81,6 +84,8 @@ export function ChallengePage({ challengeId }: { challengeId: string }) {
   const onAnswer = (r: AnswerResult) => {
     setAttempts((a) => [...a, r]);
     if (r.review) recordPrompt(challenge.id, r.review.score);
+    playSound(r.correct ? 'correct' : 'wrong');
+    awardXp(answerXp({ correct: r.correct, format: 'prompt', combo: 0, promptScore: r.review?.score }));
   };
 
   return (
@@ -102,7 +107,10 @@ export function ChallengePage({ challengeId }: { challengeId: string }) {
         {attempts.map((a, i) => (
           <div key={i} className="space-y-6">
             <StudentMessage>{a.response}</StudentMessage>
-            <TutorMessage>{a.review && <PromptReviewView review={a.review} strongExample={challenge.strongExample} />}</TutorMessage>
+            <TutorMessage>
+              {a.review && <PromptReviewView review={a.review} strongExample={challenge.strongExample} />}
+              <XpPill amount={answerXp({ correct: a.correct, format: 'prompt', combo: 0, promptScore: a.review?.score })} />
+            </TutorMessage>
           </div>
         ))}
         {last && !composerOpen && (

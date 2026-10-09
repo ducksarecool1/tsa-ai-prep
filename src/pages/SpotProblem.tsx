@@ -5,9 +5,12 @@ import { AnswerInput, type AnswerResult } from '../components/AnswerInput';
 import { Feedback } from '../components/Feedback';
 import { ProgressBar } from '../components/ProgressBar';
 import { TutorMessage } from '../components/Chat';
+import { XpPill } from '../components/GameWidgets';
+import { XP } from '../lib/gamification';
+import { playSound } from '../lib/sound';
 
 export function SpotProblemPage() {
-  const { content, recordSpot, knownTerms } = useApp();
+  const { content, recordSpot, knownTerms, awardXp } = useApp();
   const [round, setRound] = useState(0);
   const order = useMemo(() => shuffle(content.spotProblems), [content.spotProblems, round]);
   const [index, setIndex] = useState(0);
@@ -46,8 +49,13 @@ export function SpotProblemPage() {
 
   const answer = (r: AnswerResult) => {
     setResult(r);
-    if (r.correct) setScore((s) => s + 1);
+    if (r.correct) {
+      setScore((s) => s + 1);
+      awardXp(XP.spot);
+    }
+    playSound(r.correct ? 'correct' : 'wrong');
     recordSpot(item.id, r.correct);
+    if (index + 1 >= order.length) setTimeout(() => playSound('complete'), 700);
   };
 
   return (
@@ -86,6 +94,11 @@ export function SpotProblemPage() {
       {result && (
         <TutorMessage>
           <Feedback correct={result.correct} displayAnswer={item.answer} explanation={item.explanation}>
+            {result.correct && (
+              <span className="flex w-full">
+                <XpPill amount={XP.spot} />
+              </span>
+            )}
             <button
               type="button"
               className="btn-primary"

@@ -6,6 +6,10 @@ import { shuffle } from '../lib/random';
 import { AnswerInput, type AnswerResult } from '../components/AnswerInput';
 import { ProgressBar } from '../components/ProgressBar';
 import { UnitPicker } from '../components/UnitPicker';
+import { XpPill } from '../components/GameWidgets';
+import { XP } from '../lib/gamification';
+import { playSound } from '../lib/sound';
+import { fireConfetti } from '../lib/celebrate';
 
 interface TestItem {
   question: Question;
@@ -26,7 +30,7 @@ function formatTime(seconds: number): string {
 }
 
 export function PracticeTestPage({ params }: { params: URLSearchParams }) {
-  const { content, recordItem, recordTest, knownTerms } = useApp();
+  const { content, recordItem, recordTest, knownTerms, awardXp } = useApp();
   const allUnitIds = content.units.map((u) => u.id);
   const [unitIds, setUnitIds] = useState<string[]>(() => {
     const u = params.get('unit');
@@ -71,6 +75,13 @@ export function PracticeTestPage({ params }: { params: URLSearchParams }) {
       recordItem(item.question.id, a.correct);
     }
     recordTest(run.unitIds, score, run.items.length);
+    awardXp(score * XP.testCorrect);
+    if (score / run.items.length >= 0.8) {
+      playSound('complete');
+      fireConfetti();
+    } else {
+      playSound('round');
+    }
     setNow(t);
     setFinished(true);
   };
@@ -150,6 +161,9 @@ export function PracticeTestPage({ params }: { params: URLSearchParams }) {
           <p className="mt-2">
             {score} of {run.items.length} correct · Time: {formatTime(used)}
           </p>
+          <div className="mt-3 flex justify-center">
+            <XpPill amount={score * XP.testCorrect} />
+          </div>
           <div className="mt-4 flex flex-wrap justify-center gap-2">
             <button type="button" className="btn-primary" onClick={() => start(run.items.map((i) => i.question))}>
               Retake these questions
@@ -213,7 +227,10 @@ export function PracticeTestPage({ params }: { params: URLSearchParams }) {
           presentation={item.presentation}
           locked={!!answered}
           revealResult={false}
-          onAnswer={(r) => setAnswers((a) => ({ ...a, [item.question.id]: r }))}
+          onAnswer={(r) => {
+            playSound('tap');
+            setAnswers((a) => ({ ...a, [item.question.id]: r }));
+          }}
           knownTerms={knownTerms}
         />
         {answered && item.presentation.format === 'written' && (

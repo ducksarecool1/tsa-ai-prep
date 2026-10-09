@@ -9,6 +9,7 @@ import { shuffle } from '../lib/random';
 import { PASS_SCORE, reviewPrompt, type PromptReview } from '../lib/promptReview';
 import { aiEnabled, type ReviewStep } from '../lib/ai';
 import { useApp } from '../state/AppContext';
+import { playSound } from '../lib/sound';
 import { Icon } from './Icon';
 import { Thinking } from './Chat';
 
@@ -93,7 +94,13 @@ function ChoiceInput({
     <div role="group" aria-label="Answer choices" className={trueFalse ? 'grid gap-3 sm:grid-cols-2' : 'grid gap-3'}>
       {options.map((opt, i) => {
         const state =
-          locked && revealResult ? (opt === answer ? 'option-correct' : opt === chosen ? 'option-wrong' : '') : '';
+          locked && revealResult
+            ? opt === answer
+              ? `option-correct ${opt === chosen ? 'animate-pop' : ''}`
+              : opt === chosen
+                ? 'option-wrong animate-shake'
+                : ''
+            : '';
         return (
           <button
             key={opt}
@@ -140,6 +147,7 @@ function WrittenInput({
     const result = gradeWritten(value, spec, { knownTerms });
     if (result.verdict === 'almost' && allowRetry && !almost) {
       setAlmost(true);
+      playSound('almost');
       return;
     }
     onAnswer({ correct: result.verdict === 'correct', response: value.trim(), confusedWith: result.confusedWith });
@@ -153,7 +161,7 @@ function WrittenInput({
           <strong>Almost!</strong> You're close. Try once more. Hint: {hint ?? makeHint(spec.answer)}
         </p>
       )}
-      <div className="composer flex items-center gap-2 py-1.5 pl-5 pr-1.5">
+      <div key={almost ? 'retry' : 'first'} className={`composer flex items-center gap-2 py-1.5 pl-5 pr-1.5 ${almost ? 'animate-shake' : ''}`}>
         <label htmlFor="written-answer" className="sr-only">
           Type your answer
         </label>
@@ -256,7 +264,7 @@ function PromptComposer({ challenge, locked, onAnswer }: Props & { challenge: Pr
         </button>
       </div>
       <p className="px-2 text-xs text-ink-soft">
-        {useAI ? 'The AI coach will run your prompt, then review it.' : 'Checked offline against the checklist. Add an API key in Settings for AI coach reviews.'}{' '}
+        {useAI ? 'The AI coach will run your prompt on your local Ollama model, then review it.' : 'Checked offline against the checklist. Connect Ollama in Settings for AI coach reviews.'}{' '}
         Ctrl+Enter to send. Never include real names, addresses or phone numbers.
       </p>
     </form>

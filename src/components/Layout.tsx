@@ -2,6 +2,9 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useApp } from '../state/AppContext';
 import { AppMark, Icon, type IconName } from './Icon';
 import { computeStreak } from '../lib/stats';
+import { xpToday } from '../lib/gamification';
+import { Celebrations } from './Celebrations';
+import { DailyGoalRing, LevelBadge, SoundToggle } from './GameWidgets';
 
 interface NavItem {
   href: string;
@@ -22,6 +25,7 @@ export function Layout({ current, children }: { current: string; children: React
     { href: '#/test', label: 'Practice test', match: 'test', icon: 'test' },
     { href: '#/prompt-lab', label: 'Prompt Lab', match: 'prompt-lab', icon: 'wand' },
     { href: '#/glossary', label: 'Glossary', match: 'glossary', icon: 'search' },
+    { href: '#/achievements', label: 'Achievements', match: 'achievements', icon: 'trophy' },
   ];
   if (settings.advisorMode) items.push({ href: '#/advisor', label: 'Advisor', match: 'advisor', icon: 'shield' });
 
@@ -52,6 +56,23 @@ export function Layout({ current, children }: { current: string; children: React
         <Icon name="plus" className="h-4 w-4" />
         New study session
       </a>
+      <a href="#/achievements" className="mb-3 flex items-center gap-3 rounded-xl border border-line bg-surface p-3 text-ink no-underline hover:bg-raised hover:no-underline">
+        <DailyGoalRing size={40} />
+        <div className="min-w-0 flex-1 space-y-1">
+          <LevelBadge compact />
+          <p className="flex items-center gap-2 text-xs text-ink-soft">
+            <span>
+              {xpToday(progress)} / {settings.dailyGoal} XP today
+            </span>
+            {streak > 0 && (
+              <span className="inline-flex items-center gap-0.5 font-medium text-orange-600 dark:text-orange-400">
+                <Icon name="flame" className="h-3.5 w-3.5" />
+                {streak}
+              </span>
+            )}
+          </p>
+        </div>
+      </a>
       <nav aria-label="Main" className="flex flex-col gap-0.5">
         {items.map((item) => {
           const active = current === item.match;
@@ -75,12 +96,15 @@ export function Layout({ current, children }: { current: string; children: React
         ))}
       </ul>
       <div className="mt-auto flex flex-col gap-0.5 border-t border-line pt-3">
-        {streak > 0 && (
-          <p className="flex items-center gap-2 px-3 py-1 text-sm text-ink-soft">
-            <Icon name="flame" className="h-4 w-4 text-orange-500" />
-            {streak}-day streak
-          </p>
-        )}
+        <button
+          type="button"
+          className="nav-item w-full text-left"
+          aria-pressed={settings.sound}
+          onClick={() => updateSettings({ sound: !settings.sound })}
+        >
+          <Icon name={settings.sound ? 'volume' : 'mute'} className="h-[18px] w-[18px]" />
+          {settings.sound ? 'Sound on' : 'Sound off'}
+        </button>
         <button
           type="button"
           className="nav-item w-full text-left"
@@ -99,6 +123,7 @@ export function Layout({ current, children }: { current: string; children: React
 
   return (
     <div className="min-h-screen lg:flex">
+      <Celebrations />
       <a
         href="#main"
         onClick={(e) => {
@@ -122,9 +147,12 @@ export function Layout({ current, children }: { current: string; children: React
           <AppMark className="h-6 w-6" />
           AI Prep
         </a>
-        <a href="#/learn" className="btn-ghost min-h-[40px] px-2" aria-label="New study session">
-          <Icon name="plus" />
-        </a>
+        <span className="flex items-center gap-1">
+          <a href="#/achievements" className="flex items-center no-underline" aria-label={`Daily goal: ${xpToday(progress)} of ${settings.dailyGoal} XP`}>
+            <DailyGoalRing size={32} />
+          </a>
+          <SoundToggle />
+        </span>
       </header>
       {open && (
         <div className="fixed inset-0 z-40 lg:hidden">

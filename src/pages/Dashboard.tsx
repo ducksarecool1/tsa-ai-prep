@@ -4,6 +4,8 @@ import { mistakeItems } from '../lib/selection';
 import { computeStreak, dueCount, overallMastery, unitMastery, weakestTerms } from '../lib/stats';
 import { ProgressBar } from '../components/ProgressBar';
 import { AppMark, Icon, type IconName } from '../components/Icon';
+import { DailyGoalRing, LevelBadge } from '../components/GameWidgets';
+import { xpToday } from '../lib/gamification';
 import type { IncludeKey } from '../types';
 
 const ALL_TYPES: Record<IncludeKey, boolean> = { mc: true, tf: true, written: true, matching: true, scenario: true, ordering: true, term: true, prompt: true };
@@ -76,16 +78,28 @@ export function Dashboard() {
           href="#/learn?unit=u7"
           icon="wand"
           title="Practice prompts"
-          text={settings.ai.apiKey ? 'Write prompts and get AI coach reviews' : 'Write prompts and get scored feedback'}
+          text={settings.ai.enabled ? 'Write prompts and get AI coach reviews' : 'Write prompts and get scored feedback'}
         />
         <QuickStart href="#/test" icon="clock" title="Practice test" text="Timed or untimed, with a full review" />
         <QuickStart href="#/units" icon="book" title="Read a lesson" text={`${content.units.length} short lessons with diagrams`} />
       </section>
 
-      <section aria-label="Your progress" className="grid gap-3 sm:grid-cols-3">
-        <Stat icon="spark" label="Mastery" value={`${overall.percent}%`} sub={`${overall.mastered} of ${overall.total} items mastered`} />
+      <section aria-label="Your progress" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="#/achievements" className="flex items-center gap-3 rounded-2xl border border-line bg-surface p-4 text-ink no-underline hover:bg-raised hover:no-underline">
+          <DailyGoalRing size={52} />
+          <div>
+            <p className="text-sm text-ink-soft">Daily goal</p>
+            <p className="text-xl font-semibold tabular-nums">
+              {xpToday(progress)} <span className="text-sm font-medium text-ink-soft">/ {settings.dailyGoal} XP</span>
+            </p>
+          </div>
+        </a>
+        <a href="#/achievements" className="flex flex-col justify-center gap-1 rounded-2xl border border-line bg-surface p-4 text-ink no-underline hover:bg-raised hover:no-underline">
+          <LevelBadge />
+          <p className="text-xs text-ink-soft">{progress.xp.total} XP total</p>
+        </a>
         <Stat icon="flame" label="Streak" value={`${streak} ${streak === 1 ? 'day' : 'days'}`} sub={streak ? 'Study today to keep it going' : 'Answer a question to start one'} />
-        <Stat icon="clock" label="Due for review" value={String(due)} sub="Scheduled by spaced repetition" />
+        <Stat icon="spark" label="Mastery" value={`${overall.percent}%`} sub={`${overall.mastered} of ${overall.total} mastered · ${due} due`} />
       </section>
 
       <div className="grid gap-6 lg:grid-cols-5">

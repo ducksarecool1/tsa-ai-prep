@@ -6,9 +6,11 @@ import { nextLevel } from '../lib/mastery';
 import { shuffle } from '../lib/random';
 import { UnitPicker } from '../components/UnitPicker';
 import { ProgressBar } from '../components/ProgressBar';
+import { XP } from '../lib/gamification';
+import { playSound } from '../lib/sound';
 
 export function FlashcardsPage({ params }: { params: URLSearchParams }) {
-  const { content, progress, recordItem } = useApp();
+  const { content, progress, recordItem, awardXp } = useApp();
   const allUnitIds = content.units.map((u) => u.id);
   const [unitIds, setUnitIds] = useState<string[]>(() => {
     const u = params.get('unit');
@@ -39,9 +41,17 @@ export function FlashcardsPage({ params }: { params: URLSearchParams }) {
     // Self-rating can move a card from New to Familiar, but only Learn Mode can master it.
     const level = knowIt ? (current === 'new' ? 'familiar' : current) : nextLevel(current, false);
     recordItem(id, knowIt, level);
+    awardXp(XP.flashcard);
     setKnown((k) => ({ ...k, [card.id]: knowIt }));
     setFlipped(false);
+    const last = deck !== null && index + 1 >= deck.length;
+    playSound(last ? 'round' : knowIt ? 'correct' : 'tap');
     setIndex((i) => i + 1);
+  };
+
+  const flip = () => {
+    playSound('flip');
+    setFlipped((f) => !f);
   };
 
   useEffect(() => {
@@ -52,7 +62,7 @@ export function FlashcardsPage({ params }: { params: URLSearchParams }) {
       if (e.key === ' ' || e.key === 'Enter') {
         if (el?.tagName === 'BUTTON' && el.dataset.card !== 'true') return;
         e.preventDefault();
-        setFlipped((f) => !f);
+        flip();
       } else if (e.key === '1') mark(false);
       else if (e.key === '2') mark(true);
     };
@@ -133,7 +143,7 @@ export function FlashcardsPage({ params }: { params: URLSearchParams }) {
       <button
         type="button"
         data-card="true"
-        onClick={() => setFlipped((f) => !f)}
+        onClick={flip}
         aria-label={`${flipped ? 'Back' : 'Front'} of card. Select to flip.`}
         className="card flex min-h-[260px] w-full flex-col items-center justify-center gap-3 text-center hover:border-brand-400"
       >

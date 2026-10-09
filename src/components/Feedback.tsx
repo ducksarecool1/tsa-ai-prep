@@ -17,7 +17,7 @@ export function Feedback({ correct, displayAnswer, explanation, response, confus
   return (
     <div role="status" aria-live="polite" className="space-y-2">
       <p
-        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold ${
+        className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold ${correct ? 'animate-pop' : 'animate-shake'} ${
           correct
             ? 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-200'
             : 'bg-red-50 text-red-800 dark:bg-red-950/60 dark:text-red-200'
