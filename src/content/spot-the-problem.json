@@ -1,0 +1,156 @@
+[
+  {
+    "id": "sp01",
+    "title": "The everything essay",
+    "prompt": "Write about dogs.",
+    "output": "Dogs have been companions to humans for thousands of years. In this essay we will explore the history of dog domestication, the many breeds that exist today, their roles in work and service, and the science of canine behavior... (the response continues for 900 words)",
+    "options": [
+      "The instruction was vague: no audience, purpose, length or format",
+      "The prompt shared private information",
+      "The model ignored a clear word limit",
+      "The prompt asked for two opposite things"
+    ],
+    "answer": "The instruction was vague: no audience, purpose, length or format",
+    "explanation": "The student needed a 100-word paragraph about dog care for a 3rd-grade class, but the prompt said none of that. The model guessed, and guessed long."
+  },
+  {
+    "id": "sp02",
+    "title": "Sources that look real",
+    "prompt": "Give me two sources about the history of the bicycle, with authors and titles.",
+    "output": "1. Harmon, L. (2017). Two Wheels Forward: The Untold Story of the Pedal. Riverbend University Press.\n2. Okafor, D. (2020). \"Spokes and Society.\" Journal of Transportation Heritage, 14(2), 33-58.",
+    "options": [
+      "The sources may be invented and must be checked before use",
+      "The prompt was too long",
+      "The model used the wrong citation punctuation",
+      "The prompt should have asked for ten sources"
+    ],
+    "answer": "The sources may be invented and must be checked before use",
+    "explanation": "Chatbots can produce citations with realistic authors, titles and page numbers that do not exist. These two are made up for this exercise; always search for every source yourself."
+  },
+  {
+    "id": "sp03",
+    "title": "Wrong kind of speech",
+    "prompt": "Write a speech for Friday.",
+    "output": "Good evening, graduates, families and faculty. Tonight we celebrate four years of hard work...",
+    "options": [
+      "The prompt left out the context: what the event is and who the audience is",
+      "The model refused to answer",
+      "The prompt used too many examples",
+      "The output was in the wrong language"
+    ],
+    "answer": "The prompt left out the context: what the event is and who the audience is",
+    "explanation": "The speech was for a TSA club meeting, but the model had no way to know that. Context like the event, the audience and the purpose would have prevented the mismatch."
+  },
+  {
+    "id": "sp04",
+    "title": "Too much information",
+    "prompt": "I live at 18 Maple Avenue and leave home at 7:15 every morning. My school is Lincoln High. Plan the safest walking route for me.",
+    "output": "Here is a walking route from 18 Maple Avenue to Lincoln High School, leaving at 7:15 a.m....",
+    "options": [
+      "The prompt shared a home address and daily routine that did not need to be shared",
+      "The prompt did not ask for a format",
+      "The model's route was too short",
+      "The prompt should have used a role"
+    ],
+    "answer": "The prompt shared a home address and daily routine that did not need to be shared",
+    "explanation": "An address combined with when you leave home is sensitive personal information. A map app, or general nearby street names, would be safer."
+  },
+  {
+    "id": "sp05",
+    "title": "Impossible instructions",
+    "prompt": "Write a detailed, complete explanation of photosynthesis in one sentence.",
+    "output": "Photosynthesis is the process by which plants, algae and some bacteria use light energy, captured by chlorophyll in chloroplasts, to convert carbon dioxide and water into glucose and oxygen through the light-dependent reactions and the Calvin cycle, which together...",
+    "options": [
+      "The prompt gave conflicting instructions: \"detailed and complete\" versus \"one sentence\"",
+      "The model invented false facts about plants",
+      "The prompt shared private data",
+      "The prompt forgot to name the topic"
+    ],
+    "answer": "The prompt gave conflicting instructions: \"detailed and complete\" versus \"one sentence\"",
+    "explanation": "The model tried to satisfy both and produced a run-on sentence. Pick one goal, such as \"in 3 short sentences for 7th graders.\""
+  },
+  {
+    "id": "sp06",
+    "title": "Way over their heads",
+    "prompt": "Explain how the internet works.",
+    "output": "The internet is a global network of networks that exchange data as packets using the TCP/IP protocol suite. Routers forward packets based on IP addresses, and the Border Gateway Protocol determines routes between autonomous systems...",
+    "options": [
+      "The prompt did not name the audience, so the answer was too technical for 4th graders",
+      "The output contains a hallucinated protocol",
+      "The prompt asked for too many steps",
+      "The model ignored a delimiter"
+    ],
+    "answer": "The prompt did not name the audience, so the answer was too technical for 4th graders",
+    "explanation": "The explanation was meant for a 4th-grade presentation. Adding \"for 4th graders, using an everyday comparison\" would set the right level."
+  },
+  {
+    "id": "sp07",
+    "title": "A one-sided question",
+    "prompt": "Explain why year-round school is a terrible idea.",
+    "output": "Year-round school is a terrible idea for several reasons. First, it takes away summer jobs and camps. Second, it makes family vacations harder to plan...",
+    "options": [
+      "The prompt was one-sided, so the answer only covered one side",
+      "The model made a spelling mistake",
+      "The prompt was too short to understand",
+      "The model used the wrong format"
+    ],
+    "answer": "The prompt was one-sided, so the answer only covered one side",
+    "explanation": "The student needed balanced research for a debate. Asking for \"the strongest arguments for and against\" would give both sides."
+  },
+  {
+    "id": "sp08",
+    "title": "Just the number",
+    "prompt": "What is 17% of 240? Just give me the number.",
+    "output": "38.4",
+    "options": [
+      "The answer is wrong, and asking for the steps would have made the error easier to catch",
+      "The prompt shared private information",
+      "The prompt should have included a role",
+      "The output is in the wrong format"
+    ],
+    "answer": "The answer is wrong, and asking for the steps would have made the error easier to catch",
+    "explanation": "17% of 240 is 0.17 × 240 = 40.8, not 38.4. When you ask for the work step by step, mistakes are easier to spot."
+  },
+  {
+    "id": "sp09",
+    "title": "Last night's game",
+    "prompt": "Who won last night's basketball game between our two local high schools?",
+    "output": "Central High won 64 to 58, led by a strong fourth quarter.",
+    "options": [
+      "The model probably cannot know about last night's local game and may have made up the result",
+      "The prompt used too much jargon",
+      "The prompt was too long",
+      "The output should have been a table"
+    ],
+    "answer": "The model probably cannot know about last night's local game and may have made up the result",
+    "explanation": "Unless a tool can search current sources, a model only knows what was in its training data, which ends at its knowledge cutoff. A confident score here is likely a hallucination."
+  },
+  {
+    "id": "sp10",
+    "title": "Added extras",
+    "prompt": "Using only the article below, summarize what the city council decided about the new library.\n\"\"\"[article text]\"\"\"",
+    "output": "The council voted 5 to 2 to build the library, which the mayor called \"a gift to future generations.\" Construction will cost $12 million.",
+    "options": [
+      "The summary included a quote and a cost that were not in the article",
+      "The prompt forgot to separate the article",
+      "The prompt did not state a task",
+      "The summary was written in the wrong tone"
+    ],
+    "answer": "The summary included a quote and a cost that were not in the article",
+    "explanation": "The article mentioned the vote but not the quote or the cost. The model added plausible details anyway, which is a hallucination even though the prompt was well written."
+  },
+  {
+    "id": "sp11",
+    "title": "Everything at once",
+    "prompt": "Write my history essay, design a poster for the club fair, plan my birthday party and translate all of it into French.",
+    "output": "Here is a short essay, a poster idea, a party plan and translations. Essay: History is important because...",
+    "options": [
+      "Too many unrelated tasks in one prompt, so each one got a shallow answer",
+      "The prompt was missing a delimiter",
+      "The model refused to translate",
+      "The prompt asked for a role it could not play"
+    ],
+    "answer": "Too many unrelated tasks in one prompt, so each one got a shallow answer",
+    "explanation": "Splitting the work into separate, focused prompts gives each task the detail it needs."
+  }
+]

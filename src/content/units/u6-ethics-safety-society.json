@@ -1,0 +1,566 @@
+{
+  "id": "u6",
+  "number": 6,
+  "title": "Ethics, Safety and Society",
+  "summary": "Bias and fairness, privacy, copyright debates, deepfakes and misinformation, environmental cost, jobs, responsible use in school, and human oversight.",
+  "lesson": {
+    "title": "Using AI Responsibly",
+    "sections": [
+      {
+        "heading": "Bias and fairness",
+        "paragraphs": [
+          "AI learns from data created by people. If that data leaves some groups out or reflects past unfair decisions, a model can repeat or even amplify the problem. A hiring tool trained on years of past hiring may learn to favor applicants who resemble earlier hires. Studies have found that some facial analysis systems were less accurate for some groups of people than for others. Fairness itself has several definitions that can conflict, so building fair systems involves human judgment, not just math."
+        ]
+      },
+      {
+        "heading": "Privacy",
+        "paragraphs": [
+          "Depending on the service, what you type into a chatbot may be stored, reviewed or used to improve the model. Never share passwords, addresses, phone numbers, ID numbers, health details or other people's private information."
+        ]
+      },
+      {
+        "heading": "Copyright and creativity",
+        "paragraphs": [
+          "Many AI models were trained on books, art, music and code made by people. Some argue this is a fair, transformative use of available material, similar to how people learn by studying others' work. Others argue creators should give permission or be paid. Courts in several countries are deciding cases, and answers may differ by country and situation. In the United States, the Copyright Office has said copyright protects human authorship, so material generated entirely by AI generally is not protected."
+        ]
+      },
+      {
+        "heading": "Deepfakes and misinformation",
+        "paragraphs": [
+          "Deepfakes are realistic fake videos, images or audio made with AI. They can spread false stories or power scams, such as a cloned voice asking for money. Misinformation is false information shared without intent to deceive; disinformation is spread on purpose. Before sharing, check the original source and see whether trustworthy outlets confirm it. AI detectors and watermarks help but are not perfect."
+        ]
+      },
+      {
+        "heading": "Environment and jobs",
+        "paragraphs": [
+          "Training and running large models in data centers uses significant electricity, and cooling can use large amounts of water. Supporters point to efficiency improvements and uses of AI in climate research; critics worry demand is growing faster than clean energy. On jobs, AI may automate some tasks, change many roles and create new ones. Experts disagree about how large and how fast these effects will be."
+        ]
+      },
+      {
+        "heading": "Responsible use and human oversight",
+        "bullets": [
+          "Follow your teacher's and school's AI policy, and be honest about how you used AI.",
+          "Use AI to support your learning, not to replace it.",
+          "Verify facts before you rely on them.",
+          "For high-stakes decisions such as medical care, loans, hiring or criminal justice, keep a human in the loop who can review and override the AI.",
+          "People and organizations stay accountable for what their AI systems do."
+        ],
+        "paragraphs": []
+      }
+    ],
+    "analogy": {
+      "title": "Analogy: a student with one textbook",
+      "text": "A model is a bit like a student who learned everything from a single textbook. If the textbook leaves out some people or repeats old mistakes, the student will too, no matter how smart they are."
+    }
+  },
+  "terms": [
+    {
+      "id": "u6-t-algo-bias",
+      "unitId": "u6",
+      "term": "algorithmic bias",
+      "definition": "Systematic, unfair differences in how an AI system treats or performs for different groups of people.",
+      "example": "A loan model that approves equally qualified applicants from one neighborhood less often than others.",
+      "acceptedAnswers": ["AI bias", "machine bias", "bias in AI"]
+    },
+    {
+      "id": "u6-t-fairness",
+      "unitId": "u6",
+      "term": "fairness",
+      "definition": "The goal of making an AI system's decisions and errors not unjustly favor or harm particular groups.",
+      "example": "Checking whether a model's error rates are similar across different age groups."
+    },
+    {
+      "id": "u6-t-privacy",
+      "unitId": "u6",
+      "term": "privacy",
+      "definition": "People's ability to control how their personal information is collected, used and shared.",
+      "example": "Choosing not to type your home address into a chatbot protects your privacy.",
+      "acceptedAnswers": ["data privacy"]
+    },
+    {
+      "id": "u6-t-pii",
+      "unitId": "u6",
+      "term": "personal information",
+      "definition": "Information that can identify a specific person, such as a full name with an address, phone number or ID number.",
+      "example": "A student ID number and a home address are both personal information.",
+      "acceptedAnswers": ["personal data", "personally identifiable information", "PII"]
+    },
+    {
+      "id": "u6-t-copyright",
+      "unitId": "u6",
+      "term": "copyright",
+      "definition": "Legal protection that gives creators rights over how their original works are copied and used.",
+      "example": "A novel, a song and a photograph are all protected by copyright."
+    },
+    {
+      "id": "u6-t-deepfake",
+      "unitId": "u6",
+      "term": "deepfake",
+      "definition": "Realistic fake video, audio or images created with AI to make it seem someone said or did something they did not.",
+      "example": "A fake video of a celebrity endorsing a product they never used.",
+      "acceptedAnswers": ["deepfakes", "deep fake"]
+    },
+    {
+      "id": "u6-t-misinfo",
+      "unitId": "u6",
+      "term": "misinformation",
+      "definition": "False or misleading information shared without the intent to deceive.",
+      "example": "Reposting an AI-generated photo because you believed it was real.",
+      "confusableWith": ["disinformation"]
+    },
+    {
+      "id": "u6-t-disinfo",
+      "unitId": "u6",
+      "term": "disinformation",
+      "definition": "False information created or spread on purpose to deceive people.",
+      "example": "A group posting a fake video to trick voters.",
+      "confusableWith": ["misinformation"]
+    },
+    {
+      "id": "u6-t-transparency",
+      "unitId": "u6",
+      "term": "transparency",
+      "definition": "Openness about how an AI system is built, what data it uses, and when and how it is being used.",
+      "example": "A company telling customers that their support chat is answered by an AI.",
+      "confusableWith": ["explainability"]
+    },
+    {
+      "id": "u6-t-explainability",
+      "unitId": "u6",
+      "term": "explainability",
+      "definition": "The ability to understand and explain why an AI system made a particular decision.",
+      "example": "A loan model that can show which factors most affected a denial.",
+      "acceptedAnswers": ["interpretability", "explainable AI", "XAI"],
+      "confusableWith": ["transparency"]
+    },
+    {
+      "id": "u6-t-hitl",
+      "unitId": "u6",
+      "term": "human in the loop",
+      "definition": "Keeping a person involved to review, approve or override an AI system's important decisions.",
+      "example": "A doctor reviews every AI-flagged X-ray before a diagnosis is made.",
+      "acceptedAnswers": ["human-in-the-loop", "human oversight", "HITL"]
+    },
+    {
+      "id": "u6-t-accountability",
+      "unitId": "u6",
+      "term": "accountability",
+      "definition": "The principle that people and organizations remain responsible for the outcomes of the AI systems they build and use.",
+      "example": "A company, not its chatbot, is responsible for wrong information the chatbot gives customers."
+    },
+    {
+      "id": "u6-t-watermark",
+      "unitId": "u6",
+      "term": "watermark",
+      "definition": "A visible or hidden signal added to content to show that it was created or edited with AI.",
+      "example": "An image generator that embeds an invisible marker in every picture it makes.",
+      "acceptedAnswers": ["watermarking", "AI watermark"]
+    },
+    {
+      "id": "u6-t-integrity",
+      "unitId": "u6",
+      "term": "academic integrity",
+      "definition": "Being honest in schoolwork, including following rules about AI use and giving credit for help you received.",
+      "example": "Noting \"I used a chatbot to brainstorm topics\" when your teacher asks you to disclose AI use.",
+      "acceptedAnswers": ["academic honesty"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u6-q01",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "How can an AI system become biased?",
+      "options": [
+        "By learning from data that underrepresents some groups or reflects past unfair decisions",
+        "It cannot, because machines are always objective",
+        "Only if a programmer deliberately makes it unfair",
+        "By running on a slow computer"
+      ],
+      "answer": "By learning from data that underrepresents some groups or reflects past unfair decisions",
+      "explanation": "Models learn patterns from their data, including unfair ones. Bias can appear even when no one intends it.",
+      "difficulty": 1,
+      "tags": ["bias"]
+    },
+    {
+      "id": "u6-q02",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "Because computers do math, AI decisions are automatically fair and objective.",
+      "answer": false,
+      "explanation": "Math applied to biased data can produce biased results. Fairness requires careful data choices, testing and human judgment.",
+      "difficulty": 1,
+      "tags": ["bias"]
+    },
+    {
+      "id": "u6-q03",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "A company trains a résumé-screening model on ten years of its own hiring decisions, during which it mostly hired people from one background. What risk should it watch for?",
+      "options": [
+        "The model may learn to favor applicants who resemble past hires, repeating old patterns",
+        "The model will automatically correct any past unfairness",
+        "The model will refuse to screen any résumés",
+        "There is no risk because the data is real"
+      ],
+      "answer": "The model may learn to favor applicants who resemble past hires, repeating old patterns",
+      "explanation": "Real data can still carry past bias. The model treats earlier decisions as the right answers to copy.",
+      "difficulty": 2,
+      "tags": ["bias"]
+    },
+    {
+      "id": "u6-q04",
+      "unitId": "u6",
+      "type": "written",
+      "prompt": "What is the term for realistic but fake video, audio or images created with AI to make it seem someone said or did something they did not?",
+      "answer": "deepfake",
+      "acceptedAnswers": ["deepfakes", "deep fake", "deep fakes"],
+      "options": ["deepfake", "benchmark", "watermark", "chatbot"],
+      "explanation": "Deepfakes use AI to fake a person's face, voice or actions. They can be used for jokes, but also for scams and false stories.",
+      "difficulty": 1,
+      "tags": ["deepfakes"]
+    },
+    {
+      "id": "u6-q05",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "What is the difference between misinformation and disinformation?",
+      "options": [
+        "Misinformation is false information shared without intent to deceive; disinformation is spread on purpose to deceive",
+        "They mean exactly the same thing",
+        "Disinformation is always true",
+        "Misinformation only appears in printed newspapers"
+      ],
+      "answer": "Misinformation is false information shared without intent to deceive; disinformation is spread on purpose to deceive",
+      "explanation": "The difference is intent. Both can cause harm, and AI can make either one easier to produce.",
+      "difficulty": 2,
+      "tags": ["misinformation"]
+    },
+    {
+      "id": "u6-q06",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "You get a voice message that sounds exactly like your cousin, asking you to send money urgently. What is the safest response?",
+      "options": [
+        "Contact your cousin another way, such as calling their known number, before doing anything",
+        "Send the money right away since the voice matches",
+        "Reply with your bank details so they can check",
+        "Forward the message to everyone you know"
+      ],
+      "answer": "Contact your cousin another way, such as calling their known number, before doing anything",
+      "explanation": "AI can clone voices from short recordings. Confirming through a separate, trusted channel protects you from scams.",
+      "difficulty": 1,
+      "tags": ["deepfakes", "safety"]
+    },
+    {
+      "id": "u6-q07",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "Tools that detect AI-generated content are always accurate.",
+      "answer": false,
+      "explanation": "Detectors make mistakes in both directions, flagging human work as AI and missing AI work. They should not be the only evidence.",
+      "difficulty": 2,
+      "tags": ["deepfakes"]
+    },
+    {
+      "id": "u6-q08",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "Why is it risky to paste personal information, like your address or a friend's private messages, into a public chatbot?",
+      "options": [
+        "Depending on the service, what you type may be stored, reviewed or used to improve the model, and you may lose control of it",
+        "Chatbots cannot read addresses",
+        "It makes the chatbot run more slowly",
+        "It is never risky because chats are always deleted immediately"
+      ],
+      "answer": "Depending on the service, what you type may be stored, reviewed or used to improve the model, and you may lose control of it",
+      "explanation": "Data policies vary by service. The safest habit is to leave personal and private information out of prompts.",
+      "difficulty": 1,
+      "tags": ["privacy"]
+    },
+    {
+      "id": "u6-q09",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "Which statement best describes the debate over training AI on copyrighted work?",
+      "options": [
+        "Some argue it is a fair, transformative use; others argue creators should give permission or be paid; courts are still deciding many cases",
+        "Everyone agrees it is always legal",
+        "Everyone agrees it is always illegal",
+        "Copyright does not apply to anything posted online"
+      ],
+      "answer": "Some argue it is a fair, transformative use; others argue creators should give permission or be paid; courts are still deciding many cases",
+      "explanation": "This is an open, debated question with strong arguments on several sides. Outcomes may differ by country and by situation.",
+      "difficulty": 2,
+      "tags": ["copyright"]
+    },
+    {
+      "id": "u6-q10",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "In the United States, the Copyright Office has said that copyright protection requires human authorship.",
+      "answer": true,
+      "explanation": "The U.S. Copyright Office's position is that copyright protects works of human authorship. Purely AI-generated material generally does not qualify.",
+      "difficulty": 3,
+      "tags": ["copyright"]
+    },
+    {
+      "id": "u6-q11",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "What is one environmental concern about large AI models?",
+      "options": [
+        "Training and running them in data centers uses large amounts of electricity, and cooling can use a lot of water",
+        "They release smoke from laptops",
+        "They use up the world's paper supply",
+        "They have no environmental impact at all"
+      ],
+      "answer": "Training and running them in data centers uses large amounts of electricity, and cooling can use a lot of water",
+      "explanation": "Data centers need power to run chips and often water to cool them. How large the impact is depends on energy sources and efficiency.",
+      "difficulty": 1,
+      "tags": ["environment"]
+    },
+    {
+      "id": "u6-q12",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "Which statement about AI and jobs best reflects the range of expert views?",
+      "options": [
+        "AI may automate some tasks, change many jobs and create new ones, and experts disagree about how large and how fast the effects will be",
+        "AI will definitely replace every job within five years",
+        "AI will have no effect on any job",
+        "Only factory jobs can be affected by AI"
+      ],
+      "answer": "AI may automate some tasks, change many jobs and create new ones, and experts disagree about how large and how fast the effects will be",
+      "explanation": "Predictions vary widely. The balanced view recognizes both risks and new opportunities, and real uncertainty.",
+      "difficulty": 2,
+      "tags": ["jobs"]
+    },
+    {
+      "id": "u6-q13",
+      "unitId": "u6",
+      "type": "written",
+      "prompt": "What phrase describes keeping a person involved to review, approve or override an AI system's important decisions?",
+      "answer": "human in the loop",
+      "acceptedAnswers": ["human-in-the-loop", "human oversight", "HITL", "human review"],
+      "options": ["human in the loop", "fine-tuning", "clustering", "overfitting"],
+      "explanation": "A human in the loop can catch mistakes and take responsibility for high-stakes decisions.",
+      "difficulty": 2,
+      "tags": ["oversight"]
+    },
+    {
+      "id": "u6-q14",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "Why is human oversight especially important when AI is used for decisions like medical diagnoses, loans or hiring?",
+      "options": [
+        "Mistakes can seriously affect people's lives, so a person should be able to review, question and correct the AI",
+        "Humans are always faster than AI",
+        "AI cannot process medical data at all",
+        "It is legally required for every AI app, including games"
+      ],
+      "answer": "Mistakes can seriously affect people's lives, so a person should be able to review, question and correct the AI",
+      "explanation": "The higher the stakes, the more important it is that a responsible person can catch and fix errors.",
+      "difficulty": 1,
+      "tags": ["oversight"]
+    },
+    {
+      "id": "u6-q15",
+      "unitId": "u6",
+      "type": "written",
+      "prompt": "What is the term for being able to understand and explain why an AI system made a particular decision?",
+      "answer": "explainability",
+      "acceptedAnswers": ["interpretability", "explainable AI", "XAI"],
+      "confusableWith": ["transparency"],
+      "options": ["explainability", "overfitting", "tokenization", "recall"],
+      "explanation": "Explainability helps people trust, question and fix AI decisions, such as understanding why a loan was denied.",
+      "difficulty": 2,
+      "tags": ["oversight"]
+    },
+    {
+      "id": "u6-q16",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "Your teacher allows AI for brainstorming but not for writing final essays. You used a chatbot to brainstorm topics. What is the responsible approach?",
+      "options": [
+        "Use the ideas to guide your own writing, and disclose how you used AI if your teacher asks or requires it",
+        "Have the chatbot write the essay and submit it as your own",
+        "Hide your AI use even if your teacher asks",
+        "Submit a classmate's AI-written essay instead"
+      ],
+      "answer": "Use the ideas to guide your own writing, and disclose how you used AI if your teacher asks or requires it",
+      "explanation": "Responsible use means staying within the policy and being honest about the help you received.",
+      "difficulty": 1,
+      "tags": ["school"]
+    },
+    {
+      "id": "u6-q17",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "Following your school's AI policy and being honest about how you used AI are part of responsible use.",
+      "answer": true,
+      "explanation": "Policies differ between classes and schools. Following them and disclosing your use protects your academic integrity.",
+      "difficulty": 1,
+      "tags": ["school"]
+    },
+    {
+      "id": "u6-q18",
+      "unitId": "u6",
+      "type": "matching",
+      "prompt": "Match each term to its meaning.",
+      "answer": [
+        { "term": "Algorithmic bias", "definition": "Systematic unfair differences in how an AI treats groups" },
+        { "term": "Deepfake", "definition": "Realistic fake media made with AI" },
+        { "term": "Privacy", "definition": "Control over your personal information" },
+        { "term": "Transparency", "definition": "Openness about how an AI system is built and used" }
+      ],
+      "explanation": "These ideas come up in almost every discussion of responsible AI.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u6-q19",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "What is a good habit when you see a shocking image or video online that might be AI-generated?",
+      "options": [
+        "Check whether the original source or trustworthy news outlets confirm it before sharing",
+        "Share it quickly so others can decide",
+        "Assume it is real if it looks high quality",
+        "Assume it is fake if it has bright colors"
+      ],
+      "answer": "Check whether the original source or trustworthy news outlets confirm it before sharing",
+      "explanation": "Image quality is no longer proof of authenticity. Confirmation from reliable sources is a much better signal.",
+      "difficulty": 1,
+      "tags": ["misinformation"]
+    },
+    {
+      "id": "u6-q20",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "What is a watermark in the context of AI-generated content?",
+      "options": [
+        "A visible or hidden signal added to content to show it was made or edited with AI",
+        "Water damage on a computer",
+        "A type of neural network",
+        "A legal contract for using a chatbot"
+      ],
+      "answer": "A visible or hidden signal added to content to show it was made or edited with AI",
+      "explanation": "Watermarks help identify AI-generated content. They can sometimes be removed or missed, so they are one tool among several.",
+      "difficulty": 2,
+      "tags": ["deepfakes"]
+    },
+    {
+      "id": "u6-q21",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "A city considers using AI to decide where to send more police patrols, based on past arrest data. What fairness concern do critics raise?",
+      "options": [
+        "If past arrests reflected uneven policing, the model could keep sending more patrols to the same places, reinforcing the pattern",
+        "AI cannot read arrest data",
+        "Patrol locations do not affect anyone",
+        "There can be no concern because arrest data is perfectly objective"
+      ],
+      "answer": "If past arrests reflected uneven policing, the model could keep sending more patrols to the same places, reinforcing the pattern",
+      "explanation": "More patrols can lead to more recorded arrests in the same areas, which the model then treats as confirmation. Critics call this a feedback loop.",
+      "difficulty": 3,
+      "tags": ["bias"]
+    },
+    {
+      "id": "u6-q22",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "People can reasonably disagree about some AI ethics questions, such as how to balance new technology with protecting creators.",
+      "answer": true,
+      "explanation": "Many AI ethics questions involve trade-offs between real values. Understanding several perspectives is part of AI literacy.",
+      "difficulty": 1,
+      "tags": ["perspectives"]
+    },
+    {
+      "id": "u6-q23",
+      "unitId": "u6",
+      "type": "written",
+      "prompt": "What is the term for false information created or spread on purpose to deceive people?",
+      "answer": "disinformation",
+      "acceptedAnswers": [],
+      "confusableWith": ["misinformation"],
+      "options": ["disinformation", "misinformation", "hallucination", "encryption"],
+      "explanation": "Disinformation is deliberate. Misinformation is false information shared by people who believe it.",
+      "difficulty": 2,
+      "tags": ["misinformation"]
+    },
+    {
+      "id": "u6-q24",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "Which is an example of using AI responsibly for schoolwork?",
+      "options": [
+        "Asking a chatbot to quiz you on vocabulary, then checking its answers against your textbook",
+        "Submitting AI-written homework as your own when that is not allowed",
+        "Using AI to write a fake doctor's note",
+        "Sharing a classmate's personal information with a chatbot"
+      ],
+      "answer": "Asking a chatbot to quiz you on vocabulary, then checking its answers against your textbook",
+      "explanation": "Using AI to practice, and verifying what it says, supports learning without breaking rules or harming anyone.",
+      "difficulty": 1,
+      "tags": ["school"]
+    },
+    {
+      "id": "u6-q25",
+      "unitId": "u6",
+      "type": "ordering",
+      "prompt": "Put these steps for responsibly using AI on a school assignment in order.",
+      "answer": [
+        "Check your teacher's or school's AI policy",
+        "Use AI only in the ways the policy allows",
+        "Verify any facts the AI gives you",
+        "Disclose or cite your AI use as required"
+      ],
+      "explanation": "Know the rules first, stay within them, check the AI's facts, and be transparent about your use.",
+      "difficulty": 1,
+      "tags": ["school"]
+    },
+    {
+      "id": "u6-q26",
+      "unitId": "u6",
+      "type": "mc",
+      "prompt": "What does accountability mean for AI systems?",
+      "options": [
+        "People and organizations remain responsible for the outcomes of the AI systems they build and use",
+        "The AI itself is legally responsible for its mistakes",
+        "No one is responsible when AI makes a mistake",
+        "Only the person who typed the prompt is ever responsible"
+      ],
+      "answer": "People and organizations remain responsible for the outcomes of the AI systems they build and use",
+      "explanation": "An AI tool cannot take responsibility. The people who design, deploy and use it are answerable for its effects.",
+      "difficulty": 2,
+      "tags": ["accountability"]
+    },
+    {
+      "id": "u6-q27",
+      "unitId": "u6",
+      "type": "tf",
+      "prompt": "Some studies have found that facial analysis systems were less accurate for some groups of people than for others.",
+      "answer": true,
+      "explanation": "Researchers have documented accuracy differences across groups in some facial analysis systems, often linked to unbalanced training data.",
+      "difficulty": 2,
+      "tags": ["bias"]
+    },
+    {
+      "id": "u6-q28",
+      "unitId": "u6",
+      "type": "scenario",
+      "prompt": "One student says, \"AI uses so much energy it should be banned.\" Another says, \"AI will solve climate change, so its energy use doesn't matter.\" Which response is most balanced?",
+      "options": [
+        "AI has real energy and water costs and also possible benefits, so it makes sense to weigh both and push for efficiency",
+        "The first student is completely right",
+        "The second student is completely right",
+        "Energy use has nothing to do with AI"
+      ],
+      "answer": "AI has real energy and water costs and also possible benefits, so it makes sense to weigh both and push for efficiency",
+      "explanation": "Both extreme claims ignore part of the picture. A balanced view weighs costs against benefits.",
+      "difficulty": 2,
+      "tags": ["environment", "perspectives"]
+    }
+  ]
+}

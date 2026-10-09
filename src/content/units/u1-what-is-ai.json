@@ -1,0 +1,559 @@
+{
+  "id": "u1",
+  "number": 1,
+  "title": "What AI Is",
+  "summary": "What artificial intelligence means, how AI, machine learning, deep learning and generative AI fit together, narrow versus general AI, and key milestones.",
+  "lesson": {
+    "title": "What Is Artificial Intelligence?",
+    "sections": [
+      {
+        "heading": "A working definition",
+        "paragraphs": [
+          "Artificial intelligence (AI) is the field of building computer systems that perform tasks we usually connect with human intelligence, such as understanding language, recognizing images, spotting patterns, making predictions and making decisions. AI is not one single technology. It is an umbrella term that covers many different methods.",
+          "You probably use AI every day. It helps unlock phones with your face, filters spam out of your inbox, recommends videos and songs, predicts traffic in navigation apps, powers voice assistants, and runs the chatbots that answer questions and help draft text."
+        ]
+      },
+      {
+        "heading": "Circles inside circles",
+        "paragraphs": [
+          "Four terms get mixed up all the time. The easiest way to keep them straight is to picture circles inside circles, like the diagram below."
+        ],
+        "bullets": [
+          "Artificial intelligence is the biggest circle: any technique that lets a computer act intelligently, including rules written by hand.",
+          "Machine learning (ML) is a subset of AI. Instead of following only rules a programmer wrote, an ML system learns patterns from data.",
+          "Deep learning is a subset of machine learning that uses neural networks with many layers. It drives most modern progress in images, speech and language.",
+          "Generative AI is AI that creates new content such as text, images, audio, video or code. Most of today's generative AI is built with deep learning."
+        ]
+      },
+      {
+        "heading": "Narrow AI and general AI",
+        "paragraphs": [
+          "Narrow AI (sometimes called weak AI) is built for one task or a limited set of tasks, such as playing chess, translating languages or detecting credit card fraud. A chess program cannot suddenly start diagnosing car trouble.",
+          "Artificial general intelligence (AGI) describes AI that could learn and perform nearly any intellectual task a human can. Experts disagree about how close today's most capable systems are to AGI, how it should be defined, and how we would test for it. Be cautious with headlines that claim it has definitely arrived or that it never will."
+        ]
+      },
+      {
+        "heading": "Milestones worth knowing",
+        "paragraphs": [
+          "AI is much older than chatbots. These dates show up often in competitions and class discussions."
+        ],
+        "bullets": [
+          "1950: Alan Turing publishes the paper \"Computing Machinery and Intelligence\" and proposes the imitation game, now called the Turing test.",
+          "1956: The Dartmouth summer workshop is widely seen as the founding event of AI as a research field. The proposal for it, written by John McCarthy and colleagues, introduced the term \"artificial intelligence.\"",
+          "2012: A deep neural network called AlexNet wins the ImageNet image-recognition challenge by a wide margin, helped by large datasets and graphics processing units (GPUs). This sparks the deep learning boom.",
+          "2017: Researchers at Google publish \"Attention Is All You Need,\" introducing the transformer, the design behind most large language models.",
+          "Late 2022: Public chatbots, starting with ChatGPT in November 2022, bring generative AI into everyday use for millions of people."
+        ]
+      }
+    ],
+    "diagramAfter": 1,
+    "diagram": {
+      "type": "nested",
+      "caption": "Each circle sits inside the one before it. Most of today's generative AI is built with deep learning.",
+      "labels": ["Artificial intelligence", "Machine learning", "Deep learning", "Generative AI"]
+    }
+  },
+  "terms": [
+    {
+      "id": "u1-t-ai",
+      "unitId": "u1",
+      "term": "artificial intelligence",
+      "definition": "The field of building computer systems that perform tasks usually associated with human intelligence, such as understanding language or recognizing images.",
+      "example": "A navigation app that predicts traffic delays uses AI.",
+      "acceptedAnswers": ["AI"]
+    },
+    {
+      "id": "u1-t-ml",
+      "unitId": "u1",
+      "term": "machine learning",
+      "definition": "A subset of AI in which systems learn patterns from data instead of following only rules written by a programmer.",
+      "example": "A spam filter that improves by studying thousands of emails labeled spam or not spam.",
+      "acceptedAnswers": ["ML"],
+      "confusableWith": ["deep learning"]
+    },
+    {
+      "id": "u1-t-dl",
+      "unitId": "u1",
+      "term": "deep learning",
+      "definition": "A subset of machine learning that uses neural networks with many layers.",
+      "example": "The speech recognition in a voice assistant is built with deep learning.",
+      "acceptedAnswers": ["DL"],
+      "confusableWith": ["machine learning"]
+    },
+    {
+      "id": "u1-t-genai",
+      "unitId": "u1",
+      "term": "generative AI",
+      "definition": "AI that creates new content such as text, images, audio, video or code.",
+      "example": "A tool that writes a poem or draws a picture from a short description.",
+      "acceptedAnswers": ["generative artificial intelligence", "GenAI", "gen AI"]
+    },
+    {
+      "id": "u1-t-narrow",
+      "unitId": "u1",
+      "term": "narrow AI",
+      "definition": "AI designed to perform one specific task or a limited set of tasks.",
+      "example": "A program that plays chess well but cannot do anything else.",
+      "acceptedAnswers": ["weak AI"],
+      "confusableWith": ["general AI", "strong AI"]
+    },
+    {
+      "id": "u1-t-agi",
+      "unitId": "u1",
+      "term": "artificial general intelligence",
+      "definition": "AI that could learn and perform nearly any intellectual task a human can; experts disagree on how to define it and whether or when it will be reached.",
+      "example": "One system that could do the thinking work of a doctor, a poet and a mechanic equally well would be AGI.",
+      "acceptedAnswers": ["AGI", "general AI", "strong AI", "general artificial intelligence"],
+      "confusableWith": ["narrow AI", "weak AI"]
+    },
+    {
+      "id": "u1-t-turing",
+      "unitId": "u1",
+      "term": "Turing test",
+      "definition": "A test proposed by Alan Turing in 1950 that asks whether a person can reliably tell a machine apart from a human through text conversation.",
+      "example": "If judges chatting by text cannot tell which partner is the computer, the computer passes this kind of test.",
+      "acceptedAnswers": ["imitation game"]
+    },
+    {
+      "id": "u1-t-algorithm",
+      "unitId": "u1",
+      "term": "algorithm",
+      "definition": "A step-by-step set of instructions for solving a problem or completing a task.",
+      "example": "A recipe is an everyday algorithm, and so is the method you use for long division.",
+      "acceptedAnswers": ["algorithms"]
+    },
+    {
+      "id": "u1-t-chatbot",
+      "unitId": "u1",
+      "term": "chatbot",
+      "definition": "A program that holds a conversation with people through text or voice.",
+      "example": "A website help window that answers questions about store hours.",
+      "acceptedAnswers": ["chat bot", "chatbots"]
+    },
+    {
+      "id": "u1-t-dartmouth",
+      "unitId": "u1",
+      "term": "Dartmouth workshop",
+      "definition": "A 1956 summer research meeting at Dartmouth College widely seen as the founding event of AI as a field.",
+      "example": "The proposal for the Dartmouth workshop is where the phrase \"artificial intelligence\" first appeared.",
+      "acceptedAnswers": ["Dartmouth conference", "Dartmouth summer research project"]
+    },
+    {
+      "id": "u1-t-transformer",
+      "unitId": "u1",
+      "term": "transformer",
+      "definition": "A neural network design, introduced in 2017, that uses a mechanism called attention to process sequences such as text; most large language models are built on it.",
+      "example": "The \"T\" in the name GPT stands for transformer.",
+      "acceptedAnswers": ["transformers", "transformer architecture", "transformer model"]
+    },
+    {
+      "id": "u1-t-expert-system",
+      "unitId": "u1",
+      "term": "expert system",
+      "definition": "A classic type of AI that makes decisions by following many if-then rules written with help from human experts.",
+      "example": "A program that suggests what is wrong with a car by following rules written by expert mechanics.",
+      "acceptedAnswers": ["expert systems"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u1-q01",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which statement best describes the relationship between AI and machine learning?",
+      "options": [
+        "Machine learning is a subset of AI",
+        "AI is a subset of machine learning",
+        "They are two unrelated fields",
+        "Machine learning is an older name for AI"
+      ],
+      "answer": "Machine learning is a subset of AI",
+      "explanation": "Machine learning is one approach within the broader field of AI. AI also includes approaches that do not learn from data, such as rules written by hand.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q02",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "What makes deep learning different from other kinds of machine learning?",
+      "options": [
+        "It uses neural networks with many layers",
+        "It never needs any data",
+        "It only works with spreadsheets",
+        "It follows rules written entirely by programmers"
+      ],
+      "answer": "It uses neural networks with many layers",
+      "explanation": "Deep learning is machine learning with neural networks that have many layers. The word \"deep\" refers to those stacked layers.",
+      "difficulty": 1,
+      "tags": ["definitions", "deep learning"]
+    },
+    {
+      "id": "u1-q03",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "What is the name for AI that creates new content such as text, images, audio or code?",
+      "answer": "generative AI",
+      "acceptedAnswers": ["generative artificial intelligence", "GenAI", "gen AI", "generative"],
+      "confusableWith": ["general AI"],
+      "options": ["generative AI", "narrow AI", "rule-based AI", "computer vision"],
+      "explanation": "Generative AI produces new content, like a chatbot writing an essay or an image tool drawing a picture from a description.",
+      "difficulty": 1,
+      "tags": ["definitions", "generative AI"]
+    },
+    {
+      "id": "u1-q04",
+      "unitId": "u1",
+      "type": "tf",
+      "prompt": "Narrow AI is designed to perform a specific task or a limited set of tasks.",
+      "answer": true,
+      "explanation": "Narrow AI focuses on particular tasks, such as recognizing faces or recommending songs. It cannot transfer that skill to unrelated tasks on its own.",
+      "difficulty": 1,
+      "tags": ["narrow AI"]
+    },
+    {
+      "id": "u1-q05",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which of these is the best example of narrow AI?",
+      "options": [
+        "An email spam filter",
+        "A system that can learn any intellectual task a human can",
+        "A human chess champion",
+        "A paper notebook"
+      ],
+      "answer": "An email spam filter",
+      "explanation": "A spam filter does one job: sorting email. A system that could learn any human task would be artificial general intelligence, not narrow AI.",
+      "difficulty": 1,
+      "tags": ["narrow AI"]
+    },
+    {
+      "id": "u1-q06",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "In what year did Alan Turing propose the imitation game, now known as the Turing test?",
+      "answer": "1950",
+      "acceptedAnswers": [],
+      "confusableWith": ["1956"],
+      "options": ["1950", "1956", "1997", "2012"],
+      "explanation": "Turing described the imitation game in his 1950 paper \"Computing Machinery and Intelligence.\"",
+      "difficulty": 2,
+      "tags": ["history"]
+    },
+    {
+      "id": "u1-q07",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Why is the 1956 Dartmouth workshop important in AI history?",
+      "options": [
+        "It is widely considered the founding event of AI as a research field",
+        "It released the first chatbot to the public",
+        "It introduced the transformer architecture",
+        "It was where a computer first beat a world chess champion"
+      ],
+      "answer": "It is widely considered the founding event of AI as a research field",
+      "explanation": "The proposal for the 1956 Dartmouth summer workshop introduced the term \"artificial intelligence,\" and the meeting is widely seen as the start of AI as a field.",
+      "difficulty": 1,
+      "tags": ["history"]
+    },
+    {
+      "id": "u1-q08",
+      "unitId": "u1",
+      "type": "ordering",
+      "prompt": "Put these AI milestones in order from earliest to latest.",
+      "answer": [
+        "Alan Turing proposes the imitation game",
+        "The Dartmouth workshop launches AI as a field",
+        "AlexNet wins the ImageNet challenge",
+        "The transformer architecture is published",
+        "ChatGPT is released to the public"
+      ],
+      "explanation": "The order is 1950 (Turing), 1956 (Dartmouth), 2012 (AlexNet), 2017 (transformer) and November 2022 (ChatGPT).",
+      "difficulty": 2,
+      "tags": ["history"]
+    },
+    {
+      "id": "u1-q09",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "What did the 2017 paper \"Attention Is All You Need\" introduce?",
+      "options": [
+        "The transformer architecture",
+        "The Turing test",
+        "The first computer",
+        "The ImageNet dataset"
+      ],
+      "answer": "The transformer architecture",
+      "acceptedAnswers": ["transformer", "transformers", "transformer model"],
+      "explanation": "The paper introduced the transformer, a neural network design built around attention. Most large language models today are based on it.",
+      "difficulty": 2,
+      "tags": ["history", "transformer"]
+    },
+    {
+      "id": "u1-q10",
+      "unitId": "u1",
+      "type": "scenario",
+      "prompt": "Your friend says, \"My phone's photo app groups my pictures by who is in them, but that isn't AI, it's just a feature.\" What is the most accurate reply?",
+      "options": [
+        "Recognizing faces to group photos is a common everyday use of AI",
+        "You are right, because AI only refers to chatbots",
+        "You are right, because AI must be able to do every human task",
+        "Grouping photos is always done by employees of the phone company"
+      ],
+      "answer": "Recognizing faces to group photos is a common everyday use of AI",
+      "explanation": "Face grouping relies on computer vision models trained with machine learning. Many \"features\" in everyday apps are powered by AI.",
+      "difficulty": 1,
+      "tags": ["everyday AI"]
+    },
+    {
+      "id": "u1-q11",
+      "unitId": "u1",
+      "type": "tf",
+      "prompt": "All AI systems learn from data.",
+      "answer": false,
+      "explanation": "Some AI systems, such as expert systems, follow if-then rules written by people. Machine learning is the part of AI that learns from data.",
+      "difficulty": 2,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q12",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which of these is an example of generative AI?",
+      "options": [
+        "A tool that writes a short story from a one-sentence idea",
+        "A thermostat that turns on the heat at 68 degrees",
+        "A spreadsheet that adds a column of numbers",
+        "A program that sorts names alphabetically"
+      ],
+      "answer": "A tool that writes a short story from a one-sentence idea",
+      "explanation": "Generative AI creates new content. The other options follow fixed instructions and produce nothing new.",
+      "difficulty": 1,
+      "tags": ["generative AI"]
+    },
+    {
+      "id": "u1-q13",
+      "unitId": "u1",
+      "type": "matching",
+      "prompt": "Match each term to its description.",
+      "answer": [
+        { "term": "Artificial intelligence", "definition": "The broad field of making computers perform tasks linked to human intelligence" },
+        { "term": "Machine learning", "definition": "Systems that learn patterns from data" },
+        { "term": "Deep learning", "definition": "Machine learning that uses neural networks with many layers" },
+        { "term": "Generative AI", "definition": "AI that creates new content such as text or images" }
+      ],
+      "explanation": "Each term is a narrower part of the one before it, except generative AI, which describes what a system does: create content.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q14",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "What term describes AI that could learn and perform nearly any intellectual task a human can?",
+      "answer": "artificial general intelligence",
+      "acceptedAnswers": ["AGI", "general AI", "strong AI", "general artificial intelligence"],
+      "confusableWith": ["narrow AI", "weak AI", "generative AI"],
+      "options": ["artificial general intelligence", "narrow AI", "machine learning", "an expert system"],
+      "explanation": "Artificial general intelligence (AGI) refers to broad, human-level ability across tasks. Narrow AI handles only specific tasks.",
+      "difficulty": 2,
+      "tags": ["AGI"]
+    },
+    {
+      "id": "u1-q15",
+      "unitId": "u1",
+      "type": "tf",
+      "prompt": "Experts all agree that artificial general intelligence was achieved in 2022.",
+      "answer": false,
+      "explanation": "There is no expert agreement that AGI has been achieved. Experts also disagree about how to define AGI and how to test for it.",
+      "difficulty": 2,
+      "tags": ["AGI"]
+    },
+    {
+      "id": "u1-q16",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "What does the Turing test check?",
+      "options": [
+        "Whether a person can tell a machine apart from a human through conversation",
+        "How fast a computer can do arithmetic",
+        "Whether a robot can walk on two legs",
+        "How much data a model was trained on"
+      ],
+      "answer": "Whether a person can tell a machine apart from a human through conversation",
+      "explanation": "In Turing's imitation game, a judge chats by text with a human and a machine. If the judge cannot reliably tell which is which, the machine passes.",
+      "difficulty": 1,
+      "tags": ["history", "Turing test"]
+    },
+    {
+      "id": "u1-q17",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which event in 2012 helped launch the modern deep learning boom?",
+      "options": [
+        "A neural network called AlexNet won the ImageNet image-recognition challenge by a wide margin",
+        "The first personal computer went on sale",
+        "Alan Turing proposed the imitation game",
+        "The first public chatbot app reached millions of users"
+      ],
+      "answer": "A neural network called AlexNet won the ImageNet image-recognition challenge by a wide margin",
+      "explanation": "AlexNet, a deep neural network trained on GPUs, beat the other entries in the 2012 ImageNet challenge by a large margin. Its success convinced many researchers to adopt deep learning.",
+      "difficulty": 2,
+      "tags": ["history", "deep learning"]
+    },
+    {
+      "id": "u1-q18",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "What kind of computer chip, first built to draw video game graphics, became important for training deep learning models?",
+      "answer": "GPU",
+      "acceptedAnswers": ["graphics processing unit", "GPUs", "graphics card", "graphics processor", "graphics processing units"],
+      "confusableWith": ["CPU"],
+      "options": ["GPU", "CPU", "SSD", "RAM"],
+      "explanation": "A graphics processing unit (GPU) can do thousands of simple calculations at the same time, which suits the math inside neural networks.",
+      "difficulty": 2,
+      "tags": ["history", "compute"]
+    },
+    {
+      "id": "u1-q19",
+      "unitId": "u1",
+      "type": "scenario",
+      "prompt": "A program suggests what is wrong with a car by following hundreds of if-then rules written by expert mechanics. It never learns from data. Which description fits it best?",
+      "options": [
+        "An expert system, a kind of AI that is not machine learning",
+        "A deep learning system",
+        "A generative AI system",
+        "A machine learning system trained on labeled data"
+      ],
+      "answer": "An expert system, a kind of AI that is not machine learning",
+      "acceptedAnswers": ["expert system", "rule-based system", "rule based AI", "rule-based expert system"],
+      "explanation": "Expert systems are a classic form of AI built from human-written rules. Because they do not learn from data, they are not machine learning.",
+      "difficulty": 2,
+      "tags": ["definitions", "expert systems"]
+    },
+    {
+      "id": "u1-q20",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which everyday tool most likely uses machine learning?",
+      "options": [
+        "A music app that recommends songs based on what you have played",
+        "A light switch",
+        "A paper calendar",
+        "A basic four-function calculator"
+      ],
+      "answer": "A music app that recommends songs based on what you have played",
+      "explanation": "Recommendation features learn from your listening history and from other listeners. The other items follow fixed rules or have no software at all.",
+      "difficulty": 1,
+      "tags": ["everyday AI"]
+    },
+    {
+      "id": "u1-q21",
+      "unitId": "u1",
+      "type": "tf",
+      "prompt": "Most of today's generative AI tools are built using deep learning.",
+      "answer": true,
+      "explanation": "Modern text, image and audio generators rely on deep neural networks such as transformers and diffusion models.",
+      "difficulty": 2,
+      "tags": ["generative AI", "deep learning"]
+    },
+    {
+      "id": "u1-q22",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "What is the term for a step-by-step set of instructions for solving a problem or completing a task?",
+      "answer": "algorithm",
+      "acceptedAnswers": ["algorithms"],
+      "options": ["algorithm", "dataset", "parameter", "token"],
+      "explanation": "An algorithm is a precise sequence of steps. Recipes and long division are everyday algorithms.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q23",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "Which statement about AI is accurate?",
+      "options": [
+        "AI is an umbrella term that covers many different methods",
+        "AI always means a humanlike robot",
+        "AI systems understand the world exactly the way humans do",
+        "AI was invented in 2022"
+      ],
+      "answer": "AI is an umbrella term that covers many different methods",
+      "explanation": "AI includes rule-based systems, machine learning, deep learning and more. Most AI has no robot body, and AI research began decades before 2022.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q24",
+      "unitId": "u1",
+      "type": "scenario",
+      "prompt": "A classmate says ChatGPT was the first AI ever made. Which response is most accurate?",
+      "options": [
+        "AI research goes back to at least the 1950s; ChatGPT, released in November 2022, made generative AI widely popular",
+        "They are correct; AI did not exist before 2022",
+        "AI was first created in 2017 with the transformer",
+        "AI was first created in 2012 with AlexNet"
+      ],
+      "answer": "AI research goes back to at least the 1950s; ChatGPT, released in November 2022, made generative AI widely popular",
+      "explanation": "Turing's 1950 paper and the 1956 Dartmouth workshop came decades before modern chatbots. ChatGPT's release brought generative AI to a huge public audience.",
+      "difficulty": 1,
+      "tags": ["history"]
+    },
+    {
+      "id": "u1-q25",
+      "unitId": "u1",
+      "type": "matching",
+      "prompt": "Match each milestone to its year.",
+      "answer": [
+        { "term": "Turing proposes the imitation game", "definition": "1950" },
+        { "term": "Dartmouth workshop", "definition": "1956" },
+        { "term": "AlexNet wins ImageNet", "definition": "2012" },
+        { "term": "Transformer paper published", "definition": "2017" }
+      ],
+      "explanation": "These four dates trace AI from its beginnings to the design behind today's language models.",
+      "difficulty": 2,
+      "tags": ["history"]
+    },
+    {
+      "id": "u1-q26",
+      "unitId": "u1",
+      "type": "mc",
+      "prompt": "What is a chatbot?",
+      "options": [
+        "A program that holds a conversation with people through text or voice",
+        "A robot that cleans floors",
+        "A type of computer virus",
+        "A storage drive for chat messages"
+      ],
+      "answer": "A program that holds a conversation with people through text or voice",
+      "explanation": "Chatbots range from simple scripted help windows to large language model assistants that can write and explain.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q27",
+      "unitId": "u1",
+      "type": "tf",
+      "prompt": "Machine learning is a subset of deep learning.",
+      "answer": false,
+      "explanation": "It is the other way around. Deep learning is a subset of machine learning.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    },
+    {
+      "id": "u1-q28",
+      "unitId": "u1",
+      "type": "written",
+      "prompt": "Which subset of AI lets systems learn patterns from data instead of following only hand-written rules?",
+      "answer": "machine learning",
+      "acceptedAnswers": ["ML"],
+      "confusableWith": ["deep learning"],
+      "options": ["machine learning", "an expert system", "robotics", "the Turing test"],
+      "explanation": "Machine learning systems improve by finding patterns in examples. Deep learning is one kind of machine learning.",
+      "difficulty": 1,
+      "tags": ["definitions"]
+    }
+  ]
+}

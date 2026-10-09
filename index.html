@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI Prep: adaptive study app for learning artificial intelligence and prompt engineering." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>AI Prep</title>
+    <script>
+      // Apply the saved theme before first paint to avoid a flash of the wrong colors.
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('aiprep.settings.v1') || '{}');
+          var t = s.theme || 'system';
+          var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

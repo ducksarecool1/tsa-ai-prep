@@ -1,0 +1,445 @@
+{
+  "id": "u8",
+  "number": 8,
+  "title": "Glossary Review",
+  "summary": "How the key terms from every unit connect, a few final terms (inference, AI agents, APIs, open-weight models, synthetic data), and mixed vocabulary practice.",
+  "lesson": {
+    "title": "How the Big Ideas Connect",
+    "sections": [
+      {
+        "heading": "One story, many terms",
+        "paragraphs": [
+          "AI vocabulary is easier to remember when you see how the terms fit into one story. It starts with data: a dataset of examples, often with labels. During training, a model with millions or billions of parameters makes predictions, a loss function measures its mistakes, and gradient descent adjusts the parameters to shrink the loss. Engineers watch for overfitting and underfitting, and they keep a test set aside to check generalization.",
+          "Large language models are pretrained to predict the next token, then often fine-tuned and improved with reinforcement learning from human feedback. Once training ends, using the model to produce answers is called inference. You interact with it through a prompt, and the model can only consider what fits in its context window.",
+          "Finally, everything is evaluated: accuracy, precision and recall for classifiers, benchmarks for comparing models, and careful fact-checking for hallucinations. Around the whole process sit the ethical questions of bias, privacy, transparency and human oversight."
+        ]
+      },
+      {
+        "heading": "A few more terms",
+        "bullets": [
+          "Inference: using a trained model to make predictions or generate output for new inputs.",
+          "AI agent: an AI system that can plan and take actions, such as using tools or apps, to reach a goal.",
+          "API (application programming interface): a set of rules that lets one program request services or data from another, which is how many apps connect to AI models.",
+          "Open-weight model: a model whose trained parameters are publicly released so others can download and run it.",
+          "Synthetic data: data generated artificially, often by a program or an AI model, instead of collected from real events."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "How to study the glossary",
+        "paragraphs": [
+          "Use the searchable Glossary page to look up any term, then practice in Learn Mode with Terms switched on. Try answering with the term first, then switch to answering with the definition. Terms you miss will come back sooner, so focus your time on the words that trip you up."
+        ]
+      }
+    ],
+    "diagram": {
+      "type": "flow",
+      "caption": "The life of an AI model, from data to evaluation. Ethics questions apply at every step.",
+      "steps": ["Data", "Training", "Model", "Prompt", "Inference", "Evaluation"]
+    }
+  },
+  "terms": [
+    {
+      "id": "u8-t-inference",
+      "unitId": "u8",
+      "term": "inference",
+      "definition": "Using a trained model to make predictions or generate output for new inputs.",
+      "example": "Every time you send a chatbot a message, the model runs inference to produce the reply.",
+      "acceptedAnswers": ["model inference", "inferencing"]
+    },
+    {
+      "id": "u8-t-agent",
+      "unitId": "u8",
+      "term": "AI agent",
+      "definition": "An AI system that can plan and take actions, such as using tools or apps, to reach a goal.",
+      "example": "An assistant that searches flight options, compares prices and fills in a booking form.",
+      "acceptedAnswers": ["agent", "AI agents", "agentic AI"]
+    },
+    {
+      "id": "u8-t-api",
+      "unitId": "u8",
+      "term": "API",
+      "definition": "Application programming interface: a set of rules that lets one program request services or data from another.",
+      "example": "A study app sends a question to an AI model through the model provider's API.",
+      "acceptedAnswers": ["application programming interface", "APIs"]
+    },
+    {
+      "id": "u8-t-open-weight",
+      "unitId": "u8",
+      "term": "open-weight model",
+      "definition": "A model whose trained parameters (weights) are publicly released so others can download and run it.",
+      "example": "A school could run an open-weight model on its own computers.",
+      "acceptedAnswers": ["open weight model", "open-weights model", "open model"]
+    },
+    {
+      "id": "u8-t-synthetic",
+      "unitId": "u8",
+      "term": "synthetic data",
+      "definition": "Data generated artificially, often by a program or an AI model, instead of collected from real events.",
+      "example": "Computer-generated images of street scenes used to help train a self-driving car's vision system.",
+      "acceptedAnswers": ["artificial data", "generated data"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u8-q01",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What is it called when a trained model is used to make predictions or generate output for new inputs?",
+      "answer": "inference",
+      "acceptedAnswers": ["model inference", "inferencing"],
+      "options": ["inference", "pretraining", "labeling", "backpropagation"],
+      "explanation": "Training builds the model; inference is using it. Each chatbot reply is produced by inference.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q02",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "What is an AI agent?",
+      "options": [
+        "An AI system that can plan and take actions, such as using tools or apps, to reach a goal",
+        "A person who sells AI software",
+        "A virus that spreads AI to other computers",
+        "A chatbot that can only answer yes or no"
+      ],
+      "answer": "An AI system that can plan and take actions, such as using tools or apps, to reach a goal",
+      "explanation": "Agents go beyond answering questions by taking steps in the world, like searching, filling forms or running code.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q03",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What is the term for data that is generated artificially, often by a program or AI, rather than collected from real events?",
+      "answer": "synthetic data",
+      "acceptedAnswers": ["artificial data", "generated data"],
+      "options": ["synthetic data", "training set", "label", "benchmark"],
+      "explanation": "Synthetic data can fill gaps or protect privacy, but it must be checked so it does not add errors or bias.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q04",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "What is an API?",
+      "options": [
+        "A set of rules that lets one program request services or data from another",
+        "A type of neural network layer",
+        "A measure of a model's accuracy",
+        "A brand of graphics card"
+      ],
+      "answer": "A set of rules that lets one program request services or data from another",
+      "explanation": "API stands for application programming interface. Many apps use APIs to send prompts to AI models and get responses back.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q05",
+      "unitId": "u8",
+      "type": "tf",
+      "prompt": "An open-weight model is one whose trained parameters are publicly released so others can download and run it.",
+      "answer": true,
+      "explanation": "Releasing the weights lets others run or adapt the model themselves, though the license may still set rules.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q06",
+      "unitId": "u8",
+      "type": "matching",
+      "prompt": "Match each term to its definition.",
+      "answer": [
+        { "term": "Token", "definition": "A chunk of text a language model reads and writes" },
+        { "term": "Overfitting", "definition": "Memorizing training data instead of learning general patterns" },
+        { "term": "Recall", "definition": "The share of real positives a model finds" },
+        { "term": "Deepfake", "definition": "Realistic fake media made with AI" }
+      ],
+      "explanation": "These terms come from four different units: how AI works, training, evaluation and ethics.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q07",
+      "unitId": "u8",
+      "type": "matching",
+      "prompt": "Match each training term to its definition.",
+      "answer": [
+        { "term": "Parameter", "definition": "A number inside the model adjusted during training" },
+        { "term": "Feature", "definition": "A measurable property of the input" },
+        { "term": "Label", "definition": "The correct answer attached to a training example" },
+        { "term": "Loss function", "definition": "Measures how wrong the model's predictions are" }
+      ],
+      "explanation": "Features and labels describe the data, while parameters and the loss function belong to the training process.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q08",
+      "unitId": "u8",
+      "type": "matching",
+      "prompt": "Match each term to its definition.",
+      "answer": [
+        { "term": "Classification", "definition": "Predicting a category" },
+        { "term": "Regression", "definition": "Predicting a number" },
+        { "term": "Clustering", "definition": "Finding groups in unlabeled data" },
+        { "term": "Reinforcement learning", "definition": "Learning from rewards and penalties" }
+      ],
+      "explanation": "The first three are task types, and reinforcement learning is a way of learning from feedback.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q09",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "Which pair is correctly matched?",
+      "options": [
+        "Precision: of the predicted positives, how many were correct",
+        "Recall: how fast the model runs",
+        "Token: a type of computer chip",
+        "Benchmark: the correct answer for a training example"
+      ],
+      "answer": "Precision: of the predicted positives, how many were correct",
+      "explanation": "Recall measures how many real positives were found, a token is a chunk of text, and a benchmark is a standard test.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q10",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What neural network design, introduced in 2017, are most large language models built on?",
+      "answer": "transformer",
+      "acceptedAnswers": ["transformers", "transformer architecture", "transformer model"],
+      "options": ["transformer", "diffusion model", "rule-based system", "recommendation system"],
+      "explanation": "The transformer, introduced in \"Attention Is All You Need,\" uses attention to process text efficiently.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q11",
+      "unitId": "u8",
+      "type": "tf",
+      "prompt": "Fine-tuning usually happens after pretraining.",
+      "answer": true,
+      "explanation": "A model is first pretrained on broad data, then fine-tuned on a smaller, specialized dataset.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q12",
+      "unitId": "u8",
+      "type": "tf",
+      "prompt": "Clustering requires every example to have a label.",
+      "answer": false,
+      "explanation": "Clustering is unsupervised: it groups unlabeled data by similarity.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q13",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "Which term describes AI designed for one specific task?",
+      "options": ["Narrow AI", "Artificial general intelligence", "Generative AI", "Deep learning"],
+      "answer": "Narrow AI",
+      "acceptedAnswers": ["weak AI"],
+      "confusableWith": ["general AI", "strong AI"],
+      "explanation": "Narrow AI is task-specific. Artificial general intelligence would handle nearly any intellectual task.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q14",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What is the word for the correct answer attached to a training example?",
+      "answer": "label",
+      "acceptedAnswers": ["labels", "ground truth"],
+      "options": ["label", "token", "weight", "prompt"],
+      "explanation": "Labels are what supervised learning learns to predict.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q15",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "What is the context window of a language model?",
+      "options": [
+        "The maximum amount of text, in tokens, it can consider at once",
+        "The box on the screen where you type",
+        "The time of day the model was trained",
+        "The list of topics the model refuses to discuss"
+      ],
+      "answer": "The maximum amount of text, in tokens, it can consider at once",
+      "explanation": "The context window includes your prompt, any pasted material, earlier messages and the model's reply.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q16",
+      "unitId": "u8",
+      "type": "scenario",
+      "prompt": "A friend says, \"The LLM hallucinated a source.\" What do they mean?",
+      "options": [
+        "The large language model made up a source that does not exist or does not say what was claimed",
+        "The computer displayed a strange image",
+        "The model ran out of tokens",
+        "The model was fine-tuned on new sources"
+      ],
+      "answer": "The large language model made up a source that does not exist or does not say what was claimed",
+      "explanation": "LLM means large language model, and a hallucination is confident but false output.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q17",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What is the name for a standard set of tasks used to measure and compare AI models?",
+      "answer": "benchmark",
+      "acceptedAnswers": ["benchmarks", "benchmark test"],
+      "options": ["benchmark", "dataset", "label", "watermark"],
+      "explanation": "Benchmarks give models the same test so their scores can be compared, within limits.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q18",
+      "unitId": "u8",
+      "type": "ordering",
+      "prompt": "Order these from broadest to most specific.",
+      "answer": ["Artificial intelligence", "Machine learning", "Deep learning", "Large language models"],
+      "explanation": "Each is a subset of the one before it: LLMs are deep learning models, deep learning is a kind of machine learning, and machine learning is part of AI.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q19",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "Which term means a model performs well on new, unseen data?",
+      "options": ["Generalization", "Overfitting", "Hallucination", "Tokenization"],
+      "answer": "Generalization",
+      "explanation": "Generalization is the goal of training. Overfitting is the failure to generalize.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q20",
+      "unitId": "u8",
+      "type": "matching",
+      "prompt": "Match each term to its definition.",
+      "answer": [
+        { "term": "Computer vision", "definition": "AI that works with images and video" },
+        { "term": "Natural language processing", "definition": "AI that works with human language" },
+        { "term": "Speech recognition", "definition": "Turning spoken words into text" },
+        { "term": "Diffusion model", "definition": "Generates images by removing noise step by step" }
+      ],
+      "explanation": "These are major areas and model types covered in the unit on AI tasks.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q21",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What term describes systematic, unfair differences in how an AI system treats or performs for different groups of people?",
+      "answer": "algorithmic bias",
+      "acceptedAnswers": ["AI bias", "machine bias", "bias in AI", "bias"],
+      "options": ["algorithmic bias", "recall", "fine-tuning", "context window"],
+      "explanation": "Algorithmic bias often comes from unbalanced or historically unfair training data.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q22",
+      "unitId": "u8",
+      "type": "tf",
+      "prompt": "A prompt is the output a model produces.",
+      "answer": false,
+      "explanation": "A prompt is the input you give the model. What the model produces is its output or response.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q23",
+      "unitId": "u8",
+      "type": "mc",
+      "prompt": "Which term refers to people ranking a model's responses to train a reward model, which then guides further training?",
+      "options": [
+        "Reinforcement learning from human feedback (RLHF)",
+        "Unsupervised learning",
+        "Gradient descent",
+        "Object detection"
+      ],
+      "answer": "Reinforcement learning from human feedback (RLHF)",
+      "acceptedAnswers": ["RLHF", "reinforcement learning from human feedback"],
+      "confusableWith": ["reinforcement learning"],
+      "explanation": "RLHF uses human preferences, captured by a reward model, to steer a language model toward better answers.",
+      "difficulty": 2,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q24",
+      "unitId": "u8",
+      "type": "scenario",
+      "prompt": "In the sentence \"The model's weights were updated using gradient descent to lower the loss,\" which word names the quantity being reduced?",
+      "options": ["Loss", "Weights", "Gradient", "Model"],
+      "answer": "Loss",
+      "acceptedAnswers": ["the loss", "loss function"],
+      "confusableWith": ["weights"],
+      "explanation": "Gradient descent changes the weights in order to reduce the loss.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q25",
+      "unitId": "u8",
+      "type": "matching",
+      "prompt": "Match each prompting term to its definition.",
+      "answer": [
+        { "term": "Zero-shot prompting", "definition": "Instructions with no examples" },
+        { "term": "Few-shot prompting", "definition": "Instructions with a few examples" },
+        { "term": "Constraint", "definition": "A rule that limits the output" },
+        { "term": "Delimiter", "definition": "A mark that separates instructions from material" }
+      ],
+      "explanation": "These are core prompt engineering terms from Unit 7.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q26",
+      "unitId": "u8",
+      "type": "written",
+      "prompt": "What type of AI model is trained on huge amounts of text to predict the next token?",
+      "answer": "large language model",
+      "acceptedAnswers": ["LLM", "LLMs", "large language models", "language model"],
+      "options": ["large language model", "diffusion model", "recommendation system", "rule-based system"],
+      "explanation": "Large language models (LLMs) generate text one token at a time and power most modern chatbots.",
+      "difficulty": 1,
+      "tags": ["review"]
+    },
+    {
+      "id": "u8-q27",
+      "unitId": "u8",
+      "type": "ordering",
+      "prompt": "Put the life of an AI model in order.",
+      "answer": [
+        "Collect and prepare data",
+        "Train the model",
+        "Evaluate the model",
+        "Deploy the model",
+        "Use the model for inference"
+      ],
+      "explanation": "Models are built from data, trained, evaluated, deployed, and then used for inference on new inputs.",
+      "difficulty": 1,
+      "tags": ["review"]
+    }
+  ]
+}

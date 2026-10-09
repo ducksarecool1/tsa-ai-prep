@@ -1,0 +1,255 @@
+[
+  {
+    "id": "pc01",
+    "title": "Photosynthesis quiz",
+    "difficulty": 1,
+    "scenario": "Get an AI to write a 5-question quiz on photosynthesis for 7th graders, formatted as a numbered list with the answers at the end.",
+    "weakPrompt": "Make a quiz about plants.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Clearly asks for a quiz.", "check": "task", "keywords": ["quiz"], "suggestion": "Start with a clear action, such as \"Write a quiz...\"" },
+      { "id": "topic", "name": "Names the topic", "description": "Mentions photosynthesis specifically.", "check": "keywords", "keywords": ["photosynthesis"], "suggestion": "Name the exact topic: photosynthesis, not just \"plants.\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Says who the quiz is for.", "check": "audience", "suggestion": "Add the audience, for example \"for 7th graders.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for a numbered list or similar structure.", "check": "format", "suggestion": "Say how to lay it out, such as \"as a numbered list with an answer key at the end.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Includes the number of questions.", "check": "length", "suggestion": "Include a number, such as \"5 questions.\"" }
+    ],
+    "strongExample": "Write a 5-question multiple-choice quiz on photosynthesis for 7th graders. Format it as a numbered list, give four answer choices for each question, and put an answer key at the end. Use simple language."
+  },
+  {
+    "id": "pc02",
+    "title": "Newspaper summary",
+    "difficulty": 1,
+    "scenario": "You need a short, neutral summary of a news article about a new city park for readers of your school newspaper.",
+    "weakPrompt": "Summarize this.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for a summary.", "check": "task", "keywords": ["summar"], "suggestion": "Say exactly what you want: \"Summarize the article...\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Mentions who will read the summary.", "check": "audience", "suggestion": "Name the readers, for example \"for high school students who read our school paper.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a sentence or word count.", "check": "length", "suggestion": "Add a limit such as \"in 3 sentences\" or \"under 75 words.\"" },
+      { "id": "delimiters", "name": "Separates the article", "description": "Marks where the article text begins and ends.", "check": "delimiters", "suggestion": "Put the article between triple quotes (\"\"\") or tags so the AI knows what to summarize." },
+      { "id": "tone", "name": "Sets the tone", "description": "Asks for a neutral or specific tone.", "check": "tone", "suggestion": "News summaries should be neutral; say so: \"Keep the tone neutral.\"" }
+    ],
+    "strongExample": "Summarize the article below in 3 sentences for high school students who read our school newspaper. Keep the tone neutral and informative.\n\n\"\"\"\n[Paste the article about the new city park here]\n\"\"\""
+  },
+  {
+    "id": "pc03",
+    "title": "Email to a coach",
+    "difficulty": 1,
+    "scenario": "Write a prompt that gets the AI to draft a polite email asking your soccer coach if you can miss Thursday's practice because of a TSA competition.",
+    "weakPrompt": "write email to coach",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for an email.", "check": "task", "keywords": ["email"], "suggestion": "Begin with \"Write a short email to...\"" },
+      { "id": "context", "name": "Gives context", "description": "Explains the situation and the reason.", "check": "context", "suggestion": "Explain why you are writing: which practice, and the reason (\"because I have a TSA competition\")." },
+      { "id": "tone", "name": "Sets the tone", "description": "Asks for a polite or respectful tone.", "check": "tone", "suggestion": "Say how it should sound, such as \"polite and respectful.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a word or sentence limit.", "check": "length", "suggestion": "Emails to coaches should be short; add \"under 100 words.\"" },
+      { "id": "privacy", "name": "Keeps personal data out", "description": "Uses placeholders instead of real contact details.", "check": "noPersonalData", "suggestion": "Remove real emails, phone numbers or addresses and use placeholders like [My name]." }
+    ],
+    "strongExample": "Write a short, polite email to my soccer coach asking to miss practice this Thursday because I have a TSA competition that day. Keep it under 100 words, use a respectful tone, and offer to make up the practice. Use [Coach's name] and [My name] as placeholders."
+  },
+  {
+    "id": "pc04",
+    "title": "Government study guide",
+    "difficulty": 1,
+    "scenario": "Create a study guide on the three branches of the U.S. government for 9th graders, organized so it is easy to review.",
+    "weakPrompt": "study guide government",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Uses an action verb and asks for a study guide.", "check": "task", "keywords": ["study guide"], "suggestion": "Start with an action verb: \"Create a study guide...\"" },
+      { "id": "topic", "name": "Names the topic precisely", "description": "Mentions the branches of government.", "check": "keywords", "keywords": ["branch"], "suggestion": "Be specific: \"the three branches of the U.S. government.\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Says who will use the guide.", "check": "audience", "suggestion": "Add \"for 9th graders.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for a table, outline or other structure.", "check": "format", "suggestion": "Ask for a structure, such as \"a table with one row per branch.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a page or item count.", "check": "length", "suggestion": "Add a size, such as \"one page\" or \"five review questions.\"" }
+    ],
+    "strongExample": "Create a one-page study guide on the three branches of the U.S. government for 9th graders. Use a table with three rows (one per branch) and columns for main job, who serves in it, and one example of its power. End with five review questions."
+  },
+  {
+    "id": "pc05",
+    "title": "Patient math tutor",
+    "difficulty": 2,
+    "scenario": "You are stuck on the equation 2x + 6 = 14. Get the AI to act as a tutor that helps you solve it yourself instead of just giving the answer.",
+    "weakPrompt": "solve 2x+6=14",
+    "rubric": [
+      { "id": "role", "name": "Assigns a role", "description": "Tells the AI who to act as.", "check": "role", "suggestion": "Add a role: \"You are a patient math tutor.\"" },
+      { "id": "audience", "name": "Gives your level", "description": "Mentions your grade or experience.", "check": "audience", "suggestion": "Say your level, such as \"I'm in 9th grade.\"" },
+      { "id": "constraints", "name": "Sets a constraint", "description": "Tells the AI not to reveal the answer.", "check": "constraints", "suggestion": "Add a rule: \"Do not give me the final answer.\"" },
+      { "id": "steps", "name": "Asks for steps", "description": "Requests step-by-step guidance.", "check": "steps", "suggestion": "Ask it to \"guide me step by step, one hint at a time.\"" },
+      { "id": "tone", "name": "Sets the tone", "description": "Asks for an encouraging or patient tone.", "check": "tone", "suggestion": "Ask for an encouraging tone so the help feels supportive." }
+    ],
+    "strongExample": "You are a patient, encouraging math tutor. I'm in 9th grade and I'm stuck on the equation 2x + 6 = 14. Do not give me the final answer. Instead, guide me step by step with one hint at a time, and ask me a question after each step so I can try it myself."
+  },
+  {
+    "id": "pc06",
+    "title": "Snack descriptions in your style",
+    "difficulty": 2,
+    "scenario": "Your club sells snacks at games. Get the AI to write three new snack descriptions in the same fun style as two examples you like (few-shot prompting).",
+    "weakPrompt": "write snack descriptions",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for snack descriptions.", "check": "task", "keywords": ["description"], "suggestion": "Say what to write: \"Write 3 snack descriptions...\"" },
+      { "id": "examples", "name": "Provides examples", "description": "Includes sample descriptions to copy the style from.", "check": "examples", "suggestion": "Paste one or two examples you like and label them \"Example 1,\" \"Example 2.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Limits the length of each description.", "check": "length", "suggestion": "Add a limit such as \"under 20 words each.\"" },
+      { "id": "tone", "name": "Sets the tone", "description": "Names the style or tone.", "check": "tone", "suggestion": "Name the vibe: \"fun and upbeat.\"" }
+    ],
+    "strongExample": "Write 3 new snack descriptions for our robotics club's concession stand, in the same fun style as these examples:\n\nExample 1: \"Pretzel Bites: warm, salty and perfect for cheering. Grab a handful!\"\nExample 2: \"Frozen Grapes: nature's candy, served ice cold. Your halftime hero!\"\n\nKeep each description under 20 words and use an upbeat tone."
+  },
+  {
+    "id": "pc07",
+    "title": "Telescope facts without fiction",
+    "difficulty": 2,
+    "scenario": "You want a list of facts about the James Webb Space Telescope for a class presentation, and you want to reduce the chance of made-up facts.",
+    "weakPrompt": "Tell me facts about the James Webb telescope.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for facts on the topic.", "check": "task", "keywords": ["webb"], "suggestion": "Name the task and topic clearly." },
+      { "id": "audience", "name": "Gives the audience", "description": "Mentions the class or grade.", "check": "audience", "suggestion": "Add who it is for, such as \"for a 10th-grade science presentation.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives the number of facts.", "check": "length", "suggestion": "Ask for a specific number, such as \"5 key facts.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for bullets or a list.", "check": "format", "suggestion": "Request \"a bulleted list\" so it is easy to put on a slide." },
+      { "id": "verification", "name": "Guards against hallucination", "description": "Tells the AI to admit uncertainty or support verification.", "check": "verification", "suggestion": "Add \"If you are not sure about a fact, say so instead of guessing.\"" }
+    ],
+    "strongExample": "List 5 key facts about the James Webb Space Telescope for a 10th-grade science presentation. Use a bulleted list. Only include facts you are confident about; if you are not sure about something, say so instead of guessing, and suggest where I could verify each fact."
+  },
+  {
+    "id": "pc08",
+    "title": "Answer from the textbook only",
+    "difficulty": 2,
+    "scenario": "You have a paragraph from your biology textbook and want the AI to answer three questions using only that paragraph.",
+    "weakPrompt": "Answer these questions about cells.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks the AI to answer the questions.", "check": "task", "keywords": ["answer"], "suggestion": "Say clearly: \"Answer the questions below...\"" },
+      { "id": "delimiters", "name": "Separates the source", "description": "Marks the textbook paragraph with tags or quotes.", "check": "delimiters", "suggestion": "Wrap the paragraph in tags like <text> ... </text>." },
+      { "id": "constraints", "name": "Limits the source", "description": "Says to use only the provided paragraph.", "check": "constraints", "suggestion": "Add \"using only the paragraph between the tags.\"" },
+      { "id": "verification", "name": "Allows \"not in the text\"", "description": "Tells the AI what to do if the answer is missing.", "check": "verification", "suggestion": "Add \"If the answer is not in the paragraph, say so. Do not make up answers.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for numbered answers or another structure.", "check": "format", "suggestion": "Ask for \"a numbered list\" so answers line up with questions." }
+    ],
+    "strongExample": "Answer the 3 questions below using only the textbook paragraph between the <text> tags. If the paragraph does not contain the answer, write \"Not in the text.\" Do not make up answers. Give your answers as a numbered list.\n\n<text>\n[Paste the textbook paragraph here]\n</text>\n\nQuestions:\n1. What does the cell membrane do?\n2. Where is DNA stored in an animal cell?\n3. Which organelle releases energy from food?"
+  },
+  {
+    "id": "pc09",
+    "title": "Bake sale plan",
+    "difficulty": 2,
+    "scenario": "Your TSA chapter is holding a bake sale fundraiser. Get the AI to break the planning into steps with a timeline.",
+    "weakPrompt": "help me plan a bake sale",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for a plan.", "check": "task", "keywords": ["plan"], "suggestion": "Start with \"Help me plan...\" or \"Create a plan for...\"" },
+      { "id": "context", "name": "Gives context", "description": "Shares key details such as team size, budget and date.", "check": "context", "suggestion": "Add the facts the AI needs: how many members, your budget and when the sale is." },
+      { "id": "steps", "name": "Asks for steps", "description": "Requests the plan broken into steps.", "check": "steps", "suggestion": "Ask it to \"break the plan into steps.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for a checklist, schedule or timeline.", "check": "format", "suggestion": "Request \"a week-by-week checklist\" or \"a schedule.\"" },
+      { "id": "length", "name": "Sets a number", "description": "Includes a count, such as weeks or ideas.", "check": "length", "suggestion": "Include numbers, like \"in 3 weeks\" or \"2 advertising ideas.\"" }
+    ],
+    "strongExample": "Help me plan a bake sale fundraiser for our school's TSA chapter. We have 12 members, a $50 budget for supplies, and the sale is in 3 weeks. Break the plan into steps, from first to final, organized as a week-by-week checklist. Include 2 ideas for advertising it around school."
+  },
+  {
+    "id": "pc10",
+    "title": "Explain GPS to a 5th grader",
+    "difficulty": 2,
+    "scenario": "Rewrite a dense paragraph about how GPS works so a 5th grader can understand it.",
+    "weakPrompt": "make this simpler",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for a rewrite.", "check": "task", "keywords": ["rewrite", "simplif", "explain"], "suggestion": "Use a precise verb: \"Rewrite the paragraph below...\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Names the reader's grade or age.", "check": "audience", "suggestion": "Say who it is for: \"so a 5th grader can understand it.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a sentence or word limit.", "check": "length", "suggestion": "Add \"in about 4 sentences.\"" },
+      { "id": "constraints", "name": "Sets a constraint", "description": "Rules out jargon or other problems.", "check": "constraints", "suggestion": "Add \"avoid technical jargon.\"" },
+      { "id": "delimiters", "name": "Separates the text", "description": "Marks the paragraph to rewrite.", "check": "delimiters", "suggestion": "Put the paragraph inside triple quotes (\"\"\")." }
+    ],
+    "strongExample": "Rewrite the paragraph below so a 5th grader can understand it. Keep it to about 4 sentences, avoid technical jargon, and use one everyday comparison.\n\n\"\"\"\n[Paste the paragraph about how GPS works here]\n\"\"\""
+  },
+  {
+    "id": "pc11",
+    "title": "Show your work",
+    "difficulty": 3,
+    "scenario": "A bus leaves at 3:40 p.m. and the trip takes 1 hour 35 minutes. Get the AI to find the arrival time and show its reasoning so you can check it.",
+    "weakPrompt": "what time does the bus arrive",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks the AI to solve the problem.", "check": "task", "suggestion": "Start with \"Solve this word problem:\"" },
+      { "id": "details", "name": "Includes the details", "description": "Gives the departure time and trip length.", "check": "keywords", "keywords": ["3:40", "1 hour 35"], "suggestion": "Include every number the AI needs: the 3:40 p.m. departure and the 1 hour 35 minute trip." },
+      { "id": "reasoning", "name": "Asks for reasoning", "description": "Requests step-by-step work.", "check": "reasoning", "suggestion": "Add \"Show your reasoning step by step.\"" },
+      { "id": "verification", "name": "Asks for a check", "description": "Asks the AI to double-check its answer.", "check": "verification", "suggestion": "Add \"Then double-check the answer by working backward.\"" },
+      { "id": "format", "name": "Sets the answer format", "description": "Says how to present the final answer.", "check": "format", "suggestion": "Ask for the final answer in a set format, such as \"Arrival time: __\"." }
+    ],
+    "strongExample": "Solve this word problem: A bus leaves at 3:40 p.m. and the trip takes 1 hour 35 minutes. What time does it arrive? Show your reasoning step by step, then double-check the answer by working backward. Put the final answer on its own line in the format \"Arrival time: __\"."
+  },
+  {
+    "id": "pc12",
+    "title": "Both sides for debate prep",
+    "difficulty": 3,
+    "scenario": "Get a balanced overview of the arguments for and against letting students use AI tools for homework, to prepare your debate team for either side.",
+    "weakPrompt": "Is AI good or bad for school?",
+    "rubric": [
+      { "id": "task", "name": "Asks for both sides", "description": "Requests arguments for and against.", "check": "task", "keywords": ["for and against", "both sides", "pros and cons"], "suggestion": "Ask to \"compare the strongest arguments for and against.\"" },
+      { "id": "tone", "name": "Asks for balance", "description": "Requests a neutral or balanced tone.", "check": "tone", "suggestion": "Add \"keep the tone neutral and balanced.\"" },
+      { "id": "format", "name": "Sets the format", "description": "Asks for a table or columns.", "check": "format", "suggestion": "Request \"a two-column table.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives the number of arguments.", "check": "length", "suggestion": "Add \"4 arguments per side.\"" },
+      { "id": "verification", "name": "Flags claims to verify", "description": "Asks the AI to mark claims that need sources.", "check": "verification", "suggestion": "Add \"flag any claim that would need a source.\"" }
+    ],
+    "strongExample": "Compare the strongest arguments for and against allowing students to use AI tools for homework, for a high school debate team preparing both sides. Use a two-column table with 4 arguments per side, keep the tone neutral and balanced, and flag any claim that would need a source before we use it in a debate."
+  },
+  {
+    "id": "pc13",
+    "title": "Messy notes to a clean table",
+    "difficulty": 3,
+    "scenario": "Turn unorganized notes about competition events your chapter is entering into a clean table, without the AI inventing missing details.",
+    "weakPrompt": "organize my notes",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks to turn the notes into a table.", "check": "task", "keywords": ["table"], "suggestion": "Be specific: \"Turn the notes into a table.\"" },
+      { "id": "columns", "name": "Names the columns", "description": "Lists the columns to use.", "check": "keywords", "keywords": ["column"], "suggestion": "Say which columns you want, such as Event, Team size and Due date." },
+      { "id": "delimiters", "name": "Separates the notes", "description": "Marks where the notes begin and end.", "check": "delimiters", "suggestion": "Put the notes between triple quotes (\"\"\")." },
+      { "id": "constraints", "name": "No invented details", "description": "Limits the AI to information in the notes.", "check": "constraints", "suggestion": "Add \"Only use information from the notes, and write 'unknown' if something is missing.\"" }
+    ],
+    "strongExample": "Turn the notes between the triple quotes into a table with three columns: Event, Team size and Due date. Sort the rows by due date. Only use information from the notes, and write \"unknown\" if something is missing.\n\n\"\"\"\nrobotics challenge - team of 3? due jan 10\nwebsite design 2 people, due dec 15\nbridge building, due feb 1\n\"\"\""
+  },
+  {
+    "id": "pc14",
+    "title": "Recommendation request, privately",
+    "difficulty": 3,
+    "scenario": "Get help writing a letter asking a teacher for a recommendation for a summer engineering program, without sharing real personal details with the AI.",
+    "weakPrompt": "Write a letter asking Ms. Rivera for a recommendation. My email is jordan.lee@example.com and my phone is 555-201-7788.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for a letter.", "check": "task", "keywords": ["letter"], "suggestion": "Start with \"Write a polite letter...\"" },
+      { "id": "context", "name": "Gives context", "description": "Explains the program and why this teacher.", "check": "context", "suggestion": "Explain what the recommendation is for and your connection to the teacher." },
+      { "id": "tone", "name": "Sets the tone", "description": "Asks for a polite or respectful tone.", "check": "tone", "suggestion": "Add \"use a respectful tone.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a word limit.", "check": "length", "suggestion": "Add \"under 150 words.\"" },
+      { "id": "privacy", "name": "Keeps personal data out", "description": "No real emails, phone numbers or addresses.", "check": "noPersonalData", "suggestion": "Delete real contact details and use placeholders like [My name] and [Teacher name]." }
+    ],
+    "strongExample": "Write a polite letter asking a teacher to write me a recommendation for a summer engineering program. I have been in their class for two years and led our robotics team, so mention that. Keep it under 150 words, use a respectful tone, and use placeholders like [Teacher name], [My name] and [Program deadline] instead of real details."
+  },
+  {
+    "id": "pc15",
+    "title": "Fix the ocean poem",
+    "difficulty": 3,
+    "scenario": "Your first prompt, \"Write a poem about the ocean,\" produced a long, serious poem. Write a follow-up prompt that fixes it: you wanted a short, funny poem for a 2nd-grade class.",
+    "weakPrompt": "Make it better.",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks to rewrite the poem.", "check": "task", "keywords": ["poem"], "suggestion": "Say what to change: \"Rewrite the ocean poem...\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Names the class or age.", "check": "audience", "suggestion": "Add \"for a 2nd-grade class.\"" },
+      { "id": "tone", "name": "Sets the tone", "description": "Asks for a funny or playful tone.", "check": "tone", "suggestion": "Say \"make it funny.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Limits stanzas or lines.", "check": "length", "suggestion": "Add a size, such as \"2 short stanzas of 4 lines each.\"" },
+      { "id": "constraints", "name": "Sets a constraint", "description": "Rules out unwanted content.", "check": "constraints", "suggestion": "Add a rule, such as \"do not include anything scary.\"" }
+    ],
+    "strongExample": "Rewrite the ocean poem so it works for a 2nd-grade class: make it funny, keep it to 2 short stanzas of 4 lines each, use simple words, and do not include anything scary like sharks attacking."
+  },
+  {
+    "id": "pc16",
+    "title": "Welcome speech from scratch",
+    "difficulty": 3,
+    "scenario": "Your TSA chapter wants a 1-minute welcome speech for new members at the first meeting. Write a complete prompt from scratch.",
+    "rubric": [
+      { "id": "role", "name": "Assigns a role", "description": "Tells the AI who to act as.", "check": "role", "suggestion": "Add a role, such as \"You are an experienced student leader.\"" },
+      { "id": "task", "name": "States the task", "description": "Asks for a speech.", "check": "task", "keywords": ["speech"], "suggestion": "Say \"Write a welcome speech...\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Describes the new members.", "check": "audience", "suggestion": "Describe the listeners, for example \"new members, mostly freshmen.\"" },
+      { "id": "context", "name": "Gives context", "description": "Explains the event and what to cover.", "check": "context", "suggestion": "Explain the setting (first meeting) and anything the speech must mention." },
+      { "id": "length", "name": "Sets the length", "description": "Gives a time or word count.", "check": "length", "suggestion": "Add \"about 150 words\" or \"1 minute.\"" },
+      { "id": "tone", "name": "Sets the tone", "description": "Names the tone.", "check": "tone", "suggestion": "Add \"use an upbeat, welcoming tone.\"" }
+    ],
+    "strongExample": "You are an experienced student leader. Write a 1-minute welcome speech (about 150 words) for new members at the first meeting of our high school TSA chapter. Most of them are freshmen who are new to engineering, so explain what TSA competitions are in one or two sentences and mention that no experience is needed. Use an upbeat, welcoming tone."
+  },
+  {
+    "id": "pc17",
+    "title": "Overfitting with a sports analogy",
+    "difficulty": 2,
+    "scenario": "Get the AI to explain overfitting to your younger brother, a 6th grader who loves basketball, using a sports analogy.",
+    "weakPrompt": "explain overfitting",
+    "rubric": [
+      { "id": "task", "name": "States the task", "description": "Asks for an explanation of overfitting.", "check": "task", "keywords": ["overfitting"], "suggestion": "Name the concept: \"Explain what overfitting means...\"" },
+      { "id": "audience", "name": "Gives the audience", "description": "Names the reader's grade or age.", "check": "audience", "suggestion": "Add \"to a 6th grader.\"" },
+      { "id": "analogy", "name": "Requests an analogy", "description": "Asks for a comparison to something familiar.", "check": "keywords", "keywords": ["analogy", "comparison", "compare"], "suggestion": "Ask for \"one basketball analogy.\"" },
+      { "id": "length", "name": "Sets the length", "description": "Gives a word limit.", "check": "length", "suggestion": "Add \"under 120 words.\"" },
+      { "id": "constraints", "name": "Sets a constraint", "description": "Rules out math terms or jargon.", "check": "constraints", "suggestion": "Add \"avoid math terms.\"" }
+    ],
+    "strongExample": "Explain what overfitting means in machine learning to a 6th grader who loves basketball. Use one basketball analogy, keep it under 120 words, and avoid math terms."
+  }
+]

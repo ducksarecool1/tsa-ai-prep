@@ -1,0 +1,640 @@
+{
+  "id": "u3",
+  "number": 3,
+  "title": "How AI Is Trained",
+  "summary": "Datasets and labels, training/validation/test splits, the three main learning types, loss and gradient descent, overfitting, fine-tuning, RLHF and compute.",
+  "lesson": {
+    "title": "Teaching a Model",
+    "sections": [
+      {
+        "heading": "Data and labels",
+        "paragraphs": [
+          "Training starts with a dataset: a collection of examples. In many projects, people add labels, the correct answers attached to each example, such as \"cat\" or \"dog\" for a photo. Quality matters more than people expect. A model trained on messy, biased or mislabeled data learns those problems too, which is why engineers say \"garbage in, garbage out.\""
+        ]
+      },
+      {
+        "heading": "Splitting the data",
+        "paragraphs": [
+          "Data is usually split three ways. The training set is what the model learns from. The validation set is used during development to tune settings and compare versions. The test set is held back until the end to estimate how well the model handles data it has never seen. If you peek at the test set while building, its score stops being an honest measure."
+        ]
+      },
+      {
+        "heading": "Three ways to learn",
+        "bullets": [
+          "Supervised learning: the model learns from examples paired with correct answers (labels), like emails marked spam or not spam.",
+          "Unsupervised learning: the model finds structure in data with no labels, such as grouping customers with similar shopping habits.",
+          "Reinforcement learning: an agent learns by trial and error, earning rewards or penalties for its actions, like a program learning to play a game."
+        ],
+        "paragraphs": []
+      },
+      {
+        "heading": "Loss and gradient descent",
+        "paragraphs": [
+          "A loss function measures how wrong the model's predictions are. Training is the process of adjusting the parameters to make the loss smaller. Backpropagation works out how much each weight contributed to the error, and gradient descent nudges every weight a small step in the direction that reduces the loss. The learning rate sets the size of each step. Too large and training overshoots; too small and it crawls."
+        ]
+      },
+      {
+        "heading": "Overfitting and underfitting",
+        "paragraphs": [
+          "The goal is generalization: doing well on new data. A model that overfits memorizes its training data, including random noise, so it scores very well in training but poorly on new examples. A model that underfits is too simple to capture the pattern and does poorly on both. More varied data, simpler models and careful evaluation help find the balance."
+        ]
+      },
+      {
+        "heading": "Pretraining, fine-tuning and RLHF",
+        "paragraphs": [
+          "Large language models are first pretrained on enormous amounts of general text by predicting the next token. Fine-tuning then continues training on a smaller, specialized dataset for a particular job or style. Many chat assistants also go through reinforcement learning from human feedback (RLHF): people compare or rank the model's responses, a reward model learns which answers people prefer, and reinforcement learning updates the language model to produce more of those answers."
+        ]
+      },
+      {
+        "heading": "Compute",
+        "paragraphs": [
+          "Training requires an enormous number of calculations. Graphics processing units (GPUs) and other specialized chips do many calculations at the same time, which is why large models are trained on big clusters of them in data centers."
+        ]
+      }
+    ],
+    "diagramAfter": 1,
+    "diagram": {
+      "type": "flow",
+      "caption": "A typical machine learning workflow. Teams often loop back to earlier steps after evaluation.",
+      "steps": ["Collect data", "Clean and label", "Split the data", "Train", "Evaluate", "Deploy"]
+    },
+    "analogy": {
+      "title": "Analogy: walking downhill in fog",
+      "text": "Gradient descent is like trying to reach the bottom of a valley in thick fog. You cannot see the bottom, but you can feel which way the ground slopes under your feet, so you take a small step downhill and check again."
+    }
+  },
+  "terms": [
+    {
+      "id": "u3-t-dataset",
+      "unitId": "u3",
+      "term": "dataset",
+      "definition": "A collection of examples used to train or test an AI model.",
+      "example": "A dataset of 50,000 labeled photos of handwritten digits.",
+      "acceptedAnswers": ["data set", "datasets"]
+    },
+    {
+      "id": "u3-t-label",
+      "unitId": "u3",
+      "term": "label",
+      "definition": "The correct answer attached to a training example.",
+      "example": "The word \"dog\" attached to a photo of a dog is its label.",
+      "acceptedAnswers": ["labels", "ground truth"],
+      "confusableWith": ["feature"]
+    },
+    {
+      "id": "u3-t-training-set",
+      "unitId": "u3",
+      "term": "training set",
+      "definition": "The portion of the data a model learns from.",
+      "example": "80 percent of the photos might go into the training set.",
+      "acceptedAnswers": ["training data", "training dataset"]
+    },
+    {
+      "id": "u3-t-validation-set",
+      "unitId": "u3",
+      "term": "validation set",
+      "definition": "Data held out during development to tune settings and compare model versions.",
+      "example": "Engineers try three learning rates and keep the one that scores best on the validation set.",
+      "acceptedAnswers": ["validation data", "dev set", "development set"],
+      "confusableWith": ["test set"]
+    },
+    {
+      "id": "u3-t-test-set",
+      "unitId": "u3",
+      "term": "test set",
+      "definition": "Data kept aside until the end to estimate how well a model performs on new, unseen examples.",
+      "example": "The final report says the model scored 92 percent on the test set.",
+      "acceptedAnswers": ["test data", "testing set", "holdout set"],
+      "confusableWith": ["validation set"]
+    },
+    {
+      "id": "u3-t-supervised",
+      "unitId": "u3",
+      "term": "supervised learning",
+      "definition": "Machine learning from examples that are paired with correct answers (labels).",
+      "example": "Training a model on emails already marked spam or not spam.",
+      "acceptedAnswers": ["supervised"],
+      "confusableWith": ["unsupervised learning"]
+    },
+    {
+      "id": "u3-t-unsupervised",
+      "unitId": "u3",
+      "term": "unsupervised learning",
+      "definition": "Machine learning that finds patterns or groups in data without labels.",
+      "example": "Grouping songs by how similar they sound, without any genre tags.",
+      "acceptedAnswers": ["unsupervised"],
+      "confusableWith": ["supervised learning"]
+    },
+    {
+      "id": "u3-t-rl",
+      "unitId": "u3",
+      "term": "reinforcement learning",
+      "definition": "Machine learning in which an agent learns by trial and error, receiving rewards or penalties for its actions.",
+      "example": "A program that learns to play a video game by earning points for good moves.",
+      "acceptedAnswers": ["RL"],
+      "confusableWith": ["reinforcement learning from human feedback"]
+    },
+    {
+      "id": "u3-t-loss",
+      "unitId": "u3",
+      "term": "loss function",
+      "definition": "A formula that measures how far a model's predictions are from the correct answers.",
+      "example": "If a model predicts a house costs $300,000 but it sold for $250,000, the loss function turns that gap into a number.",
+      "acceptedAnswers": ["loss", "cost function", "error function"]
+    },
+    {
+      "id": "u3-t-gd",
+      "unitId": "u3",
+      "term": "gradient descent",
+      "definition": "A method that repeatedly nudges a model's parameters in the direction that lowers the loss.",
+      "example": "After each batch of examples, gradient descent adjusts every weight a little.",
+      "acceptedAnswers": ["SGD", "stochastic gradient descent"]
+    },
+    {
+      "id": "u3-t-lr",
+      "unitId": "u3",
+      "term": "learning rate",
+      "definition": "A setting that controls how big each parameter adjustment is during training.",
+      "example": "A learning rate that is too high can make training bounce around instead of improving.",
+      "acceptedAnswers": ["step size"]
+    },
+    {
+      "id": "u3-t-backprop",
+      "unitId": "u3",
+      "term": "backpropagation",
+      "definition": "The method for working out how much each weight in a neural network contributed to the error, so the weights can be adjusted.",
+      "example": "Backpropagation sends error information backward from the output layer through the hidden layers.",
+      "acceptedAnswers": ["backprop", "back propagation", "backward propagation"]
+    },
+    {
+      "id": "u3-t-overfitting",
+      "unitId": "u3",
+      "term": "overfitting",
+      "definition": "When a model memorizes its training data, including noise, so it does well in training but poorly on new data.",
+      "example": "A model that scores 99 percent on training data but 60 percent on new data is overfitting.",
+      "acceptedAnswers": ["overfit", "over-fitting"],
+      "confusableWith": ["underfitting"]
+    },
+    {
+      "id": "u3-t-underfitting",
+      "unitId": "u3",
+      "term": "underfitting",
+      "definition": "When a model is too simple to capture the pattern, so it does poorly on both training data and new data.",
+      "example": "Using a straight line to predict something that clearly follows a curve.",
+      "acceptedAnswers": ["underfit", "under-fitting"],
+      "confusableWith": ["overfitting"]
+    },
+    {
+      "id": "u3-t-generalization",
+      "unitId": "u3",
+      "term": "generalization",
+      "definition": "How well a model performs on new data it did not see during training.",
+      "example": "A plant identifier that works on photos from a new park generalizes well.",
+      "acceptedAnswers": ["generalisation", "generalizing"]
+    },
+    {
+      "id": "u3-t-pretraining",
+      "unitId": "u3",
+      "term": "pretraining",
+      "definition": "The first, large-scale stage of training, in which a model learns general patterns from a huge dataset.",
+      "example": "A language model is pretrained by predicting the next token across a vast collection of text.",
+      "acceptedAnswers": ["pre-training", "pre training"],
+      "confusableWith": ["fine-tuning"]
+    },
+    {
+      "id": "u3-t-finetuning",
+      "unitId": "u3",
+      "term": "fine-tuning",
+      "definition": "Further training of a pretrained model on a smaller, specialized dataset for a particular task or style.",
+      "example": "Fine-tuning a general model on a library's question-and-answer logs so it answers library questions well.",
+      "acceptedAnswers": ["fine tuning", "finetuning", "fine-tune", "fine tune"],
+      "confusableWith": ["pretraining"]
+    },
+    {
+      "id": "u3-t-rlhf",
+      "unitId": "u3",
+      "term": "reinforcement learning from human feedback",
+      "definition": "A training method in which people rank a model's responses, a reward model learns those preferences, and reinforcement learning updates the model to match them.",
+      "example": "Many chat assistants are trained with RLHF to give more helpful, polite answers.",
+      "acceptedAnswers": ["RLHF"],
+      "confusableWith": ["reinforcement learning"]
+    },
+    {
+      "id": "u3-t-reward-model",
+      "unitId": "u3",
+      "term": "reward model",
+      "definition": "A model trained to predict how much people would prefer a given response; it scores outputs during RLHF.",
+      "example": "The reward model gives a higher score to a clear, correct answer than to a rude one.",
+      "acceptedAnswers": ["preference model"]
+    },
+    {
+      "id": "u3-t-gpu",
+      "unitId": "u3",
+      "term": "graphics processing unit",
+      "definition": "A computer chip that performs many calculations at the same time, which makes it well suited to training neural networks.",
+      "example": "Large AI models are trained on clusters containing many GPUs.",
+      "acceptedAnswers": ["GPU", "GPUs", "graphics card"],
+      "confusableWith": ["CPU"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u3-q01",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "What is a label in supervised learning?",
+      "options": [
+        "The correct answer attached to a training example, such as \"cat\" for a cat photo",
+        "The name of the programmer who built the model",
+        "A sticker on the computer",
+        "The number of layers in the model"
+      ],
+      "answer": "The correct answer attached to a training example, such as \"cat\" for a cat photo",
+      "explanation": "Labels tell the model what the right answer is for each training example. Supervised learning needs them.",
+      "difficulty": 1,
+      "tags": ["data", "labels"]
+    },
+    {
+      "id": "u3-q02",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "Which type of machine learning trains on examples that are paired with correct answers (labels)?",
+      "answer": "supervised learning",
+      "acceptedAnswers": ["supervised"],
+      "confusableWith": ["unsupervised learning", "unsupervised"],
+      "options": ["supervised learning", "unsupervised learning", "reinforcement learning", "pretraining"],
+      "explanation": "Supervised learning uses labeled examples. The labels \"supervise\" the model by showing it the right answers.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q03",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "Which type of machine learning finds patterns or groups in data that has no labels?",
+      "answer": "unsupervised learning",
+      "acceptedAnswers": ["unsupervised"],
+      "confusableWith": ["supervised learning", "supervised"],
+      "options": ["unsupervised learning", "supervised learning", "reinforcement learning", "fine-tuning"],
+      "explanation": "Unsupervised learning works without labels. Clustering similar items together is a common example.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q04",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "Which type of machine learning has an agent learn by trial and error, receiving rewards or penalties for its actions?",
+      "answer": "reinforcement learning",
+      "acceptedAnswers": ["RL"],
+      "confusableWith": ["reinforcement learning from human feedback"],
+      "options": ["reinforcement learning", "supervised learning", "unsupervised learning", "backpropagation"],
+      "explanation": "In reinforcement learning, an agent tries actions and learns from the rewards or penalties it receives.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q05",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "Name the three main types of machine learning, one word each, separated by commas.",
+      "answer": "supervised, unsupervised, reinforcement",
+      "acceptedAnswers": ["supervised learning, unsupervised learning, reinforcement learning"],
+      "orderInsensitive": true,
+      "hint": "One uses labels, one has no labels, and one uses rewards.",
+      "explanation": "The three main types are supervised learning (labels), unsupervised learning (no labels) and reinforcement learning (rewards). Any order is fine.",
+      "difficulty": 2,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q06",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "Why is data split into training, validation and test sets?",
+      "options": [
+        "So the model can be checked on data it did not learn from, giving an honest measure of how well it generalizes",
+        "To make training faster by throwing away data",
+        "Because computers cannot store all the data in one file",
+        "So that each set can use a different programming language"
+      ],
+      "answer": "So the model can be checked on data it did not learn from, giving an honest measure of how well it generalizes",
+      "explanation": "A model can look great on data it memorized. Held-out data shows how it will do on new examples.",
+      "difficulty": 2,
+      "tags": ["data splits"]
+    },
+    {
+      "id": "u3-q07",
+      "unitId": "u3",
+      "type": "matching",
+      "prompt": "Match each data split to its purpose.",
+      "answer": [
+        { "term": "Training set", "definition": "Used to fit the model's parameters" },
+        { "term": "Validation set", "definition": "Used to tune settings and compare versions during development" },
+        { "term": "Test set", "definition": "Used at the end to estimate performance on unseen data" }
+      ],
+      "explanation": "Training data teaches the model, validation data guides choices during development, and test data gives the final, honest check.",
+      "difficulty": 2,
+      "tags": ["data splits"]
+    },
+    {
+      "id": "u3-q08",
+      "unitId": "u3",
+      "type": "scenario",
+      "prompt": "A model scores 99% on its training data but only 60% on new data. What is most likely happening?",
+      "options": ["Overfitting", "Underfitting", "Perfect generalization", "Data labeling"],
+      "answer": "Overfitting",
+      "acceptedAnswers": ["overfit", "over-fitting"],
+      "confusableWith": ["underfitting"],
+      "explanation": "A big gap between training and new-data performance means the model memorized the training data instead of learning general patterns.",
+      "difficulty": 2,
+      "tags": ["overfitting"]
+    },
+    {
+      "id": "u3-q09",
+      "unitId": "u3",
+      "type": "scenario",
+      "prompt": "A model scores poorly on both its training data and new data because it is too simple to capture the pattern. What is this called?",
+      "options": ["Underfitting", "Overfitting", "Fine-tuning", "Pretraining"],
+      "answer": "Underfitting",
+      "acceptedAnswers": ["underfit", "under-fitting"],
+      "confusableWith": ["overfitting"],
+      "explanation": "Underfitting means the model has not learned the pattern well enough to do well even on its training data.",
+      "difficulty": 2,
+      "tags": ["overfitting"]
+    },
+    {
+      "id": "u3-q10",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "What does a loss function measure?",
+      "options": [
+        "How far a model's predictions are from the correct answers",
+        "How much electricity training uses",
+        "How many people use the model",
+        "How long training takes"
+      ],
+      "answer": "How far a model's predictions are from the correct answers",
+      "explanation": "The loss is a number that summarizes the model's errors. Training tries to make it as small as possible.",
+      "difficulty": 1,
+      "tags": ["loss"]
+    },
+    {
+      "id": "u3-q11",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "Which description best explains gradient descent?",
+      "options": [
+        "Repeatedly adjusting parameters in small steps in the direction that lowers the loss",
+        "Randomly guessing parameters until one set happens to work",
+        "Removing layers from a network until it becomes accurate",
+        "Sorting the training data from hardest to easiest"
+      ],
+      "answer": "Repeatedly adjusting parameters in small steps in the direction that lowers the loss",
+      "explanation": "Gradient descent uses the slope of the loss to decide which way to change each parameter, like walking downhill one step at a time.",
+      "difficulty": 2,
+      "tags": ["gradient descent"]
+    },
+    {
+      "id": "u3-q12",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "In gradient descent, what setting controls how big each adjustment step is?",
+      "answer": "learning rate",
+      "acceptedAnswers": ["step size"],
+      "options": ["learning rate", "loss function", "label", "test set"],
+      "explanation": "The learning rate sets the step size. Too large can overshoot, and too small can make training very slow.",
+      "difficulty": 2,
+      "tags": ["gradient descent"]
+    },
+    {
+      "id": "u3-q13",
+      "unitId": "u3",
+      "type": "tf",
+      "prompt": "If the learning rate is far too large, training can overshoot good values and fail to settle down.",
+      "answer": true,
+      "explanation": "Huge steps can jump past the low point of the loss again and again. That is why the learning rate is tuned carefully.",
+      "difficulty": 2,
+      "tags": ["gradient descent"]
+    },
+    {
+      "id": "u3-q14",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "What is backpropagation used for?",
+      "options": [
+        "Working out how much each weight contributed to the error so the weights can be adjusted",
+        "Copying a trained model to another computer",
+        "Collecting more training data from the internet",
+        "Splitting text into tokens"
+      ],
+      "answer": "Working out how much each weight contributed to the error so the weights can be adjusted",
+      "explanation": "Backpropagation sends error information backward through the network. Gradient descent then uses it to update the weights.",
+      "difficulty": 3,
+      "tags": ["backpropagation"]
+    },
+    {
+      "id": "u3-q15",
+      "unitId": "u3",
+      "type": "ordering",
+      "prompt": "Put the steps of a typical machine learning project in order.",
+      "answer": [
+        "Collect data",
+        "Clean and label the data",
+        "Split the data into training, validation and test sets",
+        "Train the model",
+        "Evaluate the model on the test set",
+        "Deploy the model"
+      ],
+      "explanation": "Data comes first, then preparation and splitting, then training, a final evaluation, and finally deployment for real use.",
+      "difficulty": 1,
+      "tags": ["workflow"]
+    },
+    {
+      "id": "u3-q16",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "What is the difference between pretraining and fine-tuning?",
+      "options": [
+        "Pretraining learns general patterns from a huge dataset; fine-tuning further trains the model on a smaller, specialized dataset",
+        "Pretraining always happens after fine-tuning",
+        "Fine-tuning builds a model from scratch with no earlier training",
+        "They are two names for the same step"
+      ],
+      "answer": "Pretraining learns general patterns from a huge dataset; fine-tuning further trains the model on a smaller, specialized dataset",
+      "explanation": "Pretraining builds broad skills, and fine-tuning adapts them to a specific task or style.",
+      "difficulty": 2,
+      "tags": ["pretraining", "fine-tuning"]
+    },
+    {
+      "id": "u3-q17",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "What is it called when you further train a pretrained model on a smaller, specialized dataset for a particular task?",
+      "answer": "fine-tuning",
+      "acceptedAnswers": ["fine tuning", "finetuning", "fine-tune", "fine tune"],
+      "confusableWith": ["pretraining"],
+      "options": ["fine-tuning", "pretraining", "overfitting", "labeling"],
+      "explanation": "Fine-tuning adjusts an existing model for a narrower purpose instead of training from scratch.",
+      "difficulty": 1,
+      "tags": ["fine-tuning"]
+    },
+    {
+      "id": "u3-q18",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "In reinforcement learning from human feedback (RLHF), what do the humans do?",
+      "options": [
+        "Compare or rank the model's responses so it can learn which answers people prefer",
+        "Write every answer the model will ever give",
+        "Build the GPUs used for training",
+        "Delete the model's training data"
+      ],
+      "answer": "Compare or rank the model's responses so it can learn which answers people prefer",
+      "explanation": "Human rankings train a reward model. Reinforcement learning then pushes the language model toward highly rated responses.",
+      "difficulty": 2,
+      "tags": ["RLHF"]
+    },
+    {
+      "id": "u3-q19",
+      "unitId": "u3",
+      "type": "ordering",
+      "prompt": "Put the main steps of RLHF in order.",
+      "answer": [
+        "Pretrain a language model on a large amount of text",
+        "Have the model write several responses to the same prompts",
+        "Have people rank the responses from best to worst",
+        "Train a reward model to predict which responses people prefer",
+        "Use reinforcement learning to update the language model toward higher-reward responses"
+      ],
+      "explanation": "RLHF starts with a pretrained model, gathers human rankings of its answers, trains a reward model on those rankings, and then optimizes the language model against that reward model.",
+      "difficulty": 3,
+      "tags": ["RLHF"]
+    },
+    {
+      "id": "u3-q20",
+      "unitId": "u3",
+      "type": "tf",
+      "prompt": "GPUs are useful for training AI because they can perform many calculations at the same time.",
+      "answer": true,
+      "explanation": "Neural network training involves huge numbers of similar calculations. GPUs run many of them in parallel.",
+      "difficulty": 1,
+      "tags": ["compute"]
+    },
+    {
+      "id": "u3-q21",
+      "unitId": "u3",
+      "type": "scenario",
+      "prompt": "A team keeps tweaking its model and checks the test set after every change, stopping when the test score looks great. Why is this a problem?",
+      "options": [
+        "The test set stops being unseen, so the final score overstates how well the model will do on truly new data",
+        "Test sets should never be used at all",
+        "It guarantees the model will underfit",
+        "It deletes the training data"
+      ],
+      "answer": "The test set stops being unseen, so the final score overstates how well the model will do on truly new data",
+      "explanation": "Tuning against the test set leaks information about it into the model. Teams should tune on the validation set and use the test set only at the end.",
+      "difficulty": 3,
+      "tags": ["data splits"]
+    },
+    {
+      "id": "u3-q22",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "Which is an example of unsupervised learning?",
+      "options": [
+        "Grouping customers into segments based on shopping habits, with no categories given in advance",
+        "Teaching a model to label emails as spam using thousands of labeled emails",
+        "Training a game-playing agent with points for winning",
+        "Asking people to rank chatbot answers"
+      ],
+      "answer": "Grouping customers into segments based on shopping habits, with no categories given in advance",
+      "explanation": "No labels are provided, so the model must find the groups itself. The other options use labels, rewards or human rankings.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q23",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "Which is an example of reinforcement learning?",
+      "options": [
+        "A program learns to play a video game by gaining points for good moves and losing points for bad ones",
+        "A model learns to recognize handwritten digits from labeled images",
+        "A model groups news articles by topic without labels",
+        "A spreadsheet calculates an average"
+      ],
+      "answer": "A program learns to play a video game by gaining points for good moves and losing points for bad ones",
+      "explanation": "Rewards and penalties from the game guide the agent's learning, which is the core idea of reinforcement learning.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    },
+    {
+      "id": "u3-q24",
+      "unitId": "u3",
+      "type": "tf",
+      "prompt": "Adding more high-quality, varied training data can help reduce overfitting.",
+      "answer": true,
+      "explanation": "With more varied examples, it is harder for a model to memorize them all, so it is pushed toward patterns that generalize.",
+      "difficulty": 2,
+      "tags": ["overfitting"]
+    },
+    {
+      "id": "u3-q25",
+      "unitId": "u3",
+      "type": "mc",
+      "prompt": "What does \"garbage in, garbage out\" mean for AI training?",
+      "options": [
+        "A model trained on poor-quality or flawed data will produce poor-quality results",
+        "Models automatically delete bad data",
+        "Old computers produce worse AI",
+        "Training data must be recycled after use"
+      ],
+      "answer": "A model trained on poor-quality or flawed data will produce poor-quality results",
+      "explanation": "Models learn whatever patterns are in their data, including mistakes and biases. Good data is the foundation of a good model.",
+      "difficulty": 1,
+      "tags": ["data"]
+    },
+    {
+      "id": "u3-q26",
+      "unitId": "u3",
+      "type": "written",
+      "prompt": "What is the term for how well a model performs on new data it has not seen before?",
+      "answer": "generalization",
+      "acceptedAnswers": ["generalisation", "generalizing"],
+      "options": ["generalization", "memorization", "pretraining", "labeling"],
+      "explanation": "Generalization is the real goal of training. A model that only does well on its training data is not useful.",
+      "difficulty": 2,
+      "tags": ["overfitting"]
+    },
+    {
+      "id": "u3-q27",
+      "unitId": "u3",
+      "type": "scenario",
+      "prompt": "A company starts from a general-purpose language model and wants it to answer questions about its own products in a consistent style. Which training step fits best?",
+      "options": [
+        "Fine-tune the model on examples of the company's product questions and answers",
+        "Pretrain a brand-new model from scratch on random images",
+        "Delete the model's parameters and start over",
+        "Shrink the model's context window to zero"
+      ],
+      "answer": "Fine-tune the model on examples of the company's product questions and answers",
+      "explanation": "Fine-tuning adapts an existing model to a specific task and style using a smaller, focused dataset.",
+      "difficulty": 2,
+      "tags": ["fine-tuning"]
+    },
+    {
+      "id": "u3-q28",
+      "unitId": "u3",
+      "type": "matching",
+      "prompt": "Match each learning type to an example.",
+      "answer": [
+        { "term": "Supervised learning", "definition": "Predicting house prices from past sales with known prices" },
+        { "term": "Unsupervised learning", "definition": "Grouping songs by similarity with no genre labels" },
+        { "term": "Reinforcement learning", "definition": "A robot learning to walk by being rewarded for staying upright" }
+      ],
+      "explanation": "Supervised learning uses known answers, unsupervised learning finds structure without labels, and reinforcement learning learns from rewards.",
+      "difficulty": 1,
+      "tags": ["learning types"]
+    }
+  ]
+}

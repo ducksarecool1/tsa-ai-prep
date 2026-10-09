@@ -1,0 +1,540 @@
+{
+  "id": "u5",
+  "number": 5,
+  "title": "Evaluating AI",
+  "summary": "Accuracy, precision and recall with a confusion matrix, benchmarks and their limits, hallucinations, and why models can be confidently wrong.",
+  "lesson": {
+    "title": "How Good Is This Model?",
+    "sections": [
+      {
+        "heading": "A worked example",
+        "paragraphs": [
+          "Imagine testing a spam filter on 100 emails: 60 are really spam and 40 are real messages. The filter catches 45 of the 60 spam emails and misses 15. It also wrongly flags 5 real emails as spam and correctly leaves the other 35 alone. The table below, called a confusion matrix, organizes these four outcomes.",
+          "A true positive is spam correctly flagged (45). A false negative is spam that slipped through (15). A false positive is a real email wrongly flagged (5). A true negative is a real email correctly left alone (35)."
+        ]
+      },
+      {
+        "heading": "Three key metrics",
+        "bullets": [
+          "Accuracy: the share of all predictions that were correct. (45 + 35) / 100 = 80%.",
+          "Precision: of everything the model flagged as spam, how much really was spam? 45 / (45 + 5) = 90%.",
+          "Recall: of all the real spam, how much did the model catch? 45 / (45 + 15) = 75%."
+        ],
+        "paragraphs": [
+          "Which metric matters most depends on the cost of each mistake. If false alarms are costly, such as blocking important school emails, focus on precision. If misses are costly, such as failing to flag a possible disease in a screening test, focus on recall. The F1 score combines precision and recall into one number."
+        ]
+      },
+      {
+        "heading": "When accuracy misleads",
+        "paragraphs": [
+          "Suppose a disease affects 1 in 100 people. A lazy model that always says \"healthy\" is 99% accurate, yet it never finds a single sick person, so its recall is 0%. When one class is rare, accuracy alone can hide a useless model."
+        ]
+      },
+      {
+        "heading": "Benchmarks and their limits",
+        "paragraphs": [
+          "A benchmark is a standard set of tasks used to measure and compare models. Benchmarks are useful, but a high score does not guarantee good real-world performance. Test questions can leak into training data (called data contamination), models can be tuned to a benchmark's quirks, and real users ask messier questions than any test."
+        ]
+      },
+      {
+        "heading": "Hallucinations",
+        "paragraphs": [
+          "A hallucination is when an AI model states false or made-up information as if it were true, such as a fake quote, a wrong date or a citation to a paper that does not exist. Language models generate text that sounds likely, and their confident tone is not a sign that anything was checked. Gaps in training data and questions about events after the model's knowledge cutoff make errors more likely.",
+          "Protect yourself by checking important claims, especially names, numbers, quotes and sources, against reliable, independent sources. Asking the model \"Are you sure?\" is not a real check."
+        ]
+      }
+    ],
+    "diagram": {
+      "type": "matrix",
+      "caption": "Confusion matrix for the spam filter test (100 emails).",
+      "rowLabels": ["Actually spam (60)", "Actually not spam (40)"],
+      "colLabels": ["Predicted spam", "Predicted not spam"],
+      "cells": [
+        ["45 true positives", "15 false negatives"],
+        ["5 false positives", "35 true negatives"]
+      ]
+    }
+  },
+  "terms": [
+    {
+      "id": "u5-t-accuracy",
+      "unitId": "u5",
+      "term": "accuracy",
+      "definition": "The share of all predictions a model got right.",
+      "example": "A model that is right on 80 of 100 test emails has 80% accuracy.",
+      "confusableWith": ["precision", "recall"]
+    },
+    {
+      "id": "u5-t-precision",
+      "unitId": "u5",
+      "term": "precision",
+      "definition": "Of all the items a model labeled positive, the share that really were positive.",
+      "example": "If a filter flags 50 emails as spam and 45 really are spam, its precision is 90%.",
+      "confusableWith": ["recall", "accuracy"]
+    },
+    {
+      "id": "u5-t-recall",
+      "unitId": "u5",
+      "term": "recall",
+      "definition": "Of all the items that really were positive, the share the model found.",
+      "example": "If there are 60 spam emails and the filter catches 45, its recall is 75%.",
+      "acceptedAnswers": ["sensitivity", "true positive rate"],
+      "confusableWith": ["precision", "accuracy"]
+    },
+    {
+      "id": "u5-t-confusion-matrix",
+      "unitId": "u5",
+      "term": "confusion matrix",
+      "definition": "A table comparing a model's predictions with the actual answers, showing true and false positives and negatives.",
+      "example": "A 2-by-2 grid showing how many spam and real emails were sorted correctly and incorrectly."
+    },
+    {
+      "id": "u5-t-tp",
+      "unitId": "u5",
+      "term": "true positive",
+      "definition": "A case the model correctly labeled as positive.",
+      "example": "A spam email that the filter correctly flags as spam.",
+      "acceptedAnswers": ["true positives"],
+      "confusableWith": ["false positive"]
+    },
+    {
+      "id": "u5-t-fp",
+      "unitId": "u5",
+      "term": "false positive",
+      "definition": "A case the model wrongly labeled as positive (a false alarm).",
+      "example": "A real email from your teacher that gets sent to the spam folder.",
+      "acceptedAnswers": ["false positives", "false alarm"],
+      "confusableWith": ["false negative", "true positive"]
+    },
+    {
+      "id": "u5-t-fn",
+      "unitId": "u5",
+      "term": "false negative",
+      "definition": "A positive case the model missed by labeling it negative.",
+      "example": "A spam email that lands in your inbox.",
+      "acceptedAnswers": ["false negatives"],
+      "confusableWith": ["false positive", "true negative"]
+    },
+    {
+      "id": "u5-t-tn",
+      "unitId": "u5",
+      "term": "true negative",
+      "definition": "A case the model correctly labeled as negative.",
+      "example": "A real email that the filter correctly leaves in your inbox.",
+      "acceptedAnswers": ["true negatives"],
+      "confusableWith": ["false negative"]
+    },
+    {
+      "id": "u5-t-f1",
+      "unitId": "u5",
+      "term": "F1 score",
+      "definition": "A single metric that balances precision and recall (their harmonic mean).",
+      "example": "Two spam filters can be compared by their F1 scores when both precision and recall matter.",
+      "acceptedAnswers": ["F1", "F-score", "F1-score", "F measure"]
+    },
+    {
+      "id": "u5-t-benchmark",
+      "unitId": "u5",
+      "term": "benchmark",
+      "definition": "A standard set of tasks or questions used to measure and compare AI models.",
+      "example": "A collection of thousands of math problems used to compare how well different models reason.",
+      "acceptedAnswers": ["benchmarks", "benchmark test"]
+    },
+    {
+      "id": "u5-t-hallucination",
+      "unitId": "u5",
+      "term": "hallucination",
+      "definition": "When an AI model states false or made-up information as if it were true.",
+      "example": "A chatbot citing a research paper that does not exist.",
+      "acceptedAnswers": ["hallucinations", "hallucinating", "confabulation"]
+    },
+    {
+      "id": "u5-t-contamination",
+      "unitId": "u5",
+      "term": "data contamination",
+      "definition": "When test questions or their answers appear in a model's training data, making its test score look better than it should.",
+      "example": "A model scores highly on a quiz because the quiz was posted online and ended up in its training data.",
+      "acceptedAnswers": ["contamination", "benchmark contamination", "test set contamination"]
+    },
+    {
+      "id": "u5-t-cutoff",
+      "unitId": "u5",
+      "term": "knowledge cutoff",
+      "definition": "The point in time after which a model has little or no information from its training data.",
+      "example": "A model may not know about an election held after its knowledge cutoff.",
+      "acceptedAnswers": ["training cutoff", "training data cutoff", "cutoff date"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u5-q01",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What does accuracy measure?",
+      "options": [
+        "The share of all predictions that were correct",
+        "The share of predicted positives that were actually positive",
+        "The share of actual positives the model found",
+        "How fast the model runs"
+      ],
+      "answer": "The share of all predictions that were correct",
+      "explanation": "Accuracy counts every correct prediction, positive or negative, out of the total. The second and third options describe precision and recall.",
+      "difficulty": 1,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q02",
+      "unitId": "u5",
+      "type": "written",
+      "prompt": "Which metric answers the question \"Of all the items the model flagged as positive, how many really were positive?\"",
+      "answer": "precision",
+      "acceptedAnswers": [],
+      "confusableWith": ["recall", "accuracy"],
+      "options": ["precision", "recall", "accuracy", "loss"],
+      "explanation": "Precision looks only at what the model flagged and asks how much of it was right.",
+      "difficulty": 2,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q03",
+      "unitId": "u5",
+      "type": "written",
+      "prompt": "Which metric answers the question \"Of all the items that really were positive, how many did the model find?\"",
+      "answer": "recall",
+      "acceptedAnswers": ["sensitivity", "true positive rate"],
+      "confusableWith": ["precision", "accuracy"],
+      "options": ["recall", "precision", "accuracy", "loss"],
+      "explanation": "Recall looks at all the real positives and asks how many the model caught.",
+      "difficulty": 2,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q04",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "A spam filter is tested on 100 emails. It catches 45 of the 60 spam emails and wrongly flags 5 of the 40 real emails. What is its precision?",
+      "options": ["90%", "75%", "80%", "45%"],
+      "answer": "90%",
+      "acceptedAnswers": ["90", "90 percent"],
+      "explanation": "Precision = true positives / everything flagged as spam = 45 / (45 + 5) = 90%.",
+      "difficulty": 3,
+      "tags": ["metrics", "math"]
+    },
+    {
+      "id": "u5-q05",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "The same spam filter caught 45 of the 60 spam emails and wrongly flagged 5 of the 40 real emails. What is its recall?",
+      "options": ["75%", "90%", "80%", "60%"],
+      "answer": "75%",
+      "acceptedAnswers": ["75", "75 percent"],
+      "explanation": "Recall = true positives / all real spam = 45 / 60 = 75%.",
+      "difficulty": 3,
+      "tags": ["metrics", "math"]
+    },
+    {
+      "id": "u5-q06",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "The same spam filter caught 45 of the 60 spam emails and correctly left 35 of the 40 real emails alone. What is its accuracy?",
+      "options": ["80%", "90%", "75%", "85%"],
+      "answer": "80%",
+      "acceptedAnswers": ["80", "80 percent"],
+      "explanation": "Accuracy = correct predictions / all predictions = (45 + 35) / 100 = 80%.",
+      "difficulty": 2,
+      "tags": ["metrics", "math"]
+    },
+    {
+      "id": "u5-q07",
+      "unitId": "u5",
+      "type": "matching",
+      "prompt": "Match each confusion matrix outcome to its meaning for a spam filter.",
+      "answer": [
+        { "term": "True positive", "definition": "Spam correctly flagged as spam" },
+        { "term": "False positive", "definition": "A real email wrongly flagged as spam" },
+        { "term": "False negative", "definition": "Spam that slipped through as a real email" },
+        { "term": "True negative", "definition": "A real email correctly left alone" }
+      ],
+      "explanation": "\"True\" or \"false\" says whether the model was right, and \"positive\" or \"negative\" says what it predicted.",
+      "difficulty": 2,
+      "tags": ["confusion matrix"]
+    },
+    {
+      "id": "u5-q08",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "A rare disease affects 1 in 100 people. A model that always predicts \"healthy\" would have about what accuracy, and why is that misleading?",
+      "options": [
+        "About 99%, but it never finds a single sick person, so its recall is 0%",
+        "About 1%, because it is always wrong",
+        "50%, because there are two possible answers",
+        "100%, because healthy people are the majority"
+      ],
+      "answer": "About 99%, but it never finds a single sick person, so its recall is 0%",
+      "explanation": "It is right about the 99 healthy people but misses every sick one. With imbalanced data, accuracy alone can hide a useless model.",
+      "difficulty": 3,
+      "tags": ["metrics", "imbalanced data"]
+    },
+    {
+      "id": "u5-q09",
+      "unitId": "u5",
+      "type": "tf",
+      "prompt": "A model can have high accuracy and still be useless if one class is very rare.",
+      "answer": true,
+      "explanation": "Always predicting the common class can score high accuracy while never catching the rare cases that matter.",
+      "difficulty": 2,
+      "tags": ["metrics", "imbalanced data"]
+    },
+    {
+      "id": "u5-q10",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "For a disease screening tool, missing a real case is far worse than a false alarm that leads to a follow-up test. Which metric should the team prioritize?",
+      "options": ["Recall", "Precision", "Training speed", "Number of parameters"],
+      "answer": "Recall",
+      "acceptedAnswers": ["sensitivity"],
+      "confusableWith": ["precision"],
+      "explanation": "Recall measures how many real cases are caught. When misses are dangerous, high recall matters most.",
+      "difficulty": 2,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q11",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "A school's email filter keeps blocking real messages from teachers as spam, and those false alarms are the bigger problem. Which metric should be improved?",
+      "options": ["Precision", "Recall", "Loss", "Context window"],
+      "answer": "Precision",
+      "acceptedAnswers": [],
+      "confusableWith": ["recall"],
+      "explanation": "False positives lower precision. Improving precision means fewer real emails get wrongly flagged.",
+      "difficulty": 2,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q12",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What is an AI hallucination?",
+      "options": [
+        "When a model produces information that sounds confident but is false or made up",
+        "When a model runs out of memory",
+        "When a model is turned off during training",
+        "When a model refuses to answer a question"
+      ],
+      "answer": "When a model produces information that sounds confident but is false or made up",
+      "explanation": "Hallucinations are fluent, confident errors, such as invented quotes, facts or citations.",
+      "difficulty": 1,
+      "tags": ["hallucination"]
+    },
+    {
+      "id": "u5-q13",
+      "unitId": "u5",
+      "type": "written",
+      "prompt": "What is the term for when an AI model states false or made-up information as if it were true?",
+      "answer": "hallucination",
+      "acceptedAnswers": ["hallucinations", "hallucinating", "confabulation"],
+      "options": ["hallucination", "overfitting", "precision", "fine-tuning"],
+      "explanation": "The term \"hallucination\" describes confident but false output. Checking important claims is the best defense.",
+      "difficulty": 1,
+      "tags": ["hallucination"]
+    },
+    {
+      "id": "u5-q14",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "Why can language models be confidently wrong?",
+      "options": [
+        "They generate text that sounds likely, and a confident tone does not mean the facts were checked",
+        "They are programmed to sound unsure only when they are right",
+        "They only make mistakes when the internet is down",
+        "They always know when they are wrong but hide it"
+      ],
+      "answer": "They generate text that sounds likely, and a confident tone does not mean the facts were checked",
+      "explanation": "Fluency and correctness are different things. A model can write a polished, certain-sounding sentence that is false.",
+      "difficulty": 2,
+      "tags": ["hallucination"]
+    },
+    {
+      "id": "u5-q15",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What is a benchmark in AI?",
+      "options": [
+        "A standard set of tasks or questions used to measure and compare models",
+        "A bench where engineers sit while training models",
+        "The final step of deploying a model",
+        "A type of neural network layer"
+      ],
+      "answer": "A standard set of tasks or questions used to measure and compare models",
+      "explanation": "Benchmarks give everyone the same test so models can be compared fairly, although they have limits.",
+      "difficulty": 1,
+      "tags": ["benchmarks"]
+    },
+    {
+      "id": "u5-q16",
+      "unitId": "u5",
+      "type": "tf",
+      "prompt": "A high score on a benchmark guarantees that a model will perform well in every real-world situation.",
+      "answer": false,
+      "explanation": "Benchmarks cover only certain tasks and can be contaminated or gamed. Real-world use is messier than any test.",
+      "difficulty": 1,
+      "tags": ["benchmarks"]
+    },
+    {
+      "id": "u5-q17",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What is data contamination when evaluating a model?",
+      "options": [
+        "When test questions or their answers appeared in the model's training data, inflating its score",
+        "When a virus infects the training computer",
+        "When the model's output contains typos",
+        "When users send a model too many prompts"
+      ],
+      "answer": "When test questions or their answers appeared in the model's training data, inflating its score",
+      "explanation": "If a model has already seen the test, its score measures memory rather than skill.",
+      "difficulty": 3,
+      "tags": ["benchmarks"]
+    },
+    {
+      "id": "u5-q18",
+      "unitId": "u5",
+      "type": "written",
+      "prompt": "What metric combines precision and recall into a single number?",
+      "answer": "F1 score",
+      "acceptedAnswers": ["F1", "F-score", "F1-score", "F measure"],
+      "options": ["F1 score", "accuracy", "loss", "learning rate"],
+      "explanation": "The F1 score is the harmonic mean of precision and recall. It is high only when both are high.",
+      "difficulty": 3,
+      "tags": ["metrics"]
+    },
+    {
+      "id": "u5-q19",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "A chatbot gives you a citation for a research paper, complete with authors and a title. What should you do before using it?",
+      "options": [
+        "Search for the paper yourself to confirm it exists and says what the chatbot claims",
+        "Use it right away, since chatbots cannot invent citations",
+        "Ask the chatbot if it is sure, and trust a \"yes\"",
+        "Change the year so it looks more recent"
+      ],
+      "answer": "Search for the paper yourself to confirm it exists and says what the chatbot claims",
+      "explanation": "Chatbots can produce realistic-looking citations to papers that do not exist. Always verify sources yourself.",
+      "difficulty": 1,
+      "tags": ["hallucination", "verification"]
+    },
+    {
+      "id": "u5-q20",
+      "unitId": "u5",
+      "type": "tf",
+      "prompt": "Asking a chatbot \"Are you sure?\" is a reliable way to confirm that a fact is true.",
+      "answer": false,
+      "explanation": "The model may repeat or change its answer without checking anything. Reliable, independent sources are the real check.",
+      "difficulty": 1,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u5-q21",
+      "unitId": "u5",
+      "type": "ordering",
+      "prompt": "Put these steps for fact-checking an AI answer in order.",
+      "answer": [
+        "Identify the specific claims, names, numbers and quotes",
+        "Look up each claim in reliable, independent sources",
+        "Compare what the sources say with the AI's answer",
+        "Correct or remove anything you could not confirm"
+      ],
+      "explanation": "First find what needs checking, then check it, compare, and fix or drop unconfirmed claims.",
+      "difficulty": 1,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u5-q22",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What is a confusion matrix?",
+      "options": [
+        "A table that compares a model's predictions with the actual answers, showing each kind of correct and incorrect result",
+        "A list of words the model finds confusing",
+        "A chart of how long training took",
+        "A grid of GPU temperatures"
+      ],
+      "answer": "A table that compares a model's predictions with the actual answers, showing each kind of correct and incorrect result",
+      "explanation": "The matrix shows true positives, false positives, false negatives and true negatives, which are used to calculate accuracy, precision and recall.",
+      "difficulty": 1,
+      "tags": ["confusion matrix"]
+    },
+    {
+      "id": "u5-q23",
+      "unitId": "u5",
+      "type": "written",
+      "prompt": "For a spam filter, a real email that gets wrongly marked as spam is called a false ___ . Type the full term.",
+      "answer": "false positive",
+      "acceptedAnswers": ["positive", "false positives", "false alarm"],
+      "confusableWith": ["false negative", "negative", "true positive"],
+      "options": ["false positive", "false negative", "true positive", "true negative"],
+      "explanation": "The filter said \"positive\" (spam) and was wrong, so it is a false positive.",
+      "difficulty": 2,
+      "tags": ["confusion matrix"]
+    },
+    {
+      "id": "u5-q24",
+      "unitId": "u5",
+      "type": "scenario",
+      "prompt": "Model A scores 85% on a benchmark and Model B scores 84%. Later, researchers find that some of the test questions were in Model A's training data. What is the most reasonable conclusion?",
+      "options": [
+        "Model A's score may be inflated, so the comparison is not reliable",
+        "Model A is definitely the better model",
+        "Model B must have cheated",
+        "Benchmarks can never be used for anything"
+      ],
+      "answer": "Model A's score may be inflated, so the comparison is not reliable",
+      "explanation": "Contamination means Model A may have memorized some answers. A one-point gap tells us little in that situation.",
+      "difficulty": 3,
+      "tags": ["benchmarks"]
+    },
+    {
+      "id": "u5-q25",
+      "unitId": "u5",
+      "type": "mc",
+      "prompt": "What is a model's knowledge cutoff?",
+      "options": [
+        "The point in time after which it has little or no information from its training data",
+        "The maximum length of a prompt",
+        "The moment the model is deleted",
+        "The number of facts the model can store"
+      ],
+      "answer": "The point in time after which it has little or no information from its training data",
+      "explanation": "Models are trained on data collected up to some date. Questions about later events are more likely to get wrong or outdated answers.",
+      "difficulty": 2,
+      "tags": ["hallucination"]
+    },
+    {
+      "id": "u5-q26",
+      "unitId": "u5",
+      "type": "tf",
+      "prompt": "A model can do well on its test set but worse after launch if real-world data is different from the data it was tested on.",
+      "answer": true,
+      "explanation": "Test results only predict performance on data similar to the test set. If users or conditions differ, performance can drop.",
+      "difficulty": 2,
+      "tags": ["evaluation"]
+    },
+    {
+      "id": "u5-q27",
+      "unitId": "u5",
+      "type": "matching",
+      "prompt": "Match each metric to the question it answers.",
+      "answer": [
+        { "term": "Accuracy", "definition": "What fraction of all predictions were right?" },
+        { "term": "Precision", "definition": "When it says \"yes,\" how often is it right?" },
+        { "term": "Recall", "definition": "Of all the real \"yes\" cases, how many did it catch?" },
+        { "term": "F1 score", "definition": "What single number balances precision and recall?" }
+      ],
+      "explanation": "Each metric looks at a different slice of the confusion matrix, so they can tell different stories about the same model.",
+      "difficulty": 2,
+      "tags": ["metrics"]
+    }
+  ]
+}

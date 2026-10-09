@@ -1,0 +1,562 @@
+{
+  "id": "u2",
+  "number": 2,
+  "title": "How AI Works",
+  "summary": "Data, features, models and parameters; rule-based versus learned systems; neural networks; and how large language models predict the next token.",
+  "lesson": {
+    "title": "Inside an AI System",
+    "sections": [
+      {
+        "heading": "Inputs, models and outputs",
+        "paragraphs": [
+          "Every AI system takes in an input, processes it with a model, and produces an output. For a spam filter, the input is an email and the output is a label: spam or not spam. For a chatbot, the input is your message and the output is a reply.",
+          "Data is the information a system learns from or makes predictions about. Features are the measurable properties of an input that a model uses. A model that predicts house prices might use features such as square footage, number of bedrooms and location.",
+          "A model is a mathematical system that turns inputs into outputs. Inside it are parameters: numbers the model adjusts during training so its outputs become more accurate. Large language models can have billions of parameters."
+        ]
+      },
+      {
+        "heading": "Rules versus learning",
+        "paragraphs": [
+          "In a rule-based system, people write the rules: \"If the email contains this phrase, mark it as spam.\" This works for simple, predictable problems. In a learned system, the program discovers patterns from many examples. Recognizing a cat in a photo is nearly impossible to describe with hand-written rules, because cats appear in endless poses, colors and lighting, but a model can learn it from thousands of labeled photos."
+        ]
+      },
+      {
+        "heading": "Neural networks",
+        "paragraphs": [
+          "A neural network is a model loosely inspired by the brain, built from simple units called neurons (or nodes) arranged in layers. The input layer receives the data, one or more hidden layers transform it, and the output layer gives the result. A network with many hidden layers is called deep.",
+          "Each connection between neurons has a weight that sets how strongly one neuron influences the next. A neuron multiplies each input by its weight, adds them up, adds a bias (an extra number that shifts the total), and passes the result through an activation function. The activation function decides how strongly the neuron passes its signal on and lets the network learn complex, non-linear patterns. A popular one, ReLU, turns negative values into zero and passes positive values through unchanged. Weights and biases are the network's parameters."
+        ]
+      },
+      {
+        "heading": "How large language models write",
+        "paragraphs": [
+          "A large language model (LLM) is a neural network trained on enormous amounts of text to predict the next token. A token is a chunk of text, often a whole word, part of a word or a punctuation mark. Given some text, the model calculates how likely each possible next token is, picks one, adds it to the text, and repeats. That loop produces whole answers one token at a time.",
+          "The context window is the maximum number of tokens the model can consider at once, including your prompt and its reply. Text beyond that limit is not seen. Because an LLM generates text that is likely rather than text that has been checked, it can write fluent sentences that are false."
+        ]
+      }
+    ],
+    "diagramAfter": 2,
+    "diagram": {
+      "type": "network",
+      "caption": "Data flows left to right: an input layer, two hidden layers and an output layer. Every line is a weighted connection.",
+      "layers": [
+        { "label": "Input layer", "nodes": 3 },
+        { "label": "Hidden layer", "nodes": 4 },
+        { "label": "Hidden layer", "nodes": 4 },
+        { "label": "Output layer", "nodes": 2 }
+      ]
+    },
+    "analogy": {
+      "title": "Analogy: a sound mixing board",
+      "text": "Picture a sound engineer's mixing board covered in volume knobs. Each knob is like a weight, turning one signal up or down. Training is like slowly adjusting every knob until the music sounds right, except a big network has billions of knobs."
+    }
+  },
+  "terms": [
+    {
+      "id": "u2-t-data",
+      "unitId": "u2",
+      "term": "data",
+      "definition": "The information an AI system learns from or makes predictions about, such as text, images, numbers or sound.",
+      "example": "Thousands of labeled photos of plants are the data for a plant-identification app."
+    },
+    {
+      "id": "u2-t-feature",
+      "unitId": "u2",
+      "term": "feature",
+      "definition": "A measurable property of an input that a model uses to make a prediction.",
+      "example": "Square footage and number of bedrooms are features for predicting a house's price.",
+      "acceptedAnswers": ["features", "input feature"],
+      "confusableWith": ["parameter", "label"]
+    },
+    {
+      "id": "u2-t-model",
+      "unitId": "u2",
+      "term": "model",
+      "definition": "A mathematical system that turns inputs into outputs based on patterns it learned from data.",
+      "example": "A trained spam-detection model takes in an email and outputs \"spam\" or \"not spam.\"",
+      "acceptedAnswers": ["AI model", "models"]
+    },
+    {
+      "id": "u2-t-parameter",
+      "unitId": "u2",
+      "term": "parameter",
+      "definition": "An internal number, such as a weight or bias, that a model adjusts during training.",
+      "example": "A large language model can have billions of parameters.",
+      "acceptedAnswers": ["parameters", "model parameters"],
+      "confusableWith": ["feature", "hyperparameter"]
+    },
+    {
+      "id": "u2-t-rule-based",
+      "unitId": "u2",
+      "term": "rule-based system",
+      "definition": "An AI system that follows if-then rules written by people instead of learning from data.",
+      "example": "A homework helper that says \"If the answer is 42, show a smiley face\" follows a fixed rule.",
+      "acceptedAnswers": ["rule based system", "rules-based system", "rule-based AI", "rule based"]
+    },
+    {
+      "id": "u2-t-nn",
+      "unitId": "u2",
+      "term": "neural network",
+      "definition": "A model made of layers of connected units (neurons) that learns by adjusting the weights of its connections.",
+      "example": "The model that recognizes handwritten numbers on a check is often a neural network.",
+      "acceptedAnswers": ["NN", "neural networks", "artificial neural network", "neural net"]
+    },
+    {
+      "id": "u2-t-neuron",
+      "unitId": "u2",
+      "term": "neuron",
+      "definition": "A single unit in a neural network that combines its weighted inputs, adds a bias and applies an activation function.",
+      "example": "A small network might have 10 neurons in its hidden layer.",
+      "acceptedAnswers": ["node", "artificial neuron", "neurons", "unit"]
+    },
+    {
+      "id": "u2-t-weight",
+      "unitId": "u2",
+      "term": "weight",
+      "definition": "A number on a connection in a neural network that sets how strongly one neuron influences the next.",
+      "example": "During training, the weight on an important connection might grow larger.",
+      "acceptedAnswers": ["weights", "connection weight"],
+      "confusableWith": ["bias"]
+    },
+    {
+      "id": "u2-t-bias",
+      "unitId": "u2",
+      "term": "bias",
+      "definition": "In a neural network, an extra learned number added to a neuron's total that shifts its output up or down.",
+      "example": "A neuron's bias lets it produce a useful output even when all of its inputs are zero.",
+      "acceptedAnswers": ["bias term", "biases"],
+      "confusableWith": ["weight"]
+    },
+    {
+      "id": "u2-t-activation",
+      "unitId": "u2",
+      "term": "activation function",
+      "definition": "A function that decides how strongly a neuron passes its signal on, letting a network learn complex, non-linear patterns.",
+      "example": "ReLU is an activation function that turns negative numbers into zero.",
+      "acceptedAnswers": ["activation", "activation functions"]
+    },
+    {
+      "id": "u2-t-hidden",
+      "unitId": "u2",
+      "term": "hidden layer",
+      "definition": "A layer of neurons between a network's input layer and output layer.",
+      "example": "A deep network may have dozens of hidden layers.",
+      "acceptedAnswers": ["hidden layers"],
+      "confusableWith": ["input layer", "output layer"]
+    },
+    {
+      "id": "u2-t-llm",
+      "unitId": "u2",
+      "term": "large language model",
+      "definition": "A neural network trained on huge amounts of text to predict the next token, which lets it generate and work with language.",
+      "example": "The model behind a chatbot that drafts emails is a large language model.",
+      "acceptedAnswers": ["LLM", "LLMs", "large language models"]
+    },
+    {
+      "id": "u2-t-token",
+      "unitId": "u2",
+      "term": "token",
+      "definition": "A chunk of text, often a word, part of a word or a punctuation mark, that a language model reads and writes.",
+      "example": "The word \"unbelievable\" might be split into tokens such as \"un\", \"believ\" and \"able.\"",
+      "acceptedAnswers": ["tokens"]
+    },
+    {
+      "id": "u2-t-context-window",
+      "unitId": "u2",
+      "term": "context window",
+      "definition": "The maximum number of tokens a language model can consider at one time, including the prompt and its reply.",
+      "example": "If a document is longer than the context window, the model cannot see all of it at once.",
+      "acceptedAnswers": ["context length", "context size"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u2-q01",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "In AI, what is a model?",
+      "options": [
+        "A mathematical system that turns inputs into outputs based on patterns it learned",
+        "A person who poses for photos used in training",
+        "A small physical copy of a robot",
+        "A list of every answer the AI will ever give"
+      ],
+      "answer": "A mathematical system that turns inputs into outputs based on patterns it learned",
+      "explanation": "A model is the learned system at the heart of an AI application. It takes an input, such as an email, and produces an output, such as a label.",
+      "difficulty": 1,
+      "tags": ["models"]
+    },
+    {
+      "id": "u2-q02",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "What do we call the internal numbers, such as weights and biases, that a model adjusts during training?",
+      "answer": "parameters",
+      "acceptedAnswers": ["parameter", "model parameters"],
+      "confusableWith": ["features", "hyperparameters"],
+      "options": ["parameters", "features", "labels", "tokens"],
+      "explanation": "Parameters are the adjustable numbers inside a model. Training changes them so the model's outputs get closer to the right answers.",
+      "difficulty": 1,
+      "tags": ["parameters"]
+    },
+    {
+      "id": "u2-q03",
+      "unitId": "u2",
+      "type": "scenario",
+      "prompt": "A model predicts house prices using square footage, number of bedrooms and location. What are these three pieces of information called?",
+      "options": ["Features", "Parameters", "Labels", "Tokens"],
+      "answer": "Features",
+      "acceptedAnswers": ["feature", "input features"],
+      "confusableWith": ["parameters", "labels"],
+      "explanation": "Features are properties of the input that a model uses to make a prediction. Parameters are numbers inside the model, not information about the house.",
+      "difficulty": 2,
+      "tags": ["features"]
+    },
+    {
+      "id": "u2-q04",
+      "unitId": "u2",
+      "type": "tf",
+      "prompt": "In a rule-based system, people write the rules; in a machine learning system, the program learns patterns from examples.",
+      "answer": true,
+      "explanation": "Rule-based systems follow instructions people wrote. Machine learning systems discover patterns from data.",
+      "difficulty": 1,
+      "tags": ["rules vs learning"]
+    },
+    {
+      "id": "u2-q05",
+      "unitId": "u2",
+      "type": "scenario",
+      "prompt": "You want a program that recognizes cats in any photo. Why is machine learning usually a better approach than writing rules by hand?",
+      "options": [
+        "Cats appear in endless poses, colors and lighting, so learning from many example photos is far easier than writing rules for every case",
+        "Machine learning does not need any data",
+        "Hand-written rules cannot run on computers",
+        "Hand-written rules are always more accurate than learned models"
+      ],
+      "answer": "Cats appear in endless poses, colors and lighting, so learning from many example photos is far easier than writing rules for every case",
+      "explanation": "Some patterns are too varied to describe with rules. A model trained on many labeled photos can learn what cats look like across many situations.",
+      "difficulty": 1,
+      "tags": ["rules vs learning"]
+    },
+    {
+      "id": "u2-q06",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "What is a neural network?",
+      "options": [
+        "A model made of connected layers of simple units that learns by adjusting weights",
+        "A group of computers connected to the internet",
+        "A complete map of the human brain stored in a computer",
+        "A list of if-then rules"
+      ],
+      "answer": "A model made of connected layers of simple units that learns by adjusting weights",
+      "explanation": "A neural network passes data through layers of neurons. Training adjusts the weights on the connections so the network's outputs improve.",
+      "difficulty": 1,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q07",
+      "unitId": "u2",
+      "type": "matching",
+      "prompt": "Match each neural network part to its description.",
+      "answer": [
+        { "term": "Neuron", "definition": "A unit that combines its inputs and produces an output" },
+        { "term": "Weight", "definition": "A number that sets how strongly one connection affects the next neuron" },
+        { "term": "Bias", "definition": "An extra number added to a neuron's total that shifts its output" },
+        { "term": "Activation function", "definition": "Decides how strongly a neuron passes its signal on" }
+      ],
+      "explanation": "A neuron multiplies inputs by weights, adds a bias, then applies an activation function. Weights and biases are learned during training.",
+      "difficulty": 2,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q08",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "What are the layers between a neural network's input layer and output layer called?",
+      "answer": "hidden layers",
+      "acceptedAnswers": ["hidden layer", "hidden"],
+      "confusableWith": ["input layer", "output layer"],
+      "options": ["hidden layers", "output layers", "token layers", "input layers"],
+      "explanation": "Hidden layers sit between input and output and transform the data step by step. Networks with many hidden layers are called deep.",
+      "difficulty": 1,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q09",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "What does an activation function do inside a neural network?",
+      "options": [
+        "Decides how strongly a neuron passes its signal on, letting the network learn non-linear patterns",
+        "Turns the computer on",
+        "Stores the training data",
+        "Counts the number of layers"
+      ],
+      "answer": "Decides how strongly a neuron passes its signal on, letting the network learn non-linear patterns",
+      "explanation": "Without activation functions, stacking layers would be no more powerful than a single layer. Activation functions let networks model curved, complex relationships.",
+      "difficulty": 2,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q10",
+      "unitId": "u2",
+      "type": "tf",
+      "prompt": "Neural networks are exact copies of how the human brain works.",
+      "answer": false,
+      "explanation": "Neural networks are only loosely inspired by the brain. Artificial neurons are simple math functions and work very differently from biological neurons.",
+      "difficulty": 1,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q11",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "At its core, what is a large language model trained to do?",
+      "options": [
+        "Predict the next token in a sequence of text",
+        "Look up answers in a fixed database of facts",
+        "Translate only between English and Spanish",
+        "Copy and paste web pages"
+      ],
+      "answer": "Predict the next token in a sequence of text",
+      "explanation": "LLMs learn by predicting the next token across huge amounts of text. Repeating that prediction one token at a time lets them write whole answers.",
+      "difficulty": 1,
+      "tags": ["LLMs"]
+    },
+    {
+      "id": "u2-q12",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "What is the word for a chunk of text, often a word or part of a word, that a language model reads and writes?",
+      "answer": "token",
+      "acceptedAnswers": ["tokens"],
+      "options": ["token", "pixel", "parameter", "label"],
+      "explanation": "Language models split text into tokens. A token can be a whole word, part of a word or a punctuation mark.",
+      "difficulty": 1,
+      "tags": ["LLMs", "tokens"]
+    },
+    {
+      "id": "u2-q13",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "What is the maximum amount of text, measured in tokens, that a language model can consider at one time called?",
+      "answer": "context window",
+      "acceptedAnswers": ["context length", "context size"],
+      "options": ["context window", "parameter count", "learning rate", "training set"],
+      "explanation": "The context window limits how many tokens the model can see at once, including your prompt and its reply.",
+      "difficulty": 2,
+      "tags": ["LLMs", "context window"]
+    },
+    {
+      "id": "u2-q14",
+      "unitId": "u2",
+      "type": "scenario",
+      "prompt": "You paste a very long book into a chatbot and ask about the first chapter. It answers as if it never saw that chapter. What is the most likely reason?",
+      "options": [
+        "The text was longer than the model's context window, so the first part was not included",
+        "The model was never trained on any books",
+        "The model deliberately ignores first chapters",
+        "The model's activation function stopped working"
+      ],
+      "answer": "The text was longer than the model's context window, so the first part was not included",
+      "explanation": "A model can only consider text that fits in its context window. When input is too long, part of it is cut off or never reaches the model.",
+      "difficulty": 2,
+      "tags": ["LLMs", "context window"]
+    },
+    {
+      "id": "u2-q15",
+      "unitId": "u2",
+      "type": "tf",
+      "prompt": "A large language model writes a long answer by predicting one token at a time and adding each one to the text.",
+      "answer": true,
+      "explanation": "Each new token is chosen based on the text so far, then added to it. The process repeats until the answer is complete.",
+      "difficulty": 1,
+      "tags": ["LLMs"]
+    },
+    {
+      "id": "u2-q16",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "Which is the best description of data in AI?",
+      "options": [
+        "The examples and information a model learns from or makes predictions about",
+        "The computer's screen resolution",
+        "The programming language a model is written in",
+        "The electricity a computer uses"
+      ],
+      "answer": "The examples and information a model learns from or makes predictions about",
+      "explanation": "Data can be text, images, audio, numbers or anything else a model can process. Models learn their patterns from it.",
+      "difficulty": 1,
+      "tags": ["data"]
+    },
+    {
+      "id": "u2-q17",
+      "unitId": "u2",
+      "type": "scenario",
+      "prompt": "A spam filter receives an email and labels it \"spam.\" In this example, what are the input and the output?",
+      "options": [
+        "Input: the email; output: the label \"spam\"",
+        "Input: the label \"spam\"; output: the email",
+        "Input: the programmer; output: the computer",
+        "Input: the parameters; output: the training data"
+      ],
+      "answer": "Input: the email; output: the label \"spam\"",
+      "explanation": "The input is what goes into the model, and the output is what the model produces. Here the email goes in and a label comes out.",
+      "difficulty": 1,
+      "tags": ["inputs and outputs"]
+    },
+    {
+      "id": "u2-q18",
+      "unitId": "u2",
+      "type": "ordering",
+      "prompt": "Put the steps of a single neuron's calculation in order.",
+      "answer": [
+        "Receive inputs from the previous layer",
+        "Multiply each input by its weight",
+        "Add the weighted inputs together plus the bias",
+        "Apply the activation function",
+        "Send the result to the next layer"
+      ],
+      "explanation": "A neuron weighs each input, sums them with its bias, applies its activation function, and passes the result forward.",
+      "difficulty": 2,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q19",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "Why is a neural network with many hidden layers called \"deep\"?",
+      "options": [
+        "Because it has many layers stacked between input and output",
+        "Because it understands topics as deeply as a human expert",
+        "Because it is stored deep inside the computer",
+        "Because it can only be used for serious topics"
+      ],
+      "answer": "Because it has many layers stacked between input and output",
+      "explanation": "\"Deep\" describes the number of layers, not the depth of understanding.",
+      "difficulty": 1,
+      "tags": ["deep learning"]
+    },
+    {
+      "id": "u2-q20",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "In a neural network, what is the number on each connection that training adjusts to change how much one neuron influences another?",
+      "answer": "weight",
+      "acceptedAnswers": ["weights", "connection weight"],
+      "confusableWith": ["bias"],
+      "options": ["weight", "bias", "token", "feature"],
+      "explanation": "Each connection has a weight. Larger weights mean the sending neuron has more influence on the receiving neuron.",
+      "difficulty": 1,
+      "tags": ["neural networks"]
+    },
+    {
+      "id": "u2-q21",
+      "unitId": "u2",
+      "type": "tf",
+      "prompt": "A larger context window lets a language model consider more text at once.",
+      "answer": true,
+      "explanation": "The context window is measured in tokens. A bigger window means longer documents and conversations fit.",
+      "difficulty": 1,
+      "tags": ["context window"]
+    },
+    {
+      "id": "u2-q22",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "What is the main difference between a feature and a parameter?",
+      "options": [
+        "A feature is information about the input; a parameter is a number inside the model learned during training",
+        "They are the same thing",
+        "A parameter is information about the input; a feature is learned during training",
+        "Features exist only in rule-based systems"
+      ],
+      "answer": "A feature is information about the input; a parameter is a number inside the model learned during training",
+      "explanation": "Features describe the thing being predicted about, like a house's size. Parameters belong to the model and are tuned during training.",
+      "difficulty": 2,
+      "tags": ["features", "parameters"]
+    },
+    {
+      "id": "u2-q23",
+      "unitId": "u2",
+      "type": "scenario",
+      "prompt": "A chatbot confidently states a made-up fact about a real person. Based on how LLMs work, why can this happen?",
+      "options": [
+        "It generates text that sounds likely based on patterns, and that process does not check facts",
+        "It is designed to lie on purpose",
+        "It found the fake fact and decided to repeat it to trick you",
+        "Its context window was empty"
+      ],
+      "answer": "It generates text that sounds likely based on patterns, and that process does not check facts",
+      "explanation": "An LLM predicts plausible next tokens. Plausible and true are not the same, so it can produce confident false statements.",
+      "difficulty": 2,
+      "tags": ["LLMs", "hallucination"]
+    },
+    {
+      "id": "u2-q24",
+      "unitId": "u2",
+      "type": "matching",
+      "prompt": "Match each term to its description.",
+      "answer": [
+        { "term": "Input", "definition": "The information given to a model" },
+        { "term": "Output", "definition": "The result the model produces" },
+        { "term": "Model", "definition": "The learned system that maps inputs to outputs" },
+        { "term": "Parameters", "definition": "Internal numbers adjusted during training" }
+      ],
+      "explanation": "Inputs go in, the model processes them using its parameters, and outputs come out.",
+      "difficulty": 1,
+      "tags": ["inputs and outputs"]
+    },
+    {
+      "id": "u2-q25",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "Which activation function outputs zero for any negative input and passes positive inputs through unchanged?",
+      "options": ["ReLU (rectified linear unit)", "Sigmoid", "Softmax", "Tanh"],
+      "answer": "ReLU (rectified linear unit)",
+      "acceptedAnswers": ["ReLU", "rectified linear unit"],
+      "explanation": "ReLU is a simple, widely used activation function: negative values become 0 and positive values stay the same.",
+      "difficulty": 3,
+      "tags": ["neural networks", "activation functions"]
+    },
+    {
+      "id": "u2-q26",
+      "unitId": "u2",
+      "type": "tf",
+      "prompt": "A token is always exactly one whole word.",
+      "answer": false,
+      "explanation": "A token can be a whole word, part of a word or a punctuation mark. Long or unusual words are often split into several tokens.",
+      "difficulty": 1,
+      "tags": ["tokens"]
+    },
+    {
+      "id": "u2-q27",
+      "unitId": "u2",
+      "type": "written",
+      "prompt": "What kind of AI system follows if-then rules written by people instead of learning from data?",
+      "answer": "rule-based system",
+      "acceptedAnswers": ["rule based system", "rules-based system", "rule-based AI", "rule based", "expert system"],
+      "options": ["rule-based system", "neural network", "large language model", "deep learning model"],
+      "explanation": "Rule-based systems, including expert systems, act only on rules people wrote. They do not improve by studying examples.",
+      "difficulty": 1,
+      "tags": ["rules vs learning"]
+    },
+    {
+      "id": "u2-q28",
+      "unitId": "u2",
+      "type": "mc",
+      "prompt": "How does an LLM choose each next token?",
+      "options": [
+        "It calculates how likely each possible next token is and chooses one based on those probabilities",
+        "It picks a random word from a dictionary, with every word equally likely",
+        "It always repeats the last token a human typed",
+        "It copies the next word from its training data in order"
+      ],
+      "answer": "It calculates how likely each possible next token is and chooses one based on those probabilities",
+      "explanation": "The model produces a probability for each possible next token given the text so far, then selects one. Settings such as temperature affect how adventurous that choice is.",
+      "difficulty": 2,
+      "tags": ["LLMs"]
+    }
+  ]
+}

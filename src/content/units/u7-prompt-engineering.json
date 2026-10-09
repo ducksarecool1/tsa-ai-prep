@@ -1,0 +1,562 @@
+{
+  "id": "u7",
+  "number": 7,
+  "title": "Prompt Engineering",
+  "summary": "Writing clear prompts: task, context, role, audience, format, length, constraints and examples; zero-shot and few-shot prompting; step-by-step reasoning; iteration; fact-checking; and protecting private data.",
+  "lesson": {
+    "title": "Talking to AI Clearly",
+    "sections": [
+      {
+        "heading": "Why prompts matter",
+        "paragraphs": [
+          "A prompt is the input or instructions you give an AI model. Prompt engineering is the skill of writing and refining prompts to get useful results. The model knows nothing about your situation except what you tell it, so a vague prompt like \"Write about water\" gets a vague answer."
+        ]
+      },
+      {
+        "heading": "Ingredients of a strong prompt",
+        "paragraphs": ["You rarely need all of these at once, but the best prompts combine several:"],
+        "bullets": [
+          "Task: a clear action verb. \"Summarize,\" \"compare,\" \"write a quiz.\"",
+          "Context: background and purpose. \"This is for our school robotics club newsletter.\"",
+          "Role: who the AI should act as. \"You are a patient chemistry tutor.\"",
+          "Audience: who will read it. \"For 7th graders who are new to the topic.\"",
+          "Format: list, table, email, outline. \"Use a numbered list.\"",
+          "Length: a number. \"About 150 words\" or \"five bullet points.\"",
+          "Constraints: limits and rules. \"Do not use jargon.\" \"Use only the article below.\"",
+          "Tone: friendly, formal, encouraging, neutral."
+        ]
+      },
+      {
+        "heading": "Examples, steps and reasoning",
+        "paragraphs": [
+          "A zero-shot prompt gives instructions with no examples. A few-shot prompt includes a few input-and-output examples so the model can copy the pattern, which is useful when you need a specific style or format.",
+          "For complex jobs, break the task into steps, or ask the model to work through a problem step by step before answering. This is called chain-of-thought prompting. It often improves answers on multi-step problems and lets you check the logic, but the shown reasoning can still contain mistakes.",
+          "Delimiters such as triple quotes or tags separate your instructions from the text you want the model to work on."
+        ]
+      },
+      {
+        "heading": "Iterate and verify",
+        "paragraphs": [
+          "Treat the first answer as a draft. Read it, notice what is missing or wrong, revise your prompt, and try again. To reduce made-up answers, give the model the source text and say \"Use only this text,\" and tell it to say when it is unsure instead of guessing. Always check important facts, names, numbers, quotes and citations yourself."
+        ]
+      },
+      {
+        "heading": "What never goes in a prompt",
+        "paragraphs": [
+          "Leave out passwords, addresses, phone numbers, ID numbers, health or financial details, and other people's private information. Use placeholders like [Name] instead. Your prompt may be stored by the service."
+        ]
+      }
+    ],
+    "diagramAfter": 3,
+    "diagram": {
+      "type": "flow",
+      "caption": "Prompting is a loop. Each pass adds what the last answer was missing.",
+      "steps": ["Write a clear prompt", "Read the output", "Spot what is missing or wrong", "Revise the prompt", "Run it again"]
+    },
+    "analogy": {
+      "title": "Analogy: briefing a substitute teacher",
+      "text": "Prompting is like leaving instructions for a very capable substitute teacher who has never met your class. They can do almost anything, but only if you explain the goal, the students, the materials and the rules."
+    }
+  },
+  "terms": [
+    {
+      "id": "u7-t-prompt",
+      "unitId": "u7",
+      "term": "prompt",
+      "definition": "The input or instructions you give an AI model.",
+      "example": "\"Write a haiku about autumn for a 4th-grade class\" is a prompt.",
+      "acceptedAnswers": ["prompts"],
+      "confusableWith": ["prompt engineering"]
+    },
+    {
+      "id": "u7-t-pe",
+      "unitId": "u7",
+      "term": "prompt engineering",
+      "definition": "The skill of writing and refining prompts to get better results from an AI model.",
+      "example": "Adding an audience, a format and a length to a vague prompt is prompt engineering.",
+      "acceptedAnswers": ["prompt design", "prompt crafting", "prompting"],
+      "confusableWith": ["prompt"]
+    },
+    {
+      "id": "u7-t-zero-shot",
+      "unitId": "u7",
+      "term": "zero-shot prompting",
+      "definition": "Prompting with instructions only, without any examples.",
+      "example": "\"Classify this review as positive or negative\" with no sample reviews.",
+      "acceptedAnswers": ["zero-shot", "zero shot", "zero-shot prompt"],
+      "confusableWith": ["few-shot prompting", "one-shot"]
+    },
+    {
+      "id": "u7-t-few-shot",
+      "unitId": "u7",
+      "term": "few-shot prompting",
+      "definition": "Prompting with a few input-and-output examples that show the model the pattern you want.",
+      "example": "Giving two sample product descriptions, then asking for a third in the same style.",
+      "acceptedAnswers": ["few-shot", "few shot", "few-shot prompt"],
+      "confusableWith": ["zero-shot prompting", "one-shot"]
+    },
+    {
+      "id": "u7-t-cot",
+      "unitId": "u7",
+      "term": "chain-of-thought prompting",
+      "definition": "Asking a model to reason through a problem step by step before giving its final answer.",
+      "example": "\"Solve this word problem. Show each step of your reasoning, then give the answer.\"",
+      "acceptedAnswers": ["chain of thought", "chain-of-thought", "CoT", "step-by-step reasoning"]
+    },
+    {
+      "id": "u7-t-role",
+      "unitId": "u7",
+      "term": "role prompting",
+      "definition": "Telling the model who to act as, which shapes the style, focus and expertise of its response.",
+      "example": "\"You are an experienced debate coach.\"",
+      "acceptedAnswers": ["persona prompting", "assigning a role", "role-play prompting", "persona"]
+    },
+    {
+      "id": "u7-t-constraint",
+      "unitId": "u7",
+      "term": "constraint",
+      "definition": "A rule in a prompt that limits what the model should do or include.",
+      "example": "\"Do not use any technical jargon.\"",
+      "acceptedAnswers": ["constraints", "restriction", "limitation"]
+    },
+    {
+      "id": "u7-t-delimiter",
+      "unitId": "u7",
+      "term": "delimiter",
+      "definition": "A mark, such as triple quotes or tags, that separates instructions from the text the model should work on.",
+      "example": "Summarize the text between the triple quotes: \"\"\" ... \"\"\"",
+      "acceptedAnswers": ["delimiters"]
+    },
+    {
+      "id": "u7-t-iteration",
+      "unitId": "u7",
+      "term": "iteration",
+      "definition": "Improving a result by repeatedly reviewing the output and revising the prompt.",
+      "example": "After a too-long first answer, adding \"Keep it under 100 words\" and trying again.",
+      "acceptedAnswers": ["iterating", "iterative prompting", "prompt iteration"]
+    },
+    {
+      "id": "u7-t-temperature",
+      "unitId": "u7",
+      "term": "temperature",
+      "definition": "A setting in many text generators that controls how random or varied the output is; higher values give more variety.",
+      "example": "A low temperature suits a factual summary, while a higher one suits brainstorming silly team names."
+    },
+    {
+      "id": "u7-t-system-prompt",
+      "unitId": "u7",
+      "term": "system prompt",
+      "definition": "Instructions set by the app or developer, usually hidden from the user, that shape how an AI assistant behaves in every conversation.",
+      "example": "A homework-help app's system prompt might tell the AI to give hints instead of full answers.",
+      "acceptedAnswers": ["system message", "system instructions"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u7-q01",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "Which prompt is clearest?",
+      "options": [
+        "Write a 150-word summary of the water cycle for 5th graders, using three short paragraphs.",
+        "Tell me about water.",
+        "Water cycle stuff please.",
+        "Write something good."
+      ],
+      "answer": "Write a 150-word summary of the water cycle for 5th graders, using three short paragraphs.",
+      "explanation": "It names the task, topic, audience, length and format. The others leave the model guessing.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q02",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "What do we call a prompt that gives the model instructions but no examples?",
+      "answer": "zero-shot prompting",
+      "acceptedAnswers": ["zero-shot", "zero shot", "zero-shot prompt"],
+      "confusableWith": ["few-shot prompting", "few-shot", "one-shot"],
+      "options": ["zero-shot prompting", "few-shot prompting", "fine-tuning", "role prompting"],
+      "explanation": "\"Zero-shot\" means zero examples. The model must rely on the instructions alone.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q03",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "What do we call a prompt that includes a few input-and-output examples to show the model the pattern you want?",
+      "answer": "few-shot prompting",
+      "acceptedAnswers": ["few-shot", "few shot", "few-shot prompt"],
+      "confusableWith": ["zero-shot prompting", "zero-shot", "one-shot"],
+      "options": ["few-shot prompting", "zero-shot prompting", "chain-of-thought prompting", "pretraining"],
+      "explanation": "Few-shot prompts teach by example inside the prompt, without retraining the model.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q04",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "You ask an AI, \"Explain photosynthesis,\" and get a college-level answer full of jargon. What should you add to your prompt?",
+      "options": [
+        "The audience, such as \"for a 7th grader, using simple words\"",
+        "More exclamation points",
+        "The word \"please\" five times",
+        "Nothing, because the AI already chose the right level"
+      ],
+      "answer": "The audience, such as \"for a 7th grader, using simple words\"",
+      "explanation": "Naming the audience tells the model what reading level and vocabulary to use.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q05",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "What does assigning a role, such as \"You are an experienced debate coach,\" do in a prompt?",
+      "options": [
+        "It guides the style, focus and expertise of the response",
+        "It gives the AI real-world credentials",
+        "It guarantees the facts are correct",
+        "It automatically makes the response shorter"
+      ],
+      "answer": "It guides the style, focus and expertise of the response",
+      "explanation": "A role shapes how the model responds, but it does not make the model an actual expert or guarantee accuracy.",
+      "difficulty": 1,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q06",
+      "unitId": "u7",
+      "type": "tf",
+      "prompt": "Asking a model to work through a math word problem step by step can improve its answer and lets you check its reasoning.",
+      "answer": true,
+      "explanation": "Step-by-step reasoning often helps on multi-step problems and makes errors easier to spot. The reasoning can still contain mistakes, so check it.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q07",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "Which of these should you never put in a prompt to a public AI tool?",
+      "options": [
+        "Your password or a friend's home address",
+        "The topic of your science project",
+        "The reading level you want",
+        "The number of bullet points you want"
+      ],
+      "answer": "Your password or a friend's home address",
+      "explanation": "Prompts may be stored by the service. Private information about you or others should stay out.",
+      "difficulty": 1,
+      "tags": ["privacy"]
+    },
+    {
+      "id": "u7-q08",
+      "unitId": "u7",
+      "type": "matching",
+      "prompt": "Match each prompt ingredient to an example.",
+      "answer": [
+        { "term": "Role", "definition": "You are a friendly museum tour guide." },
+        { "term": "Audience", "definition": "...for students who are new to coding." },
+        { "term": "Format", "definition": "Present it as a table with two columns." },
+        { "term": "Constraint", "definition": "Do not use any technical jargon." },
+        { "term": "Length", "definition": "Keep it under 100 words." }
+      ],
+      "explanation": "Each ingredient answers a different question the model would otherwise have to guess about.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q09",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "An AI's answer about a historical event includes a quote you have never seen before. What is the best next step?",
+      "options": [
+        "Verify the quote in a reliable source before using it",
+        "Use it, because AI quotes are always accurate",
+        "Ask the AI to make the quote longer",
+        "Change a few words so it sounds right"
+      ],
+      "answer": "Verify the quote in a reliable source before using it",
+      "explanation": "Models can invent realistic quotes. Checking a reliable source prevents spreading a fake one.",
+      "difficulty": 1,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u7-q10",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "What does \"iterating on a prompt\" mean?",
+      "options": [
+        "Reviewing the output, revising the prompt to fix what is missing or wrong, and trying again",
+        "Typing the same prompt over and over without changes",
+        "Deleting the chat and giving up",
+        "Asking a different person to write the prompt"
+      ],
+      "answer": "Reviewing the output, revising the prompt to fix what is missing or wrong, and trying again",
+      "explanation": "Good results usually come from a few rounds of improvement, not from the first try.",
+      "difficulty": 1,
+      "tags": ["iteration"]
+    },
+    {
+      "id": "u7-q11",
+      "unitId": "u7",
+      "type": "ordering",
+      "prompt": "Put the steps of iterating on a prompt in order.",
+      "answer": [
+        "Write a first prompt with a clear task",
+        "Read the output carefully",
+        "Identify what is missing or wrong",
+        "Revise the prompt with more detail or constraints",
+        "Run it again and compare"
+      ],
+      "explanation": "Iteration is a loop: write, read, diagnose, revise and rerun.",
+      "difficulty": 1,
+      "tags": ["iteration"]
+    },
+    {
+      "id": "u7-q12",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "What is the name for a rule like \"Do not use slang\" or \"Use only the article below\" that limits what the AI should do?",
+      "answer": "constraint",
+      "acceptedAnswers": ["constraints", "restriction", "limitation"],
+      "options": ["constraint", "token", "benchmark", "label"],
+      "explanation": "Constraints set boundaries on the output, such as length limits, banned words or allowed sources.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q13",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "You want an AI to answer questions about a news article without adding outside facts. Which instruction helps most?",
+      "options": [
+        "Paste the article and write: \"Answer using only the article below. If the answer is not in it, say so.\"",
+        "Write: \"Answer from memory.\"",
+        "Write: \"Be creative.\"",
+        "Say nothing about sources."
+      ],
+      "answer": "Paste the article and write: \"Answer using only the article below. If the answer is not in it, say so.\"",
+      "explanation": "Grounding the model in a provided source and allowing \"I don't know\" reduces made-up answers.",
+      "difficulty": 2,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u7-q14",
+      "unitId": "u7",
+      "type": "tf",
+      "prompt": "Breaking a big task, like planning an event, into smaller steps in your prompt often leads to better results.",
+      "answer": true,
+      "explanation": "Smaller, clearer steps are easier for the model to handle well, and easier for you to check.",
+      "difficulty": 1,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q15",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "What are delimiters in a prompt?",
+      "options": [
+        "Marks such as triple quotes or tags that separate instructions from the text the AI should work on",
+        "Extra words that make a prompt longer",
+        "Spelling errors in the prompt",
+        "Settings that delete the chat history"
+      ],
+      "answer": "Marks such as triple quotes or tags that separate instructions from the text the AI should work on",
+      "explanation": "Delimiters make it clear where your instructions end and the material begins, so the model does not confuse the two.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q16",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "The weak prompt is \"Make a study guide.\" Which revision is strongest?",
+      "options": [
+        "Create a one-page study guide on the causes of World War I for 10th graders, with five bullet points and three practice questions at the end.",
+        "Make a really good study guide.",
+        "Study guide, history, thanks.",
+        "Make a study guide fast."
+      ],
+      "answer": "Create a one-page study guide on the causes of World War I for 10th graders, with five bullet points and three practice questions at the end.",
+      "explanation": "The strong revision adds topic, audience, length and format. The others add nothing the model can use.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q17",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "What is the term for the skill of writing and refining instructions to get better results from an AI model?",
+      "answer": "prompt engineering",
+      "acceptedAnswers": ["prompt design", "prompt crafting", "prompting"],
+      "confusableWith": ["prompt"],
+      "options": ["prompt engineering", "fine-tuning", "backpropagation", "clustering"],
+      "explanation": "Prompt engineering improves results by changing the input, not the model itself.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q18",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "Why does adding context, such as \"This is for a school club newsletter,\" improve a prompt?",
+      "options": [
+        "The model knows nothing about your situation unless you tell it, so context helps it tailor the response",
+        "Context makes the model run faster",
+        "Context lets the model open your files",
+        "It doesn't; models always know your situation"
+      ],
+      "answer": "The model knows nothing about your situation unless you tell it, so context helps it tailor the response",
+      "explanation": "Context explains the purpose and setting, which shapes tone, length and content.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    },
+    {
+      "id": "u7-q19",
+      "unitId": "u7",
+      "type": "tf",
+      "prompt": "If an AI lists sources, you can assume those sources are real without checking.",
+      "answer": false,
+      "explanation": "AI can generate sources that look real but do not exist or do not say what is claimed. Always check them.",
+      "difficulty": 1,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u7-q20",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "You need product descriptions in a consistent style and you have two descriptions you love. Which prompting technique fits best?",
+      "options": [
+        "Few-shot prompting: include the two descriptions as examples of the style you want",
+        "Zero-shot prompting with no style guidance",
+        "Asking for \"something nice\"",
+        "Using a larger context window and nothing else"
+      ],
+      "answer": "Few-shot prompting: include the two descriptions as examples of the style you want",
+      "acceptedAnswers": ["few-shot prompting", "few-shot", "few shot"],
+      "confusableWith": ["zero-shot prompting", "zero-shot"],
+      "explanation": "Examples show the model exactly what you want, which is hard to describe in words alone.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q21",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "What does the temperature setting usually control in a text generator?",
+      "options": [
+        "How random or varied the output is, with higher values giving more variety",
+        "How hot the computer gets",
+        "How long the context window is",
+        "How many people can use it at once"
+      ],
+      "answer": "How random or varied the output is, with higher values giving more variety",
+      "explanation": "Lower temperature makes the model pick the most likely tokens more consistently. Higher temperature allows less likely choices, giving more variety.",
+      "difficulty": 3,
+      "tags": ["settings"]
+    },
+    {
+      "id": "u7-q22",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "In the prompt \"You are an experienced chef. Suggest three dinners...\", which technique does \"You are an experienced chef\" show?",
+      "answer": "role prompting",
+      "acceptedAnswers": ["persona prompting", "assigning a role", "role-play prompting", "persona", "role", "giving a role"],
+      "confusableWith": ["few-shot prompting"],
+      "options": ["role prompting", "few-shot prompting", "fine-tuning", "zero-shot prompting"],
+      "explanation": "Giving the model a role or persona shapes its voice and focus.",
+      "difficulty": 1,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q23",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "Which prompt best reduces the chance of a made-up answer?",
+      "options": [
+        "List three facts about NASA's Perseverance rover. If you are not sure about a fact, say so instead of guessing.",
+        "Tell me everything about Mars and sound confident.",
+        "Make up some fun facts about Mars.",
+        "Write about Mars."
+      ],
+      "answer": "List three facts about NASA's Perseverance rover. If you are not sure about a fact, say so instead of guessing.",
+      "explanation": "Giving the model permission to say it is unsure discourages guessing. You should still verify the facts.",
+      "difficulty": 2,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u7-q24",
+      "unitId": "u7",
+      "type": "scenario",
+      "prompt": "A student writes: \"My name is Jordan Lee, I live at 42 Oak Street and my phone number is 555-0147. Write me a cover letter for a summer job.\" What is the main problem with this prompt?",
+      "options": [
+        "It shares unnecessary personal details; placeholders like [Name] and [Address] would work just as well",
+        "It is too short to be useful",
+        "It forgot to assign a role",
+        "Nothing is wrong with it"
+      ],
+      "answer": "It shares unnecessary personal details; placeholders like [Name] and [Address] would work just as well",
+      "explanation": "The AI does not need your real address or phone number to write the letter. Fill them in yourself afterward.",
+      "difficulty": 1,
+      "tags": ["privacy"]
+    },
+    {
+      "id": "u7-q25",
+      "unitId": "u7",
+      "type": "tf",
+      "prompt": "Reasoning that an AI shows step by step is always correct, so you never need to check it.",
+      "answer": false,
+      "explanation": "Shown reasoning can include wrong steps or a wrong final answer. It makes checking easier, but you still need to check.",
+      "difficulty": 1,
+      "tags": ["verification"]
+    },
+    {
+      "id": "u7-q26",
+      "unitId": "u7",
+      "type": "matching",
+      "prompt": "Match each technique to its description.",
+      "answer": [
+        { "term": "Zero-shot prompting", "definition": "Instructions only, no examples" },
+        { "term": "Few-shot prompting", "definition": "Instructions plus a few examples" },
+        { "term": "Chain-of-thought prompting", "definition": "Asking the model to reason step by step" },
+        { "term": "Role prompting", "definition": "Telling the model who to act as" }
+      ],
+      "explanation": "These techniques can be combined in a single prompt.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q27",
+      "unitId": "u7",
+      "type": "written",
+      "prompt": "What do we call asking a model to reason through a problem step by step before giving its final answer?",
+      "answer": "chain-of-thought prompting",
+      "acceptedAnswers": ["chain of thought", "chain-of-thought", "CoT", "step-by-step reasoning", "step by step reasoning"],
+      "confusableWith": ["few-shot prompting"],
+      "options": ["chain-of-thought prompting", "few-shot prompting", "fine-tuning", "role prompting"],
+      "explanation": "Chain-of-thought prompting asks for the reasoning steps, which can improve multi-step answers.",
+      "difficulty": 2,
+      "tags": ["techniques"]
+    },
+    {
+      "id": "u7-q28",
+      "unitId": "u7",
+      "type": "mc",
+      "prompt": "What is a prompt?",
+      "options": [
+        "The input or instructions you give an AI model",
+        "The AI's final answer",
+        "The data used to train the model",
+        "The computer chip that runs the model"
+      ],
+      "answer": "The input or instructions you give an AI model",
+      "explanation": "The prompt is what you type or send. The model's reply is its output.",
+      "difficulty": 1,
+      "tags": ["prompt basics"]
+    }
+  ]
+}

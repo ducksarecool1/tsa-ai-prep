@@ -1,0 +1,525 @@
+{
+  "id": "u4",
+  "number": 4,
+  "title": "Types of AI Models and Tasks",
+  "summary": "Classification, regression and clustering; computer vision, language and speech; recommendation systems; and how text and image generators, including diffusion models, work.",
+  "lesson": {
+    "title": "What Can AI Do?",
+    "sections": [
+      {
+        "heading": "Start with the output",
+        "paragraphs": [
+          "The easiest way to tell AI tasks apart is to ask what kind of output you need. If the answer is a category, such as spam or not spam, the task is classification. If the answer is a number, such as tomorrow's temperature or a house price, the task is regression. If you want the computer to find natural groups in data without being told what the groups are, the task is clustering, a form of unsupervised learning. If you want something new, like a paragraph or a picture, you need a generative model."
+        ]
+      },
+      {
+        "heading": "Seeing, reading and listening",
+        "paragraphs": [
+          "Computer vision is the area of AI that works with images and video. It includes image classification (\"this photo shows a dog\"), object detection (finding and boxing every car in a street scene), and face recognition.",
+          "Natural language processing (NLP) works with human language. Examples include machine translation, sentiment analysis (deciding whether a review is positive, negative or neutral), summarizing, answering questions and powering chatbots.",
+          "Speech recognition converts spoken words into text, as when you dictate a message. Text-to-speech does the reverse, turning written text into spoken audio. Multimodal models can work with more than one type of data, such as text and images, in the same system."
+        ]
+      },
+      {
+        "heading": "Recommendations and anomalies",
+        "paragraphs": [
+          "Recommendation systems suggest videos, songs or products. They look at what you have watched, rated or bought, and often at what similar users liked. Anomaly detection looks for unusual cases that do not fit normal patterns, such as a sudden burst of failed logins or an odd credit card purchase."
+        ]
+      },
+      {
+        "heading": "How generators create",
+        "paragraphs": [
+          "Text generators are usually large language models that write one token at a time. Many modern image generators are diffusion models. During training, a diffusion model is shown images that have had random noise added and learns to remove that noise. To create a new image, it starts from pure noise and removes a little at each step, guided by your text prompt, until a clear picture appears.",
+          "Generated text and images can look convincing even when they show things that never happened or state facts that are wrong. That is why later units cover evaluation, misinformation and responsible use."
+        ]
+      }
+    ],
+    "diagram": {
+      "type": "matrix",
+      "caption": "Choose the task by the kind of output you need.",
+      "rowLabels": ["A category", "A number", "Groups, with no labels", "New content"],
+      "colLabels": ["Task", "Example"],
+      "cells": [
+        ["Classification", "Spam or not spam"],
+        ["Regression", "Tomorrow's high temperature"],
+        ["Clustering", "Customer segments"],
+        ["Generation", "A story or an image from a prompt"]
+      ]
+    }
+  },
+  "terms": [
+    {
+      "id": "u4-t-classification",
+      "unitId": "u4",
+      "term": "classification",
+      "definition": "A task in which a model assigns each input to a category.",
+      "example": "Sorting emails into spam and not spam.",
+      "acceptedAnswers": ["classifying"],
+      "confusableWith": ["clustering", "regression"]
+    },
+    {
+      "id": "u4-t-regression",
+      "unitId": "u4",
+      "term": "regression",
+      "definition": "A task in which a model predicts a number.",
+      "example": "Predicting the price a used car will sell for.",
+      "confusableWith": ["classification"]
+    },
+    {
+      "id": "u4-t-clustering",
+      "unitId": "u4",
+      "term": "clustering",
+      "definition": "An unsupervised task that groups similar items together without predefined labels.",
+      "example": "Grouping shoppers by similar buying habits.",
+      "acceptedAnswers": ["cluster analysis"],
+      "confusableWith": ["classification"]
+    },
+    {
+      "id": "u4-t-cv",
+      "unitId": "u4",
+      "term": "computer vision",
+      "definition": "The area of AI that works with images and video.",
+      "example": "A self-checkout camera that recognizes produce.",
+      "acceptedAnswers": ["CV", "machine vision"]
+    },
+    {
+      "id": "u4-t-object-detection",
+      "unitId": "u4",
+      "term": "object detection",
+      "definition": "A computer vision task that finds objects in an image and marks where they are, often with boxes.",
+      "example": "Drawing a box around every pedestrian in a street photo."
+    },
+    {
+      "id": "u4-t-nlp",
+      "unitId": "u4",
+      "term": "natural language processing",
+      "definition": "The area of AI that works with human language, both understanding and generating it.",
+      "example": "Translation apps and grammar checkers use NLP.",
+      "acceptedAnswers": ["NLP"]
+    },
+    {
+      "id": "u4-t-sentiment",
+      "unitId": "u4",
+      "term": "sentiment analysis",
+      "definition": "An NLP task that decides whether text expresses a positive, negative or neutral opinion.",
+      "example": "Scanning product reviews to see how many customers are unhappy.",
+      "acceptedAnswers": ["sentiment classification", "opinion mining", "sentiment detection"]
+    },
+    {
+      "id": "u4-t-mt",
+      "unitId": "u4",
+      "term": "machine translation",
+      "definition": "Using AI to translate text or speech from one language to another.",
+      "example": "An app that turns a Spanish menu into English.",
+      "acceptedAnswers": ["automatic translation", "AI translation"]
+    },
+    {
+      "id": "u4-t-asr",
+      "unitId": "u4",
+      "term": "speech recognition",
+      "definition": "Converting spoken words into written text.",
+      "example": "Dictating a text message instead of typing it.",
+      "acceptedAnswers": ["speech-to-text", "speech to text", "automatic speech recognition", "ASR"],
+      "confusableWith": ["text-to-speech"]
+    },
+    {
+      "id": "u4-t-tts",
+      "unitId": "u4",
+      "term": "text-to-speech",
+      "definition": "Converting written text into spoken audio.",
+      "example": "A reading app that reads an article aloud.",
+      "acceptedAnswers": ["text to speech", "TTS", "speech synthesis"],
+      "confusableWith": ["speech recognition"]
+    },
+    {
+      "id": "u4-t-recsys",
+      "unitId": "u4",
+      "term": "recommendation system",
+      "definition": "A system that suggests items, such as videos, songs or products, based on your behavior and the behavior of similar users.",
+      "example": "A streaming service's \"Because you watched...\" row.",
+      "acceptedAnswers": ["recommender system", "recommendation engine", "recommender", "recommendation systems"]
+    },
+    {
+      "id": "u4-t-diffusion",
+      "unitId": "u4",
+      "term": "diffusion model",
+      "definition": "A generative model that creates images by starting from random noise and removing it step by step, guided by a prompt.",
+      "example": "Many text-to-image tools are built on diffusion models.",
+      "acceptedAnswers": ["diffusion", "diffusion models"]
+    },
+    {
+      "id": "u4-t-multimodal",
+      "unitId": "u4",
+      "term": "multimodal model",
+      "definition": "A model that can work with more than one type of data, such as text, images and audio.",
+      "example": "A chatbot that can describe a photo you upload.",
+      "acceptedAnswers": ["multimodal", "multimodal AI", "multi-modal model"]
+    },
+    {
+      "id": "u4-t-anomaly",
+      "unitId": "u4",
+      "term": "anomaly detection",
+      "definition": "Finding unusual data points that do not fit normal patterns.",
+      "example": "Flagging a credit card purchase made in another country minutes after one at home.",
+      "acceptedAnswers": ["outlier detection"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "u4-q01",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A model looks at an email and decides whether it is \"spam\" or \"not spam.\" What type of task is this?",
+      "options": ["Classification", "Regression", "Clustering", "Text generation"],
+      "answer": "Classification",
+      "acceptedAnswers": ["classifying"],
+      "confusableWith": ["clustering", "regression"],
+      "explanation": "The model picks a category for each email, which is classification.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q02",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A model predicts tomorrow's high temperature in degrees. What type of task is this?",
+      "options": ["Regression", "Classification", "Clustering", "Object detection"],
+      "answer": "Regression",
+      "acceptedAnswers": [],
+      "confusableWith": ["classification"],
+      "explanation": "Predicting a number on a continuous scale, like a temperature, is regression.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q03",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A store groups its customers into segments based on shopping behavior, without deciding the groups in advance. What type of task is this?",
+      "options": ["Clustering", "Classification", "Regression", "Speech recognition"],
+      "answer": "Clustering",
+      "acceptedAnswers": ["cluster analysis"],
+      "confusableWith": ["classification"],
+      "explanation": "Clustering finds natural groups in unlabeled data. Classification would need categories decided ahead of time.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q04",
+      "unitId": "u4",
+      "type": "tf",
+      "prompt": "Regression predicts a number, while classification predicts a category.",
+      "answer": true,
+      "explanation": "That is the key difference between the two tasks. Asking whether the output is a number or a category tells you which one you need.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q05",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "Which area of AI focuses on understanding images and video?",
+      "options": ["Computer vision", "Natural language processing", "Speech recognition", "Reinforcement learning"],
+      "answer": "Computer vision",
+      "acceptedAnswers": ["CV", "machine vision"],
+      "explanation": "Computer vision covers tasks such as image classification, object detection and face recognition.",
+      "difficulty": 1,
+      "tags": ["computer vision"]
+    },
+    {
+      "id": "u4-q06",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "Which area of AI focuses on understanding and generating human language?",
+      "options": ["Natural language processing", "Computer vision", "Robotics", "Regression"],
+      "answer": "Natural language processing",
+      "acceptedAnswers": ["NLP"],
+      "explanation": "Natural language processing (NLP) covers translation, sentiment analysis, summarizing, chatbots and more.",
+      "difficulty": 1,
+      "tags": ["NLP"]
+    },
+    {
+      "id": "u4-q07",
+      "unitId": "u4",
+      "type": "written",
+      "prompt": "What is the task of converting spoken words into written text called?",
+      "answer": "speech recognition",
+      "acceptedAnswers": ["speech-to-text", "speech to text", "automatic speech recognition", "ASR"],
+      "confusableWith": ["text-to-speech"],
+      "options": ["speech recognition", "text-to-speech", "sentiment analysis", "object detection"],
+      "explanation": "Speech recognition turns audio into text. Text-to-speech goes the other way.",
+      "difficulty": 1,
+      "tags": ["speech"]
+    },
+    {
+      "id": "u4-q08",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A video streaming service suggests shows based on what you and similar viewers have watched. What kind of system is this?",
+      "options": ["A recommendation system", "A diffusion model", "A speech recognition system", "A rule-based calculator"],
+      "answer": "A recommendation system",
+      "acceptedAnswers": ["recommendation system", "recommender system", "recommendation engine", "recommender"],
+      "explanation": "Recommendation systems use your behavior and that of similar users to suggest items you are likely to enjoy.",
+      "difficulty": 1,
+      "tags": ["recommendation"]
+    },
+    {
+      "id": "u4-q09",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "How does a diffusion model generate an image?",
+      "options": [
+        "It starts from random noise and removes the noise step by step until an image matching the prompt appears",
+        "It searches the internet and copies the closest existing image",
+        "It draws one pixel at a time using rules written by artists",
+        "It averages together every image in its training data"
+      ],
+      "answer": "It starts from random noise and removes the noise step by step until an image matching the prompt appears",
+      "explanation": "Diffusion models learn to remove noise during training. To generate, they start from noise and gradually denoise it, guided by the prompt.",
+      "difficulty": 2,
+      "tags": ["generative AI", "diffusion"]
+    },
+    {
+      "id": "u4-q10",
+      "unitId": "u4",
+      "type": "tf",
+      "prompt": "Diffusion models are trained by adding noise to images and learning to reverse that process.",
+      "answer": true,
+      "explanation": "Training images are gradually noised, and the model learns to predict and remove that noise. Generation runs this learned denoising starting from pure noise.",
+      "difficulty": 3,
+      "tags": ["diffusion"]
+    },
+    {
+      "id": "u4-q11",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "What does object detection do?",
+      "options": [
+        "Finds objects in an image and marks where they are, often with boxes",
+        "Converts speech to text",
+        "Predicts stock prices",
+        "Groups customers by behavior"
+      ],
+      "answer": "Finds objects in an image and marks where they are, often with boxes",
+      "explanation": "Object detection answers both \"what is in the image?\" and \"where is it?\" Self-driving research and security cameras use it.",
+      "difficulty": 1,
+      "tags": ["computer vision"]
+    },
+    {
+      "id": "u4-q12",
+      "unitId": "u4",
+      "type": "written",
+      "prompt": "What NLP task decides whether a piece of text expresses a positive, negative or neutral opinion?",
+      "answer": "sentiment analysis",
+      "acceptedAnswers": ["sentiment classification", "opinion mining", "sentiment detection"],
+      "options": ["sentiment analysis", "object detection", "clustering", "text-to-speech"],
+      "explanation": "Sentiment analysis measures the opinion or emotion in text. Companies use it to read customer reviews at scale.",
+      "difficulty": 1,
+      "tags": ["NLP"]
+    },
+    {
+      "id": "u4-q13",
+      "unitId": "u4",
+      "type": "matching",
+      "prompt": "Match each task to an example.",
+      "answer": [
+        { "term": "Classification", "definition": "Labeling a photo as \"cat\" or \"dog\"" },
+        { "term": "Regression", "definition": "Predicting a house's sale price" },
+        { "term": "Clustering", "definition": "Grouping news articles by topic without labels" },
+        { "term": "Text generation", "definition": "Writing a product description from a few notes" }
+      ],
+      "explanation": "Categories mean classification, numbers mean regression, unlabeled groups mean clustering, and new content means generation.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q14",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A school wants to automatically flag unusual login activity, such as hundreds of failed passwords at 3 a.m. Which task fits best?",
+      "options": ["Anomaly detection", "Text-to-speech", "Image generation", "Machine translation"],
+      "answer": "Anomaly detection",
+      "acceptedAnswers": ["outlier detection"],
+      "explanation": "Anomaly detection finds behavior that does not fit normal patterns, which is exactly what unusual logins are.",
+      "difficulty": 2,
+      "tags": ["anomaly detection"]
+    },
+    {
+      "id": "u4-q15",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "What is a multimodal model?",
+      "options": [
+        "A model that can work with more than one type of data, such as text and images",
+        "A model that only works in one language",
+        "A model with exactly two layers",
+        "A model that can only run on multiple computers"
+      ],
+      "answer": "A model that can work with more than one type of data, such as text and images",
+      "explanation": "\"Modes\" are types of data like text, images and audio. A multimodal model can take in or produce more than one of them.",
+      "difficulty": 2,
+      "tags": ["multimodal"]
+    },
+    {
+      "id": "u4-q16",
+      "unitId": "u4",
+      "type": "tf",
+      "prompt": "Speech recognition and text-to-speech are the same task.",
+      "answer": false,
+      "explanation": "Speech recognition turns speech into text, and text-to-speech turns text into speech. They are opposite directions.",
+      "difficulty": 1,
+      "tags": ["speech"]
+    },
+    {
+      "id": "u4-q17",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "Which of these is a computer vision task?",
+      "options": [
+        "Reading license plate numbers from traffic camera images",
+        "Translating a paragraph from French to English",
+        "Predicting next month's sales totals",
+        "Recommending songs from listening history"
+      ],
+      "answer": "Reading license plate numbers from traffic camera images",
+      "explanation": "Reading plates requires understanding images. The other tasks work with text, numbers or behavior data.",
+      "difficulty": 1,
+      "tags": ["computer vision"]
+    },
+    {
+      "id": "u4-q18",
+      "unitId": "u4",
+      "type": "written",
+      "prompt": "What do we call using AI to automatically translate text from one language to another?",
+      "answer": "machine translation",
+      "acceptedAnswers": ["automatic translation", "AI translation", "translation"],
+      "options": ["machine translation", "speech recognition", "clustering", "object detection"],
+      "explanation": "Machine translation is a core NLP task. Modern systems use neural networks, often transformers.",
+      "difficulty": 1,
+      "tags": ["NLP"]
+    },
+    {
+      "id": "u4-q19",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A doctor's office wants a model that predicts how many minutes late each patient will arrive. Which task is this?",
+      "options": ["Regression", "Classification", "Clustering", "Image generation"],
+      "answer": "Regression",
+      "acceptedAnswers": [],
+      "confusableWith": ["classification"],
+      "explanation": "The output is a number of minutes, so this is regression. Predicting simply \"late\" or \"on time\" would be classification.",
+      "difficulty": 2,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q20",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "Which question best helps you choose between classification and regression?",
+      "options": [
+        "Is the output a category or a number?",
+        "Is the data stored in the cloud?",
+        "How many GPUs do I have?",
+        "Is the model's code public?"
+      ],
+      "answer": "Is the output a category or a number?",
+      "explanation": "Classification outputs categories and regression outputs numbers. The type of output decides the task.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q21",
+      "unitId": "u4",
+      "type": "tf",
+      "prompt": "A recommendation system can use the behavior of similar users to make suggestions for you.",
+      "answer": true,
+      "explanation": "If people with tastes like yours enjoyed something, the system may suggest it to you too.",
+      "difficulty": 1,
+      "tags": ["recommendation"]
+    },
+    {
+      "id": "u4-q22",
+      "unitId": "u4",
+      "type": "ordering",
+      "prompt": "Put the steps of generating an image with a diffusion model in order.",
+      "answer": [
+        "The user writes a text prompt",
+        "The model starts from an image of pure random noise",
+        "The model removes a little noise at each step, guided by the prompt",
+        "After many steps, a clear image remains"
+      ],
+      "explanation": "Generation begins with noise and repeatedly denoises it, steered by the prompt, until a finished image appears.",
+      "difficulty": 2,
+      "tags": ["diffusion"]
+    },
+    {
+      "id": "u4-q23",
+      "unitId": "u4",
+      "type": "mc",
+      "prompt": "A phone keyboard suggests the next word as you type. Which kind of AI is this most closely related to?",
+      "options": [
+        "Language modeling, predicting likely next words",
+        "Object detection",
+        "Clustering",
+        "Speech synthesis"
+      ],
+      "answer": "Language modeling, predicting likely next words",
+      "explanation": "Next-word suggestions come from a language model, the same basic idea behind large language models, just much smaller.",
+      "difficulty": 2,
+      "tags": ["NLP"]
+    },
+    {
+      "id": "u4-q24",
+      "unitId": "u4",
+      "type": "matching",
+      "prompt": "Match each AI area to the kind of data it mainly works with.",
+      "answer": [
+        { "term": "Computer vision", "definition": "Images and video" },
+        { "term": "Natural language processing", "definition": "Written text" },
+        { "term": "Speech recognition", "definition": "Spoken audio" },
+        { "term": "Recommendation systems", "definition": "User behavior such as clicks, ratings and purchases" }
+      ],
+      "explanation": "Each area is defined largely by its type of data. Multimodal models combine several of them.",
+      "difficulty": 1,
+      "tags": ["task types"]
+    },
+    {
+      "id": "u4-q25",
+      "unitId": "u4",
+      "type": "scenario",
+      "prompt": "A wildlife team has thousands of camera-trap photos and wants each tagged with the animal species in it. Experts have already labeled 5,000 photos. Which approach fits best?",
+      "options": [
+        "Train a supervised image classification model on the labeled photos",
+        "Use clustering, since the labels are not useful",
+        "Use a text-to-speech model",
+        "Use regression to predict a number for each photo"
+      ],
+      "answer": "Train a supervised image classification model on the labeled photos",
+      "explanation": "Labeled examples plus a category output (species) point to supervised classification in computer vision.",
+      "difficulty": 2,
+      "tags": ["task types", "computer vision"]
+    },
+    {
+      "id": "u4-q26",
+      "unitId": "u4",
+      "type": "written",
+      "prompt": "What type of generative model creates images by starting with random noise and gradually removing it?",
+      "answer": "diffusion model",
+      "acceptedAnswers": ["diffusion", "diffusion models"],
+      "options": ["diffusion model", "regression model", "recommendation system", "rule-based system"],
+      "explanation": "Diffusion models generate by denoising. Many popular text-to-image tools are built on them.",
+      "difficulty": 2,
+      "tags": ["diffusion"]
+    },
+    {
+      "id": "u4-q27",
+      "unitId": "u4",
+      "type": "tf",
+      "prompt": "AI image generators always produce accurate pictures of real events.",
+      "answer": false,
+      "explanation": "Generated images can look realistic while showing things that never happened. That is why they can be misused as deepfakes.",
+      "difficulty": 1,
+      "tags": ["generative AI"]
+    }
+  ]
+}
